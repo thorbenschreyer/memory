@@ -1,0 +1,21 @@
+.button {
+    width: 300px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: yellow;
+    color: black;
+    border: none;
+
+    &-primary {
+        font-size: 32px;
+
+        &:hover {
+            background-color: aqua;
+        }
+    }
+
+    &-secondary {
+        color: white;
+        background-color: black;
+    }
+}
