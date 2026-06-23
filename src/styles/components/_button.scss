@@ -1,21 +1,25 @@
 .button {
-    width: 300px;
-    height: 100px;
-    border-radius: 15px;
-    background-color: yellow;
-    color: black;
-    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  height: 98px;
+  font-family: "Red_Rose", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  border: none;
 
-    &-primary {
-        font-size: 32px;
+  &-primary {
+    background-color: rgba(240, 234, 110, 1);
+    color: rgba(48, 49, 49, 1);
+    font-size: 40px;
 
-        &:hover {
-            background-color: aqua;
-        }
+    &:hover {
+      background-color: aqua;
     }
+  }
 
-    &-secondary {
-        color: white;
-        background-color: black;
-    }
+  &-secondary {
+    color: white;
+    background-color: black;
+  }
 }

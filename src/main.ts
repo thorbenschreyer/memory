@@ -1,3 +1,5 @@
 import './styles/style.scss'
 import './styles/components/_button.scss'
 import './styles/layout/_flex.scss'
+import './styles/base/_welcome-page.scss'
+import './styles/base/_all-pages.scss'
