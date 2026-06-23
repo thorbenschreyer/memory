@@ -2,19 +2,30 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative;
   width: 250px;
   height: 98px;
-  font-family: "Red_Rose", Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: "Red-Rose";
   border: none;
   transition: all ease-out 200ms;
 
   &__controller {
+    position: absolute;
+    left: 24px;
     transition: transform 200ms ease-out;
   }
 
   &__arrow {
-    /* Styles für den Pfeil */
+    position: absolute;
+    right: 24px;
+    transition: all 200ms ease-out;
+
+    &-hover {
+      position: absolute;
+      right: 24px;
+      opacity: 0;
+      transition: all 200ms ease-out;
+    }
   }
 
   &--primary {
@@ -22,12 +33,19 @@
     color: rgba(48, 49, 49, 1);
     font-size: 40px;
 
-
     &:hover {
       scale: 1.1;
 
       .button__controller {
-        transform: rotate(25deg);
+        transform: rotate(-25deg);
+      }
+
+      .button__arrow {
+        opacity: 0;
+
+        &-hover {
+          opacity: 1;
+        }
       }
     }
   }
