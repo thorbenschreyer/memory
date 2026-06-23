@@ -1,0 +1,17 @@
+.settings {
+  &--page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  &--content {
+    width: 1100px;
+    height: 600px;
+    border: 1px solid rebeccapurple;
+    display: flex;
+    justify-content: space-between;
+  }
+}
