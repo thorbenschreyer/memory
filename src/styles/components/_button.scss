@@ -7,19 +7,28 @@
   font-family: "Red_Rose", Arial, Helvetica, sans-serif;
   font-weight: 700;
   border: none;
+  transition: all ease-out 200ms;
 
-  &-primary {
+  &__controller {
+    transition: transform 200ms ease-out;
+  }
+
+  &__arrow {
+    /* Styles für den Pfeil */
+  }
+
+  &--primary {
     background-color: rgba(240, 234, 110, 1);
     color: rgba(48, 49, 49, 1);
     font-size: 40px;
 
-    &:hover {
-      background-color: aqua;
-    }
-  }
 
-  &-secondary {
-    color: white;
-    background-color: black;
+    &:hover {
+      scale: 1.1;
+
+      .button__controller {
+        transform: rotate(25deg);
+      }
+    }
   }
 }
