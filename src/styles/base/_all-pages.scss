@@ -36,8 +36,36 @@ a {
 }
 
 @font-face {
-  font-family: "Red-Rose";
-  src: url('../../../public/font/RedRose-VariableFont_wght.ttf') format('truetype');
+  font-family: "Red-Rose-regular";
+  src: url('../../../public/font/RedRose-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Red-Rose-bold";
+  src: url('../../../public/font/RedRose-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Red-Rose-light";
+  src: url('../../../public/font/RedRose-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Red-Rose-medium";
+  src: url('../../../public/font/RedRose-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Red-Rose-semibold";
+  src: url('../../../public/font/RedRose-SemiBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
