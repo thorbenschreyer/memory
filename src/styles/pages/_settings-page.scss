@@ -4,21 +4,31 @@
   justify-content: center;
   align-items: center;
 
-  &--page {
-    display: flex;
-    flex-direction: column;
-  }
-
   &--content {
       width: 1100px;
       height: 600px;
       border: 1px solid rebeccapurple;
       display: flex;
       justify-content: space-between;
+
+      &__header {
+        font-family:"Red-Rose-bold" ;
+        font-size: 54px;
+      }
+    }
+
+    &__header {
+        font-family: "Almarai-Bold", Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        color: rgba(48, 49, 49, 1);
+        padding: 16px;
+    }
+
+    &__size {
+        display: flex;
+        flex-direction: column;
     }
 }
-
-
 
 
 
@@ -38,3 +48,4 @@
     }
 
 }
+
