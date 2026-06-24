@@ -12,10 +12,20 @@
     border: 1px solid red;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     &__header {
       font-family: "Red-Rose-bold";
       font-size: 54px;
+      margin-bottom: 64px;
+      position: relative;
+
+      > img {
+        position: absolute;
+        bottom: -24px;
+        left: -24px;
+        width: 480px;
+      }
     }
   }
 
