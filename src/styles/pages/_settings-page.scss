@@ -1,3 +1,5 @@
+@use "../layout/flex";
+
 .settings {
   height: 100vh;
   display: flex;
@@ -5,49 +7,106 @@
   align-items: center;
 
   &--content {
-      width: 1100px;
-      height: 600px;
-      border: 1px solid red;
-      display: flex;
-      justify-content: space-between;
+    width: 1100px;
+    height: 600px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
 
-      &__header {
-        font-family:"Red-Rose-bold" ;
-        font-size: 54px;
-      }
+    &__header {
+      font-family: "Red-Rose-bold";
+      font-size: 54px;
     }
+  }
 
-    &__size {
-        display: flex;
-        flex-direction: column;
-    }
+  &__size {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .settings-detail {
-    &__header {
-        font-family: "Almarai-Bold", Arial, Helvetica, sans-serif;
-        font-size: 24px;
-        color: rgba(48, 49, 49, 1);
-        padding: 16px;
-    }
-}
+  &__header {
+    font-family: "Almarai-Bold", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: rgba(48, 49, 49, 1);
+    padding: 32px 0px 16px 0px;
+    @include flex.flex-vertical-center;
 
-
-
-.show-settings{
-    &--area {
     > img {
-        background-color: aqua;
-        width: 460px;
-        height: 412px;
+      margin-right: 8px;
+    }
+  }
+
+  .flex-collumn:first-child &__header {
+    padding-top: 0;
+  }
+
+  &__radiobutton {
+    display: flex;
+    align-items: center;
+    font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 4px;
+    margin-left: 40px;
+
+    > input {
+      margin-right: 8px;
+    }
+
+    > input[type="radio"] {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      margin-right: 8px;
+      border: 3px solid rgba(48, 49, 49, 1);
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      position: relative;
+      transition: 0.2s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: rgba(48, 49, 49, 1);
+        transform: translate(-50%, -50%) scale(0);
+        transition: 0.2s;
+      }
+
+      &:checked::before {
+        transform: translate(-50%, -50%) scale(1);
+
+        &:focus-visible {
+          outline: 3px solid #8ec5ff;
+          outline-offset: 3px;
         }
+      }
     }
+  }
 
-    &--details {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    }
-
+  &__radiobutton-image {
+    margin-left: 8px;
+  }
 }
 
+.show-settings {
+  &--area {
+    > img {
+      background-color: aqua;
+      width: 460px;
+      height: 412px;
+    }
+  }
+
+  &--details {
+    @include flex.flex-vertical-center;
+    justify-content: end;
+  }
+}

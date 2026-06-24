@@ -8,3 +8,8 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin flex-vertical-center {
+    display: flex;
+    align-items: center;
+}
