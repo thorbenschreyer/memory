@@ -9,6 +9,12 @@
   flex-direction: column;
 }
 
+@mixin flex-collumn-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 @mixin flex-vertical-center {
     display: flex;
     align-items: center;
