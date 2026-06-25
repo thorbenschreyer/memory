@@ -48,5 +48,16 @@
         }
       }
     }
+
+    &__settings {
+      width: unset;
+      height: unset;
+      font-size: 20px;
+      padding: 16px;
+
+      > img {
+        margin-right: 8px;
+      }
+    }
   }
 }
