@@ -11,6 +11,11 @@
   --header-element-height: 54px;
   --header-element-radius: 10px;
   --header-element-margin: 32px;
+  // Score board
+  --score-bord-background-color: rgba(255, 255, 255, 1);
+  --score-bord-score-text-font-size: 30px;
+  --score-bord-score-text-padding: 8px;
+
   // Player
   --player-text-font-size: 32px;
   --player-text-font-color: rgba(255, 255, 255, 1);
@@ -21,6 +26,12 @@
   --player-icon-size: 40px;
   --player-icon-img-width: 25px;
   --player-icon-img-height: 32px;
+
+  // Exit button
+  --exit-button-border: 2px solid rgba(231, 28, 79, 1);
+  --exit-button-margin-right: 8px;
+  --exit-button-background-color: rgba(237, 27, 118, 0.08);
+  --exit-button-text-color: rgba(255, 255, 255, 1);
 
 
 

@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   background-color: var(--page-background);
-  font-family: var(--page-font-family)
+  font-family: var(--page-font-family);
 }
 
 .header-menu {
@@ -20,26 +20,26 @@
   &__score {
     width: var(--header-element-width);
     height: var(--header-element-height);
-    background-color: rgba(255, 255, 255, 1);
+    background-color: var(--score-bord-background-color);
     border-radius: var(--header-element-radius);
     margin-left: var(--header-element-margin);
     @include flex.flex-center;
     justify-content: space-around;
 
     &--player {
-        @include flex.flex-center;
-        > span {
-            padding: 8px;
-            font-size: 30px;
-        }
+      @include flex.flex-center;
+      > span {
+        padding: var(--score-bord-score-text-padding);
+        font-size: var(--score-bord-score-text-font-size);
+      }
 
-        >.player-score-blue {
-            color: var(--player-one-background-color);
-        }
+      > .player-score-blue {
+        color: var(--player-one-background-color);
+      }
 
-        >.player-score-orange {
-            color: var(--player-two-background-color);
-        }
+      > .player-score-orange {
+        color: var(--player-two-background-color);
+      }
     }
   }
 
@@ -47,9 +47,9 @@
     @include flex.flex-center;
 
     &--text {
-        font-size: var(--player-text-font-size);
-        margin-right: var(--player-text-margin-right);
-        color: var(--player-text-font-color)
+      font-size: var(--player-text-font-size);
+      margin-right: var(--player-text-margin-right);
+      color: var(--player-text-font-color);
     }
 
     &--color {
@@ -67,11 +67,42 @@
   }
 
   &__exit {
+    cursor: pointer;
+    position: relative;
     width: var(--header-element-width);
     height: var(--header-element-height);
-    background-color: rgba(255, 255, 255, 1);
+    border: var(--exit-button-border);
+    background-color: var(--exit-button-background-color);
+    color: var(--exit-button-text-color);
     border-radius: var(--header-element-radius);
     margin-right: var(--header-element-margin);
+    @include flex.flex-center;
+
+        > span {
+            margin-left: 32px;
+        }
+
+        > .exit-img {
+        position: absolute;
+        left: 16px;
+        transition: all ease-in-out 200ms;
+        }
+
+        > .exit-img-hover {
+        position: absolute;
+        opacity: 0;
+        left: 16px;
+        transition: all ease-in-out 200ms;
+        }
+
+        &:hover .exit-img {
+        opacity: 0;
+        }
+
+        &:hover .exit-img-hover {
+        opacity: 1;
+        }
+
   }
 }
 
