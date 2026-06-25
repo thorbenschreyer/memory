@@ -8,13 +8,24 @@
 .header-menu {
     width: 1220px;
     height: 104px;
-    margin-top: 40px;
+    margin-top: var(--header-menu-margin-top);
     background-color: var(--background-color-header-menu);
 }
 
 .card-field {
-    margin-top: 48px;
-    width: 470px;
-    height: 530px;
-    border: 1px solid rosybrown;
+    margin-top: var(--card-field-margin-top);
+}
+
+.card-field-column {
+    display: flex;
+}
+
+.card {
+    width: var(--card-width) ;
+    height: var(--card-eight);
+    background-image: var(--card-background-image);
+    border-radius: var(--card-border-radius);
+    background-color: var(--card-background-color);
+    margin: var(--card-margin);
+    
 }

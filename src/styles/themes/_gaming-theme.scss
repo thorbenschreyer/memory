@@ -1,4 +1,35 @@
 [data-theme="gaming"] {
+  // Page
   --page-background: rgba(41, 79, 96, 1);
+
+  // Haeder Menu
   --background-color-header-menu: rgba(83, 93, 117);
+  --header-menu-margin-top: 40px;
+
+  // Card-field
+  --card-field-margin-top: 48px;
+
+
+  // Cards
+  --card-width: 105px;
+  --card-eight: 120px;
+  --card-background-image: linear-gradient(30deg, rgba(10, 40, 53, 1) 0%, rgba(237, 27, 118, 1) 80%);
+  --card-border-radius: 12px;
+  --card-margin: 4px;
+
+
+/*
+  //das muss in eine IF abfrage, wenn größer 24 Cards dann das hier! 
+  @media (max-height: 600px) {
+    // Haeder Menu
+  --header-menu-margin-top: 8px;
+
+  // Card-field
+  --card-field-margin-top: 16px;
+
+    // Cards
+  --card-margin: 2px;
+  } */
+
+  
 }
