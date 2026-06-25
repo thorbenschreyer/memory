@@ -39,7 +39,11 @@
   // Cards
   --card-width: 105px;
   --card-eight: 120px;
-  --card-background-image: linear-gradient(30deg, rgba(10, 40, 53, 1) 0%, rgba(237, 27, 118, 1) 80%);
+  --card-background-image: linear-gradient(
+    30deg,
+    rgba(10, 40, 53, 1) 0%,
+    rgba(237, 27, 118, 1) 80%
+  );
   --card-border-radius: 12px;
   --card-margin: 4px;
 
@@ -52,10 +56,29 @@
   --dialog-text-color: rgba(41, 79, 96, 1);
 
   // Dialog buttons
-  
-  
+  --dialog-button-font-family: "Orbitron-Bold";
+  --dialog-button-font-size: 16px;
+  --dialog-button-letter-spacing: 4%;
+  --dialog-button-padding: 16px --dialog-button-borderradius: 10px
+    // Dialog button stay
+    --dialog-button-stay-border: 2px solid rgba(231, 28, 79, 1);
+  --dialog-button-stay-background-color: rgba(237, 27, 118, 1);
+  --dialog-button-stay-color: rgba(255, 255, 255, 1);
+  // Dialog button stay hover
+  --dialog-button-stay-hover-border: 2px solid rgba(231, 28, 79, 1);
+  --dialog-button-stay-hover-background-color: rgba(237, 27, 118, 0.08);
+  --dialog-button-stay-hover-color: rgba(237, 27, 118, 1);
+  // Dialog button exit
+  --dialog-button-exit-border: 1px solid rgba(231, 28, 79, 1);
+  --dialog-button-exit-background-color: rgba(237, 27, 118, 0.08);
+  --dialog-button-exit-color: rgba(237, 27, 118, 1);
+  // Dialog button exit hover
+  --dialog-button-exit-hover-background-color: rgba(242, 199, 218, 0.08);
+  --dialog-button-exit-hover-color: rgba(237, 27, 118, 1);
+  --dialog-button-exit-hover-boxshadow-inset: inset 0 0 0 1px rgba(231, 28, 79, 1),
+      0 4px 12px rgba(231, 28, 79, 0.35);
 
-/*
+  /*
   //das muss in eine IF abfrage, wenn größer 24 Cards dann das hier! 
   @media (max-height: 600px) {
     // Haeder Menu
@@ -67,6 +90,4 @@
     // Cards
   --card-margin: 2px;
   } */
-
-  
 }
