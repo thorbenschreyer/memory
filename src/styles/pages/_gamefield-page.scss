@@ -1,31 +1,75 @@
+@use "../layout/flex";
+
 .gamefield-page {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--page-background);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--page-background);
+  font-family: var(--page-font-family)
 }
 
 .header-menu {
-    width: 1220px;
-    height: 104px;
-    margin-top: var(--header-menu-margin-top);
-    background-color: var(--background-color-header-menu);
+  display: flex;
+  align-items: var(--header-align-itmes);
+  justify-content: space-between;
+  width: 1220px;
+  height: 104px;
+  margin-top: var(--header-menu-margin-top);
+  background-color: var(--background-color-header-menu);
+
+  &__score {
+    width: var(--header-element-width);
+    height: var(--header-element-height);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: var(--header-element-radius);
+    margin-left: var(--header-element-margin);
+  }
+
+  &__player {
+    @include flex.flex-center;
+
+    &--text {
+        font-size: var(--player-text-font-size);
+        margin-right: var(--player-text-margin-right);
+        color: var(--player-text-font-color)
+    }
+
+    &--color {
+      background-color: var(--player-one-background-color);
+      border-radius: var(--player-icon-border-radius);
+      width: var(--player-icon-size);
+      height: var(--player-icon-size);
+      @include flex.flex-center;
+
+      > img {
+        width: var(--player-icon-img-width);
+        height: var(--player-icon-img-height);
+      }
+    }
+  }
+
+  &__exit {
+    width: var(--header-element-width);
+    height: var(--header-element-height);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: var(--header-element-radius);
+    margin-right: var(--header-element-margin);
+  }
 }
 
 .card-field {
-    margin-top: var(--card-field-margin-top);
+  margin-top: var(--card-field-margin-top);
 }
 
 .card-field-column {
-    display: flex;
+  display: flex;
 }
 
 .card {
-    width: var(--card-width) ;
-    height: var(--card-eight);
-    background-image: var(--card-background-image);
-    border-radius: var(--card-border-radius);
-    background-color: var(--card-background-color);
-    margin: var(--card-margin);
-    
+  width: var(--card-width);
+  height: var(--card-eight);
+  background-image: var(--card-background-image);
+  border-radius: var(--card-border-radius);
+  background-color: var(--card-background-color);
+  margin: var(--card-margin);
 }
