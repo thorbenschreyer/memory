@@ -1,0 +1,55 @@
+@use "../layout/flex";
+
+.game-over-content {
+  width: 100wh;
+  height: 100vh;
+  @include flex.flex-center;
+  flex-direction: column;
+}
+
+.game-over-header {
+  font-size: 124px;
+  color: #ed1b76;
+  font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  margin-bottom: 100px;
+}
+
+.score-section {
+  &_header {
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  }
+
+  &_overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 24px;
+    gap: 32px;
+  }
+
+  &_img {
+    width: 26px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  &_player {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+
+    &--blue {
+      color: #097fc5;
+    }
+
+    &--orange {
+      color: #ea6900;
+    }
+  }
+}

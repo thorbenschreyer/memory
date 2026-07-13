@@ -8,6 +8,9 @@ import './styles/base/_all-pages.scss'
 import './styles/pages/_welcome-page.scss'
 import './styles/pages/_settings-page.scss'
 import './styles/pages/_gamefield-page.scss'
+import './styles/pages/_game-over-page.scss'
+import './styles/pages/_winner-screen.scss'
+
 
 // ############### Themes ###############
 import './styles/themes/_code-vibes-theme.scss'
