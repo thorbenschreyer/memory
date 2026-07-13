@@ -61,8 +61,8 @@
   --dialog-button-letter-spacing: 4%;
   --dialog-button-padding: 16px;
   --dialog-button-borderradius: 10px;
-    // Dialog button stay
-    --dialog-button-stay-border: 2px solid rgba(231, 28, 79, 1);
+  // Dialog button stay
+  --dialog-button-stay-border: 2px solid rgba(231, 28, 79, 1);
   --dialog-button-stay-background-color: rgba(237, 27, 118, 1);
   --dialog-button-stay-color: rgba(255, 255, 255, 1);
   // Dialog button stay hover
@@ -76,15 +76,44 @@
   // Dialog button exit hover
   --dialog-button-exit-hover-background-color: rgba(242, 199, 218, 0.08);
   --dialog-button-exit-hover-color: rgba(237, 27, 118, 1);
-  --dialog-button-exit-hover-boxshadow: inset 0 0 0 1px rgba(231, 28, 79, 1),
-        3px 3px 5px rgba(0, 0, 0, 0.45);
+  --dialog-button-exit-hover-boxshadow:
+    inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
 
   // Game over Screen
+  --game-over-page-width: 100wh;
+  --game-over-page-height: 100vh;
 
+  --game-over-header-fontsize: 124px;
+  --game-over-header-color: #ed1b76;
+  --game-over-header-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --game-over-header-margin-bottom: 100px;
 
+  --game-over-score-fontsize: 28px;
+  --game-over-score-header-color: #ffffff;
+  --game-over-score-header-text-align: center;
+  --game-over-score-header-font-family:
+    "Orbitron-Bold", Arial, Helvetica, sans-serif;
   // Winner Screen
+  --game-over-score-overview-display: flex;
+  --game-over-score-overview-align-items: center;
+  --game-over-score-overview-justify-content: space-around;
+  --game-over-score-overview-background-color: #ffffff;
+  --game-over-score-overview-padding: 8px;
+  --game-over-score-overview-border-radius: 10px;
+  --game-over-score-overview-margin-top: 24px;
+  --game-over-score-overview-gap: 32px;
 
-  
+    --game-over-score-img-width: 26px;
+    --game-over-score-img-height: 32px;
+    --game-over-score-img-margin-right: 8px;
+
+    --game-over-score-player-display: flex;
+    --game-over-score-player-align-items: center;
+    --game-over-score-player-font-size: 40px;
+
+--game-over-score-player-one-color: #097fc5;
+--game-over-score-player-two-color: #ea6900;
+
 
   /*
   //das muss in eine IF abfrage, wenn größer 24 Cards dann das hier! 

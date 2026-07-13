@@ -1,55 +1,55 @@
 @use "../layout/flex";
 
 .game-over-content {
-  width: 100wh;
-  height: 100vh;
+  width: var(--game-over-page-width);
+  height: var(--game-over-page-height);
   @include flex.flex-center;
   flex-direction: column;
 }
 
 .game-over-header {
-  font-size: 124px;
-  color: #ed1b76;
-  font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  margin-bottom: 100px;
+  font-size: var(--game-over-header-fontsize);
+  color: var(--game-over-header-color);
+  font-family: var(--game-over-header-font-family);
+  margin-bottom: var(--game-over-header-margin-bottom);
 }
 
 .score-section {
   &_header {
-    font-size: 28px;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+    font-size: var(--game-over-score-fontsize);
+    color: var(--game-over-score-header-color);
+    text-align: var(--game-over-score-header-text-align);
+    font-family: var(--game-over-score-header-font-family);
   }
 
   &_overview {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #ffffff;
-    padding: 8px;
-    border-radius: 10px;
-    margin-top: 24px;
-    gap: 32px;
+    display: var(--game-over-score-overview-display);
+    align-items: var(--game-over-score-overview-align-items);
+    justify-content: var(--game-over-score-overview-justify-content);
+    background-color: var(--game-over-score-overview-background-color);
+    padding: var(--game-over-score-overview-padding);
+    border-radius: var(--game-over-score-overview-border-radius);
+    margin-top: var(--game-over-score-overview-margin-top);
+    gap: var(--game-over-score-overview-gap);
   }
 
   &_img {
-    width: 26px;
-    height: 32px;
-    margin-right: 8px;
+    width: var(--game-over-score-img-width);
+    height: var(--game-over-score-img-height);
+    margin-right: var(--game-over-score-img-margin-right);
   }
 
   &_player {
-    display: flex;
-    align-items: center;
-    font-size: 40px;
+    display: var(--game-over-score-player-display);
+    align-items: var(--game-over-score-player-align-items);
+    font-size: var(--game-over-score-player-font-size);
 
     &--blue {
-      color: #097fc5;
+      color: var(--game-over-score-player-one-color);
     }
 
     &--orange {
-      color: #ea6900;
+      color: var(--game-over-score-player-two-color)
     }
   }
 }
