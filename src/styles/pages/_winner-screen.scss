@@ -7,54 +7,55 @@
 }
 
 .winner-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  display: var(--winning-screen-display);
+  flex-direction: var(--winning-screen-flex-direction);
+  align-items: var(--winning-screen-align-items);
+  position: var(--winning-screen-position);
 
   &_text {
-    font-size: 28px;
-    font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    font-size: var(--winning-screen-text-font-size);
+    font-family: var(--winning-screen-text-font-family);
+    color: var(--winning-screen-text-color);
   }
 
   &_player {
-    font-size: 64px;
-    font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
-    color: #ea6900;
-    letter-spacing: 0.07em;
-    margin-bottom: 32px;
+    font-size: var(--winning-screen-player-font-size);
+    font-family: var(--winning-screen-player-font-family);
+    color: var(--winning-screen-player-color);
+    letter-spacing: var(--winning-screen-player-letter-spacing);
+    margin-bottom: var(--winning-screen-player-margin-bottom);
   }
 
   &_img {
-    background-image: url("public/img/theme-img/game/player-booth-games-theme.png");
-    width: 288px;
-    height: 344px;
-    letter-spacing: 0.07em;
-    margin-bottom: 32px;
+    background-image: var(--winning-screen-img-background-image);
+    width: var(--winning-screen-img-width);
+    height: var(--winning-screen-img-height);
+    letter-spacing: var(--winning-screen-img-letter-spacing);
+    margin-bottom: var(--winning-screen-img-margin-bottom);
   }
 
   &__button {
     cursor: pointer;
-    position: relative;
-    width: 182px;
-    height: 54px;
-    border: 2px solid rgba(231, 28, 79, 1);
-    background-color: rgba(237, 27, 118, 0.08);
-    color: rgba(255, 255, 255, 1);
-    border-radius: 10px;
     @include flex.flex-center;
+    position: var(--winning-screen-button-position);
+    width: var(--winning-screen-button-widt);
+    height: var(--winning-screen-button-height);
+    border: var(--winning-screen-button-border);
+    background-color: var(--winning-screen-button-background-color);
+    color: var(--winning-screen-button-color);
+    border-radius: var(--winning-screen-button-border-radius);
+    
 
     &:hover {
-      border: 2px solid rgba(231, 28, 79, 1);
-      background-color: rgba(237, 29, 119, 0.141);
-      color: var rgba(237, 27, 118, 1);
+      border: var(--winning-screen-button-hover-border);
+      background-color: var(--winning-screen-button-hover-background-color);
+      color: var(--winning-screen-button-hover-color);
     }
   }
 }
 
 .confetti {
-  display: none;
-  width: 80%;
-  margin-top: -90px;
+  display: var(--winning-screen-confetti-display);
+  width: var(--winning-screen-confetti-width);
+  margin-top: var(--winning-screen-confetti-margin-top);
 }
