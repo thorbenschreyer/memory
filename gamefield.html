@@ -3,160 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./public/img/memory_favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./public/img/memory_favicon.ico"
+      type="image/x-icon"
+    />
     <script type="module" src="src/main.ts"></script>
 
     <title>Memory</title>
   </head>
   <body data-theme="gaming" class="gamefield-page">
-        <header class="header-menu">
-          <!-- Score board -->
-          <div class="header-menu__score">
-            <div class="header-menu__score--player">
-              <img src="./public/img/theme-img/game/chess_pawn_orange.svg" alt="">
-              <span id="score-player-orange" class="player-score-orange">4</span>
-            </div>
-            <div class="header-menu__score--player">
-              <img src="./public/img/theme-img/game/chess_pawn_blue.svg" alt="">
-              <span id="score-player-blue" class="player-score-blue">6</span>
-            </div>
-          </div>
-          <!-- Current player -->
-          <div class="header-menu__player">
-            <span class="header-menu__player--text" >Current player: </span>
-            <div class="header-menu__player--color"><img src="./public/img/theme-img/game/chess_pawn.svg" alt=""></div>
-          </div>
-          <!-- Exit button -->
+    <header class="header-menu">
+      <!-- Score board -->
+      <div class="header-menu__score">
+        <div class="header-menu__score--player">
+          <img src="./public/img/theme-img/game/chess_pawn_orange.svg" alt="" />
+          <span id="score-player-orange" class="player-score-orange">4</span>
+        </div>
+        <div class="header-menu__score--player">
+          <img src="./public/img/theme-img/game/chess_pawn_blue.svg" alt="" />
+          <span id="score-player-blue" class="player-score-blue">6</span>
+        </div>
+      </div>
+      <!-- Current player -->
+      <div class="header-menu__player">
+        <span class="header-menu__player--text">Current player: </span>
+        <div class="header-menu__player--color">
+          <img src="./public/img/theme-img/game/chess_pawn.svg" alt="" />
+        </div>
+      </div>
+      <!-- Exit button -->
 
-          <div onclick="openDialog()" class="header-menu__exit">
-            <img class="exit-img" src="./public/img/theme-img/game/exit-button.svg" alt="">
-            <img class="exit-img-hover" src="./public/img/theme-img/game/exit-button-color.svg" alt="">
-            <span>Exit game</span>
-          </div>
+      <div onclick="openDialog()" class="header-menu__exit">
+        <img
+          class="exit-img"
+          src="./public/img/theme-img/game/exit-button.svg"
+          alt=""
+        />
+        <img
+          class="exit-img-hover"
+          src="./public/img/theme-img/game/exit-button-color.svg"
+          alt=""
+        />
+        <span>Exit game</span>
+      </div>
+    </header>
 
-
-        </header>
-    
-        <section id="card-field" class="card-field">
-            <!--------------column 1 ------------->
-            <div id="card-field-column-1" class="card-field-column">
-            <!--------------Card 1 ------------->  
-              <div class="card">
-
-              </div>
-            <!--------------Card 2 ------------->  
-              <div class="card">
-                
-              </div>
-            <!--------------Card 3 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 4 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 5 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 6 ------------->  
-              <div class="card">
-                
-              </div>
-            </div>
-            <!--------------column 2 ------------->
-            <div id="card-field-column-2" class="card-field-column">
-              <!--------------Card 1 ------------->  
-              <div class="card">
-
-              </div>
-            <!--------------Card 2 ------------->  
-              <div class="card">
-                
-              </div>
-            <!--------------Card 3 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 4 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 5 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 6 ------------->  
-              <div class="card">
-                
-              </div>
-            </div>
-            <!--------------column 3 ------------->
-            <div id="card-field-column-3" class="card-field-column">
-              <!--------------Card 1 ------------->  
-              <div class="card">
-
-              </div>
-            <!--------------Card 2 ------------->  
-              <div class="card">
-                
-              </div>
-            <!--------------Card 3 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 4 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 5 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 6 ------------->  
-              <div class="card">
-                
-              </div></div>
-            <!--------------column 4 ------------->
-            <div id="card-field-column-4" class="card-field-column">
-              <!--------------Card 1 ------------->  
-              <div class="card">
-
-              </div>
-            <!--------------Card 2 ------------->  
-              <div class="card">
-                
-              </div>
-            <!--------------Card 3 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 4 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 5 ------------->  
-              <div class="card">
-                
-              </div>
-              <!--------------Card 6 ------------->  
-              <div class="card">
-                
-              </div>
-            </div>
-
-        </section>
+    <section id="card-field" class="card-field">
+      <!--------------column 1 ------------->
+      <div id="card-field-column-1" class="card-field-column">
+        <!--------------Card 1 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 2 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 3 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 4 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 5 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 6 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+      </div>
+      <!--------------column 2 ------------->
+      <div id="card-field-column-2" class="card-field-column">
+        <!--------------Card 1 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 2 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 3 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 4 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 5 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 6 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+      </div>
+      <!--------------column 3 ------------->
+      <div id="card-field-column-3" class="card-field-column">
+        <!--------------Card 1 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 2 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 3 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 4 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 5 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 6 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+      </div>
+      <!--------------column 4 ------------->
+      <div id="card-field-column-4" class="card-field-column">
+        <!--------------Card 1 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 2 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 3 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 4 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 5 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+        <!--------------Card 6 ------------->
+        <div class="card">
+          <div class="card__img"></div>
+        </div>
+      </div>
+    </section>
   </body>
 
   <!-- Exit Dialog -->
   <dialog id="exit-dialog" class="exit-game">
     <div class="exit-game--content">
-        <p class="exit-game--content__text">Are you sure you want <br> to quit the game?</p>
-        <div class="exit-game--content__buttons">
-          <button class="dialog-button dialog-button--stay">No, back to game</button>
-          <button class="dialog-button dialog-button--exit">Yes, quit game</button>
-        </div>
+      <p class="exit-game--content__text">
+        Are you sure you want <br />
+        to quit the game?
+      </p>
+      <div class="exit-game--content__buttons">
+        <button class="dialog-button dialog-button--stay">
+          No, back to game
+        </button>
+        <button class="dialog-button dialog-button--exit">
+          Yes, quit game
+        </button>
+      </div>
     </div>
   </dialog>
 </html>

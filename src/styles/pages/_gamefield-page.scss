@@ -120,6 +120,14 @@
   border-radius: var(--card-border-radius);
   background-color: var(--card-background-color);
   margin: var(--card-margin);
+
+  &__img {
+    width: var(--card-background-img-width);
+    height: var(--card-background-img-height);
+    background-repeat: var(--card-background-img-background-repeat);
+    background-position: var(--card-background-img-background-position);
+    background-image: var(--card-background-img-background-image);
+  }
 }
 
 .exit-game {
@@ -169,9 +177,9 @@
     color: var(--dialog-button-stay-color);
 
     &:hover {
-      border: var(  --dialog-button-stay-hover-border);
+      border: var(--dialog-button-stay-hover-border);
       background-color: var(--dialog-button-stay-hover-background-color);
-      color: var(--dialog-button-stay-hover-color)
+      color: var(--dialog-button-stay-hover-color);
     }
   }
 

@@ -1,4 +1,164 @@
 [data-theme="code-vibes"] {
-  --background: #121212;
-  --text-color: white;
+  // Page
+  --page-background: rgba(41, 79, 96, 1);
+  --page-font-family: "Orbitron-Bold";
+
+  // Haeder Menu
+  --background-color-header-menu: rgba(83, 93, 117);
+  --header-menu-margin-top: 40px;
+  --header-align-itmes: center;
+  --header-element-width: 182px;
+  --header-element-height: 54px;
+  --header-element-radius: 10px;
+  --header-element-margin: 32px;
+  // Score board
+  --score-bord-background-color: rgba(255, 255, 255, 1);
+  --score-bord-score-text-font-size: 30px;
+  --score-bord-score-text-padding: 8px;
+
+  // Player
+  --player-text-font-size: 32px;
+  --player-text-font-color: rgba(255, 255, 255, 1);
+  --player-text-margin-right: 16px;
+  --player-one-background-color: rgba(31, 170, 252, 1);
+  --player-two-background-color: rgba(234, 105, 0, 1);
+  --player-icon-border-radius: 3px;
+  --player-icon-size: 40px;
+  --player-icon-img-width: 25px;
+  --player-icon-img-height: 32px;
+
+  // Exit button
+  --exit-button-border: 2px solid rgba(231, 28, 79, 1);
+  --exit-button-margin-right: 8px;
+  --exit-button-background-color: rgba(237, 27, 118, 0.08);
+  --exit-button-text-color: rgba(255, 255, 255, 1);
+
+  // Card-field
+  --card-field-margin-top: 48px;
+
+  // Cards
+  --card-width: 105px;
+  --card-eight: 120px;
+  --card-background-image: linear-gradient(
+    30deg,
+    rgba(10, 40, 53, 1) 0%,
+    rgba(237, 27, 118, 1) 80%
+  );
+  --card-border-radius: 12px;
+  --card-margin: 4px;
+
+  //Card Background
+  --card-background-img-width: 100%;
+  --card-background-img-height: 100%;
+  --card-background-img-background-repeat: no-repeat;
+  --card-background-img-background-position: center;
+  --card-background-img-background-image: none;
+
+  // Dialog
+  --dialog-width: 481px;
+  --dialog-height: 254px;
+  --dialog-border-radius: 20px;
+  --dialog-background-color: rgba(240, 246, 249, 1);
+  --dialog-text-font-size: 28px;
+  --dialog-text-color: rgba(41, 79, 96, 1);
+
+  // Dialog buttons
+  --dialog-button-font-family: "Orbitron-Bold";
+  --dialog-button-font-size: 16px;
+  --dialog-button-letter-spacing: 4%;
+  --dialog-button-padding: 16px;
+  --dialog-button-borderradius: 10px;
+  // Dialog button stay
+  --dialog-button-stay-border: 2px solid rgba(231, 28, 79, 1);
+  --dialog-button-stay-background-color: rgba(237, 27, 118, 1);
+  --dialog-button-stay-color: rgba(255, 255, 255, 1);
+  // Dialog button stay hover
+  --dialog-button-stay-hover-border: 2px solid rgba(231, 28, 79, 1);
+  --dialog-button-stay-hover-background-color: rgba(237, 27, 118, 0.08);
+  --dialog-button-stay-hover-color: rgba(237, 27, 118, 1);
+  // Dialog button exit
+  --dialog-button-exit-border: 1px solid rgba(231, 28, 79, 1);
+  --dialog-button-exit-background-color: rgba(237, 27, 118, 0.08);
+  --dialog-button-exit-color: rgba(237, 27, 118, 1);
+  // Dialog button exit hover
+  --dialog-button-exit-hover-background-color: rgba(242, 199, 218, 0.08);
+  --dialog-button-exit-hover-color: rgba(237, 27, 118, 1);
+  --dialog-button-exit-hover-boxshadow:
+    inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
+
+  // Game over Screen
+  --game-over-page-width: 100wh;
+  --game-over-page-height: 100vh;
+
+  --game-over-header-fontsize: 124px;
+  --game-over-header-color: #ed1b76;
+  --game-over-header-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --game-over-header-margin-bottom: 100px;
+
+  --game-over-score-fontsize: 28px;
+  --game-over-score-header-color: #ffffff;
+  --game-over-score-header-text-align: center;
+  --game-over-score-header-font-family:
+    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+
+  --game-over-score-overview-display: flex;
+  --game-over-score-overview-align-items: center;
+  --game-over-score-overview-justify-content: space-around;
+  --game-over-score-overview-background-color: #ffffff;
+  --game-over-score-overview-padding: 8px;
+  --game-over-score-overview-border-radius: 10px;
+  --game-over-score-overview-margin-top: 24px;
+  --game-over-score-overview-gap: 32px;
+
+  --game-over-score-img-width: 26px;
+  --game-over-score-img-height: 32px;
+  --game-over-score-img-margin-right: 8px;
+
+  --game-over-score-player-display: flex;
+  --game-over-score-player-align-items: center;
+  --game-over-score-player-font-size: 40px;
+
+  --game-over-score-player-one-color: #097fc5;
+  --game-over-score-player-two-color: #ea6900;
+
+  // Winner Screen
+  --winning-screen-display: flex;
+  --winning-screen-flex-direction: column;
+  --winning-screen-align-items: center;
+  --winning-screen-position: relative;
+
+  --winning-screen-text-font-size: 28px;
+  --winning-screen-text-font-family:
+    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --winning-screen-text-color: #ffffff;
+
+  --winning-screen-player-font-size: 64px;
+  --winning-screen-player-font-family:
+    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --winning-screen-player-color: #ea6900;
+  --winning-screen-player-letter-spacing: 0.07em;
+  --winning-screen-player-margin-bottom: 32px;
+
+  --winning-screen-img-background-image: url("public/img/theme-img/game/player-booth-games-theme.png");
+  --winning-screen-img-width: 288px;
+  --winning-screen-img-height: 344px;
+  --winning-screen-img-letter-spacing: 0.07em;
+  --winning-screen-img-margin-bottom: 32px;
+
+  --winning-screen-button-position: relative;
+  --winning-screen-button-width: 182px;
+  --winning-screen-button-height: 54px;
+  --winning-screen-button-border: 2px solid rgba(231, 28, 79, 1);
+  --winning-screen-button-background-color: rgba(237, 27, 118, 0.08);
+  --winning-screen-button-color: rgba(255, 255, 255, 1);
+  --winning-screen-button-border-radius: 10px;
+
+  --winning-screen-button-hover-border: 2px solid rgba(231, 28, 79, 1);
+  --winning-screen-button-hover-background-color: rgba(237, 29, 119, 0.141);
+  --winning-screen-button-hover-color: var rgba(237, 27, 118, 1);
+
+  --winning-screen-confetti-display: none;
+  --winning-screen-confetti-width: 80%;
+  --winning-screen-confetti-margin-top: -90px;
+
 }
