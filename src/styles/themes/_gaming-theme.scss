@@ -91,9 +91,8 @@
   --game-over-score-fontsize: 28px;
   --game-over-score-header-color: #ffffff;
   --game-over-score-header-text-align: center;
-  --game-over-score-header-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  // Winner Screen
+  --game-over-score-header-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  
   --game-over-score-overview-display: flex;
   --game-over-score-overview-align-items: center;
   --game-over-score-overview-justify-content: space-around;
@@ -103,28 +102,21 @@
   --game-over-score-overview-margin-top: 24px;
   --game-over-score-overview-gap: 32px;
 
-    --game-over-score-img-width: 26px;
-    --game-over-score-img-height: 32px;
-    --game-over-score-img-margin-right: 8px;
+  --game-over-score-img-width: 26px;
+  --game-over-score-img-height: 32px;
+  --game-over-score-img-margin-right: 8px;
 
-    --game-over-score-player-display: flex;
-    --game-over-score-player-align-items: center;
-    --game-over-score-player-font-size: 40px;
+  --game-over-score-player-display: flex;
+  --game-over-score-player-align-items: center;
+  --game-over-score-player-font-size: 40px;
 
---game-over-score-player-one-color: #097fc5;
---game-over-score-player-two-color: #ea6900;
+  --game-over-score-player-one-color: #097fc5;
+  --game-over-score-player-two-color: #ea6900;
+
+  // Winner Screen
+
+  
 
 
-  /*
-  //das muss in eine IF abfrage, wenn größer 24 Cards dann das hier! 
-  @media (max-height: 600px) {
-    // Haeder Menu
-  --header-menu-margin-top: 8px;
-
-  // Card-field
-  --card-field-margin-top: 16px;
-
-    // Cards
-  --card-margin: 2px;
-  } */
+  
 }
