@@ -32,6 +32,8 @@
     height: var(--winning-screen-img-height);
     letter-spacing: var(--winning-screen-img-letter-spacing);
     margin-bottom: var(--winning-screen-img-margin-bottom);
+    background-repeat: var(--card-background-img-background-repeat);
+    background-position: var(--card-background-img-background-position);
   }
 
   &__button {
@@ -44,7 +46,6 @@
     background-color: var(--winning-screen-button-background-color);
     color: var(--winning-screen-button-color);
     border-radius: var(--winning-screen-button-border-radius);
-    
 
     &:hover {
       border: var(--winning-screen-button-hover-border);
@@ -55,7 +56,7 @@
 }
 
 .confetti {
-  display: var(--winning-screen-confetti-display);
+  display: block;
   width: var(--winning-screen-confetti-width);
   margin-top: var(--winning-screen-confetti-margin-top);
 }
