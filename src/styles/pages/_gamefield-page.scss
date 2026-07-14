@@ -78,6 +78,7 @@
       font-size: var(--player-text-font-size);
       margin-right: var(--player-text-margin-right);
       color: var(--player-text-font-color);
+      font-family: var(--player-text-font-family);
     }
 
     &--color {
@@ -107,7 +108,9 @@
     @include flex.flex-center;
 
     &:hover {
-      box-shadow: var(--exit-button-img-background-box-shadow-hover)
+      box-shadow: var(--exit-button-img-background-box-shadow-hover);
+      background-color: var(--exit-button-background-color-hover);
+      color: var(--exit-button-text-color-hover);
     }
 
     > span {
@@ -179,6 +182,8 @@
     justify-content: space-around;
     width: 100%;
     height: 100%;
+    border-radius: var(--dialog-button-borderradius);
+
     background-color: var(--dialog-background-color);
 
     &__text {
@@ -213,6 +218,7 @@
     border: var(--dialog-button-stay-border);
     background-color: var(--dialog-button-stay-background-color);
     color: var(--dialog-button-stay-color);
+    box-shadow: var(--dialog-button-stay-boxshadow);
 
     &:hover {
       box-shadow: var(--dialog-button-stay-hover-border);
@@ -225,6 +231,7 @@
     border: var(--dialog-button-exit-border);
     background-color: var(--dialog-button-exit-background-color);
     color: var(--dialog-button-exit-color);
+    box-shadow: var(--dialog-button-exit-boxshadow);
 
     &:hover {
       box-shadow: var(--dialog-button-exit-hover-boxshadow);

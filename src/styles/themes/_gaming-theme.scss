@@ -20,6 +20,7 @@
   --player-text-font-size: 32px;
   --player-text-font-color: rgba(255, 255, 255, 1);
   --player-text-margin-right: 16px;
+  --player-text-font-family: "Orbitron-Bold";
   --player-one-color: rgba(31, 170, 252, 1);
   --player-two-color: rgba(234, 105, 0, 1);
   --player-icon-border-radius: 3px;
@@ -51,6 +52,8 @@
   --exit-button-img-background-image: url("./public/img/theme-img/game/exit-button.svg");
   --exit-button-img-background-image-hover: url("public/img/theme-img/game/exit-button-color.svg");
   --exit-button-img-background-box-shadow-hover: 4px 6px 6px 0 rgba(47, 46, 46, 0.2), inset 0 0 0 2px rgba(231, 28, 79, 1);
+  --exit-button-background-color-hover: none;
+  --exit-button-text-color-hover: none;
 
   // Card-field
   --card-field-margin-top: 48px;
@@ -91,6 +94,7 @@
   --dialog-button-stay-border: 2px solid rgba(231, 28, 79, 1);
   --dialog-button-stay-background-color: rgba(237, 27, 118, 1);
   --dialog-button-stay-color: rgba(255, 255, 255, 1);
+  --dialog-button-stay-boxshadow: none;
   // Dialog button stay hover
   --dialog-button-stay-hover-border: 2px solid rgba(231, 28, 79, 1);
   --dialog-button-stay-hover-background-color: rgba(237, 27, 118, 0.08);
@@ -99,6 +103,7 @@
   --dialog-button-exit-border: 1px solid rgba(231, 28, 79, 1);
   --dialog-button-exit-background-color: rgba(237, 27, 118, 0.08);
   --dialog-button-exit-color: rgba(237, 27, 118, 1);
+  --dialog-button-exit-boxshadow: none;
   // Dialog button exit hover
   --dialog-button-exit-hover-background-color: rgba(242, 199, 218, 0.08);
   --dialog-button-exit-hover-color: rgba(237, 27, 118, 1);
