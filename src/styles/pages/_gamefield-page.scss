@@ -17,6 +17,14 @@
   margin-top: var(--header-menu-margin-top);
   background-color: var(--background-color-header-menu);
 
+  &__current-player {
+    background-image: var(  --current-player-background-image);
+    background-repeat: var(--card-background-img-background-repeat);
+    background-position: var(--card-background-img-background-position);
+    width: var(--current-player-img-width);
+    height: var(--current-player-img-height);
+  }
+
   &__img {
     background-repeat: var(--card-background-img-background-repeat);
     background-position: var(--card-background-img-background-position);
@@ -49,16 +57,17 @@
       }
 
       > .player-score-blue {
-        color: var(--player-one-background-color);
+        color: var(--player-one-color);
       }
 
       > .player-score-orange {
-        color: var(--player-two-background-color);
+        color: var(--player-two-color);
       }
     }
 
     &--add-color {
       display: var(--player-color-is-displayed);
+      font-size: var(--player-color-is-displayed-font-size);
     }
   }
 
@@ -88,8 +97,8 @@
   &__exit {
     cursor: pointer;
     position: relative;
-    width: var(--header-element-width);
-    height: var(--header-element-height);
+    width: var(--exit-button-width);
+    height: var(--exit-button-height);
     border: var(--exit-button-border);
     background-color: var(--exit-button-background-color);
     color: var(--exit-button-text-color);
@@ -97,21 +106,32 @@
     margin-right: var(--header-element-margin);
     @include flex.flex-center;
 
+    &:hover {
+      border: 3px solid rgba(77, 213, 188, 1);
+      box-shadow: 4px 6px 6px 0 rgba(77, 213, 188, 0.2);
+    }
+
     > span {
       margin-left: 32px;
     }
 
     > .exit-img {
       position: absolute;
-      left: 16px;
+      width: var(--exit-button-img-width);
+      height: var(--exit-button-img-height);
+      left: var(--exit-button-img-left);
       transition: all ease-in-out 200ms;
+      background-image: var(--exit-button-img-background-image);
     }
 
     > .exit-img-hover {
       position: absolute;
       opacity: 0;
-      left: 16px;
+      width: var(--exit-button-img-width);
+      height: var(--exit-button-img-height);
+      left: var(--exit-button-img-left);
       transition: all ease-in-out 200ms;
+      background-image: var(--exit-button-img-background-image-hover);
     }
 
     &:hover .exit-img {
