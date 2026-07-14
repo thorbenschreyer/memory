@@ -107,8 +107,7 @@
     @include flex.flex-center;
 
     &:hover {
-      border: 3px solid rgba(77, 213, 188, 1);
-      box-shadow: 4px 6px 6px 0 rgba(77, 213, 188, 0.2);
+      box-shadow: var(--exit-button-img-background-box-shadow-hover)
     }
 
     > span {
@@ -216,7 +215,7 @@
     color: var(--dialog-button-stay-color);
 
     &:hover {
-      border: var(--dialog-button-stay-hover-border);
+      box-shadow: var(--dialog-button-stay-hover-border);
       background-color: var(--dialog-button-stay-hover-background-color);
       color: var(--dialog-button-stay-hover-color);
     }
