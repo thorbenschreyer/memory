@@ -81,7 +81,7 @@
     }
 
     &--color {
-      background-color: var(--player-one-background-color);
+      background-color: var(--current-player-background-color);
       border-radius: var(--player-icon-border-radius);
       width: var(--player-icon-size);
       height: var(--player-icon-size);
