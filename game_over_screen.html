@@ -3,25 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./public/img/memory_favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./public/img/memory_favicon.ico"
+      type="image/x-icon"
+    />
     <script type="module" src="src/main.ts"></script>
 
     <title>Memory</title>
   </head>
   <body data-theme="code-vibes" class="gamefield-page">
+    <div class="game-over-content">
+      <p class="game-over-header">GAME OVER</p>
 
-        <div class="game-over-content">
-            <p class="game-over-header">GAME OVER</p>
-
-            <div class="score-section">
-                <p class="score-section_header">Final score</p>
-                <div class="score-section_overview">
-                    <span class="score-section_player score-section_player--orange"><img class="score-section_img" src="public/img/theme-img/game/chess_pawn_orange.svg" alt="Orange Player">6</span>
-                    <span class="score-section_player score-section_player--blue"><img class="score-section_img" src="public/img/theme-img/game/chess_pawn_blue.svg" alt="Blue Player">12</span>
-                </div>
-            </div>
-        </div> 
-
+      <div class="score-section">
+        <p class="score-section_header">Final score</p>
+        <div class="score-section_overview">
+          <div class="header-menu__score--player">
+            <div class="header-menu__img header-menu__img--orange"></div>
+              <span id="score-player-orange" class="player-score-orange">
+              <span class="header-menu__score--add-color">Orange </span>4</span>
+          </div>
+          <div class="header-menu__score--player">
+            <div class="header-menu__img header-menu__img--blue"></div>
+            <span id="score-player-blue" class="player-score-blue">
+              <span class="header-menu__score--add-color">Blue </span>6</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-
 </html>

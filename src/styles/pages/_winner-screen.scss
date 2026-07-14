@@ -21,6 +21,7 @@
   &_player {
     font-size: var(--winning-screen-player-font-size);
     font-family: var(--winning-screen-player-font-family);
+    text-transform: var(--winning-screen-player-uppercase);
     color: var(--winning-screen-player-color);
     letter-spacing: var(--winning-screen-player-letter-spacing);
     margin-bottom: var(--winning-screen-player-margin-bottom);
@@ -40,7 +41,7 @@
     cursor: pointer;
     @include flex.flex-center;
     position: var(--winning-screen-button-position);
-    width: var(--winning-screen-button-widt);
+    width: var(--winning-screen-button-width);
     height: var(--winning-screen-button-height);
     border: var(--winning-screen-button-border);
     background-color: var(--winning-screen-button-background-color);
@@ -48,10 +49,15 @@
     border-radius: var(--winning-screen-button-border-radius);
 
     &:hover {
-      border: var(--winning-screen-button-hover-border);
+      box-shadow: var(--winning-screen-button-hover-border);
       background-color: var(--winning-screen-button-hover-background-color);
       color: var(--winning-screen-button-hover-color);
     }
+
+  >span {
+    font-family: var(--winning-screen-button-font-family);
+    font-size: var(--winning-screen-button-font-size);
+  }
   }
 }
 

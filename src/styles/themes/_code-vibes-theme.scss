@@ -109,23 +109,24 @@
   --game-over-page-width: 100wh;
   --game-over-page-height: 100vh;
 
-  --game-over-header-fontsize: 124px;
-  --game-over-header-color: #ed1b76;
-  --game-over-header-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  --game-over-header-margin-bottom: 100px;
+  --game-over-header-fontsize: 184px;
+  --game-over-header-color: rgba(77, 213, 188, 1)
+;  --game-over-header-font-family: "Red-Rose-bold", Arial, Helvetica, sans-serif;
+  --game-over-header-margin-bottom: 60px;
+  --game-over-header-text-shadow: -7px 0 8px rgba(77, 213, 188, 0.5);
 
   --game-over-score-fontsize: 28px;
   --game-over-score-header-color: #ffffff;
   --game-over-score-header-text-align: center;
   --game-over-score-header-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+    "Red-Rose-regular", Arial, Helvetica, sans-serif;
 
   --game-over-score-overview-display: flex;
   --game-over-score-overview-align-items: center;
   --game-over-score-overview-justify-content: space-around;
-  --game-over-score-overview-background-color: #ffffff;
+  --game-over-score-overview-background-color: rgba(134, 233, 214, 0.2);
   --game-over-score-overview-padding: 8px;
-  --game-over-score-overview-border-radius: 10px;
+  --game-over-score-overview-border-radius: 0px;
   --game-over-score-overview-margin-top: 24px;
   --game-over-score-overview-gap: 32px;
 
@@ -148,12 +149,13 @@
 
   --winning-screen-text-font-size: 28px;
   --winning-screen-text-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+    "Red-Rose-bold", Arial, Helvetica, sans-serif;
   --winning-screen-text-color: #ffffff;
 
   --winning-screen-player-font-size: 64px;
   --winning-screen-player-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+    "Red-Rose-bold", Arial, Helvetica, sans-serif;
+  --winning-screen-player-uppercase: uppercase;
   --winning-screen-player-color: #ea6900;
   --winning-screen-player-letter-spacing: 0.07em;
   --winning-screen-player-margin-bottom: 32px;
@@ -165,18 +167,20 @@
   --winning-screen-img-margin-bottom: 32px;
 
   --winning-screen-button-position: relative;
-  --winning-screen-button-width: 182px;
-  --winning-screen-button-height: 54px;
-  --winning-screen-button-border: 2px solid rgba(231, 28, 79, 1);
-  --winning-screen-button-background-color: rgba(237, 27, 118, 0.08);
+  --winning-screen-button-width: 204px;
+  --winning-screen-button-height: 62px;
+  --winning-screen-button-border: 1px solid rgba(77, 213, 188, 1);
+  --winning-screen-button-background-color: rgba(134, 233, 214, 0.2);
   --winning-screen-button-color: rgba(255, 255, 255, 1);
-  --winning-screen-button-border-radius: 10px;
+  --winning-screen-button-border-radius: 0px;
+  --winning-screen-button-font-family: "Red-Rose-bold", Arial, Helvetica, sans-serif;
+  --winning-screen-button-font-size: 24px;
 
-  --winning-screen-button-hover-border: 2px solid rgba(231, 28, 79, 1);
-  --winning-screen-button-hover-background-color: rgba(237, 29, 119, 0.141);
-  --winning-screen-button-hover-color: var rgba(237, 27, 118, 1);
+  --winning-screen-button-hover-border: 4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
+  --winning-screen-button-hover-background-color: rgba(134, 233, 214, 0.2);
+  --winning-screen-button-hover-color: rgba(255, 255, 255, 1);
 
-  --winning-screen-confetti-display: none;
-  --winning-screen-confetti-width: 80%;
+  --winning-screen-confetti-display: block;
+  --winning-screen-confetti-width: 90%;
   --winning-screen-confetti-margin-top: -90px;
 }

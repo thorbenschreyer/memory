@@ -119,6 +119,7 @@
   --game-over-score-header-text-align: center;
   --game-over-score-header-font-family:
     "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --game-over-header-text-shadow: none;
 
   --game-over-score-overview-display: flex;
   --game-over-score-overview-align-items: center;
@@ -149,6 +150,7 @@
   --winning-screen-text-font-size: 28px;
   --winning-screen-text-font-family:
     "Orbitron-Bold", Arial, Helvetica, sans-serif;
+    --winning-screen-player-uppercase: none;
   --winning-screen-text-color: #ffffff;
 
   --winning-screen-player-font-size: 64px;
@@ -171,8 +173,10 @@
   --winning-screen-button-background-color: rgba(237, 27, 118, 0.08);
   --winning-screen-button-color: rgba(255, 255, 255, 1);
   --winning-screen-button-border-radius: 10px;
+    --winning-screen-button-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --winning-screen-button-font-size: 24px;
 
-  --winning-screen-button-hover-border: 2px solid rgba(231, 28, 79, 1);
+  --winning-screen-button-hover-border: inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
   --winning-screen-button-hover-background-color: rgba(237, 29, 119, 0.141);
   --winning-screen-button-hover-color: var rgba(237, 27, 118, 1);
 

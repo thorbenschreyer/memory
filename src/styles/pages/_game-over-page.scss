@@ -12,8 +12,8 @@
   color: var(--game-over-header-color);
   font-family: var(--game-over-header-font-family);
   margin-bottom: var(--game-over-header-margin-bottom);
+  text-shadow: var(--game-over-header-text-shadow);
 }
-
 .score-section {
   &_header {
     font-size: var(--game-over-score-fontsize);
