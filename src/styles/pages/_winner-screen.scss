@@ -62,7 +62,7 @@
 }
 
 .confetti {
-  display: block;
+  display: var(--winning-screen-confetti-display);
   width: var(--winning-screen-confetti-width);
   margin-top: var(--winning-screen-confetti-margin-top);
 }
