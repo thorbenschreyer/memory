@@ -4,12 +4,12 @@
   --page-font-family: "Orbitron-Bold";
 
   // Haeder Menu
-  --background-color-header-menu: rgba(83, 93, 117);
+  --background-color-header-menu: transparent;
   --header-menu-margin-top: 40px;
   --header-align-itmes: center;
-  --header-element-width: 182px;
-  --header-element-height: 54px;
-  --header-element-radius: 10px;
+  --header-element-width: 292px;
+  --header-element-height: 62px;
+  --header-element-radius: 0px;
   --header-element-margin: 32px;
   // Score board
   --score-bord-background-color: rgba(255, 255, 255, 1);
@@ -26,6 +26,12 @@
   --player-icon-size: 40px;
   --player-icon-img-width: 25px;
   --player-icon-img-height: 32px;
+  --player-img-width: 22px;
+  --player-img-height: 28px;
+  --player-img-padding: 4px;
+  --player-background-img-orange: url("./public/img/theme-img/game/chess_pawn_orange.svg");
+  --player-background-img-blue: url("./public/img/theme-img/game/chess_pawn_blue.svg");
+  --player-color-is-displayed: inline;
 
   // Exit button
   --exit-button-border: 2px solid rgba(231, 28, 79, 1);

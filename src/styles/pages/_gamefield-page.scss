@@ -17,6 +17,21 @@
   margin-top: var(--header-menu-margin-top);
   background-color: var(--background-color-header-menu);
 
+  &__img {
+    background-repeat: var(--card-background-img-background-repeat);
+    background-position: var(--card-background-img-background-position);
+    padding: var(--player-img-padding);
+    width: var(--player-img-width);
+    height: var(--player-img-height);
+    &--orange {
+      background-image: var(--player-background-img-orange);
+    }
+
+    &--blue {
+      background-image: var(--player-background-img-blue);
+    }
+  }
+
   &__score {
     width: var(--header-element-width);
     height: var(--header-element-height);
@@ -40,6 +55,10 @@
       > .player-score-orange {
         color: var(--player-two-background-color);
       }
+    }
+
+    &--add-color {
+      display: var(--player-color-is-displayed);
     }
   }
 
