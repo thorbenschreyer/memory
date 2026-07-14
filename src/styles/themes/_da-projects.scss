@@ -94,22 +94,20 @@
   --dialog-button-stay-border: none;
   --dialog-button-stay-background-color: rgba(191, 229, 242, 1);
   --dialog-button-stay-color: rgba(30, 117, 148, 1);
-  --dialog-button-stay-boxshadow:
-    inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
+  --dialog-button-stay-boxshadow: 3px 3px 5px rgba(47, 46, 46, 0.2);
   // Dialog button stay hover
-  --dialog-button-stay-hover-border: 2px solid rgba(231, 28, 79, 1);
-  --dialog-button-stay-hover-background-color: rgba(237, 27, 118, 0.08);
-  --dialog-button-stay-hover-color: rgba(237, 27, 118, 1);
+  --dialog-button-stay-hover-border: none;
+  --dialog-button-stay-hover-background-color: rgba(30, 117, 148, 1);
+  --dialog-button-stay-hover-color: rgba(255, 255, 255, 1);
   // Dialog button exit
-  --dialog-button-exit-border: 1px solid rgba(231, 28, 79, 1);
-  --dialog-button-exit-background-color: rgba(237, 27, 118, 0.08);
-  --dialog-button-exit-color: rgba(237, 27, 118, 1);
-  --dialog-button-exit-boxshadow: inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);;
+  --dialog-button-exit-border: none;
+  --dialog-button-exit-background-color: rgba(253, 138, 129, 1);
+  --dialog-button-exit-color: rgba(255, 255, 255, 1);
+  --dialog-button-exit-boxshadow:  3px 3px 5px rgba(47, 46, 46, 0.2);
   // Dialog button exit hover
-  --dialog-button-exit-hover-background-color: rgba(242, 199, 218, 0.08);
-  --dialog-button-exit-hover-color: rgba(237, 27, 118, 1);
-  --dialog-button-exit-hover-boxshadow:
-    inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
+  --dialog-button-exit-hover-background-color: rgba(237, 91, 80, 1);
+  --dialog-button-exit-hover-color:rgba(255, 255, 255, 1);
+  --dialog-button-exit-hover-boxshadow: none:
 
   // Game over Screen
   --game-over-page-width: 100wh;
