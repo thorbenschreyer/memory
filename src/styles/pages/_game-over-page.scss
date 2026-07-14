@@ -7,6 +7,10 @@
   flex-direction: column;
 }
 
+.game-over-page {
+  background-color: var(--game-over-page-color);
+}
+
 .game-over-header {
   font-size: var(--game-over-header-fontsize);
   color: var(--game-over-header-color);
@@ -49,7 +53,7 @@
     }
 
     &--orange {
-      color: var(--game-over-score-player-two-color)
+      color: var(--game-over-score-player-two-color);
     }
   }
 }

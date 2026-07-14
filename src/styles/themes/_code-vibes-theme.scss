@@ -1,6 +1,6 @@
 [data-theme="code-vibes"] {
   // Page
-  --page-background: #303131;
+  --page-background: rgb(48, 49, 49);
   --page-font-family: "Red-Rose-regular";
 
   // Haeder Menu
@@ -51,7 +51,8 @@
   --exit-button-img-left: 16px;
   --exit-button-img-background-image: url("./public/img/theme-img/game/exit-button.svg");
   --exit-button-img-background-image-hover: url("public/img/theme-img/code-vibes/exit-icon-code-vibes-theme.png");
-  --exit-button-img-background-box-shadow-hover: 4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
+  --exit-button-img-background-box-shadow-hover:
+    4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
   --exit-button-background-color-hover: none;
   --exit-button-text-color-hover: none;
 
@@ -111,14 +112,15 @@
     4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
 
   // Game over Screen
+  --game-over-page-color: rgb(48, 49, 49);
   --game-over-page-width: 100wh;
   --game-over-page-height: 100vh;
 
   --game-over-header-fontsize: 184px;
-  --game-over-header-color: rgba(77, 213, 188, 1)
-;  --game-over-header-font-family: "Red-Rose-bold", Arial, Helvetica, sans-serif;
+  --game-over-header-color: rgba(77, 213, 188, 1);
+  --game-over-header-font-family: "Red-Rose-bold", Arial, Helvetica, sans-serif;
   --game-over-header-margin-bottom: 60px;
-  --game-over-header-text-shadow: -7px 0 8px rgba(77, 213, 188, 0.5);
+  --game-over-header-text-shadow: -7px 0px 8px rgba(77, 213, 188, 0.5);
 
   --game-over-score-fontsize: 28px;
   --game-over-score-header-color: #ffffff;
@@ -178,10 +180,12 @@
   --winning-screen-button-background-color: rgba(134, 233, 214, 0.2);
   --winning-screen-button-color: rgba(255, 255, 255, 1);
   --winning-screen-button-border-radius: 0px;
-  --winning-screen-button-font-family: "Red-Rose-bold", Arial, Helvetica, sans-serif;
+  --winning-screen-button-font-family:
+    "Red-Rose-bold", Arial, Helvetica, sans-serif;
   --winning-screen-button-font-size: 24px;
 
-  --winning-screen-button-hover-border: 4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
+  --winning-screen-button-hover-border:
+    4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
   --winning-screen-button-hover-background-color: rgba(134, 233, 214, 0.2);
   --winning-screen-button-hover-color: rgba(255, 255, 255, 1);
 

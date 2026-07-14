@@ -14,7 +14,7 @@
   // Score board
   --score-bord-background-color: rgba(255, 255, 255, 1);
   --score-bord-score-text-font-size: 30px;
-  --score-bord-score-text-padding: 8px;
+  --score-bord-score-text-padding: px;
 
   // Player
   --player-text-font-size: 32px;
@@ -103,27 +103,29 @@
   --dialog-button-exit-border: none;
   --dialog-button-exit-background-color: rgba(253, 138, 129, 1);
   --dialog-button-exit-color: rgba(255, 255, 255, 1);
-  --dialog-button-exit-boxshadow:  3px 3px 5px rgba(47, 46, 46, 0.2);
+  --dialog-button-exit-boxshadow: 3px 3px 5px rgba(47, 46, 46, 0.2);
   // Dialog button exit hover
   --dialog-button-exit-hover-background-color: rgba(237, 91, 80, 1);
-  --dialog-button-exit-hover-color:rgba(255, 255, 255, 1);
-  --dialog-button-exit-hover-boxshadow: none:
+  --dialog-button-exit-hover-color: rgba(255, 255, 255, 1);
+  --dialog-button-exit-hover-boxshadow: none;
 
   // Game over Screen
+  --game-over-page-color: rgba(30, 117, 148, 1);
   --game-over-page-width: 100wh;
   --game-over-page-height: 100vh;
 
-  --game-over-header-fontsize: 124px;
-  --game-over-header-color: #ed1b76;
-  --game-over-header-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --game-over-header-fontsize: 130px;
+  --game-over-header-color: rgba(253, 91, 79, 1);
+  --game-over-header-font-family:
+    "Figtree-extrabold", Arial, Helvetica, sans-serif;
   --game-over-header-margin-bottom: 100px;
+  --game-over-header-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  --game-over-score-fontsize: 28px;
+  --game-over-score-fontsize: 40px;
   --game-over-score-header-color: #ffffff;
   --game-over-score-header-text-align: center;
   --game-over-score-header-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  --game-over-header-text-shadow: none;
+    "Figtree-medium", Arial, Helvetica, sans-serif;
 
   --game-over-score-overview-display: flex;
   --game-over-score-overview-align-items: center;
@@ -154,7 +156,7 @@
   --winning-screen-text-font-size: 28px;
   --winning-screen-text-font-family:
     "Orbitron-Bold", Arial, Helvetica, sans-serif;
-    --winning-screen-player-uppercase: none;
+  --winning-screen-player-uppercase: none;
   --winning-screen-text-color: #ffffff;
 
   --winning-screen-player-font-size: 64px;
@@ -177,10 +179,12 @@
   --winning-screen-button-background-color: rgba(237, 27, 118, 0.08);
   --winning-screen-button-color: rgba(255, 255, 255, 1);
   --winning-screen-button-border-radius: 10px;
-    --winning-screen-button-font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  --winning-screen-button-font-family:
+    "Orbitron-Bold", Arial, Helvetica, sans-serif;
   --winning-screen-button-font-size: 24px;
 
-  --winning-screen-button-hover-border: inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
+  --winning-screen-button-hover-border:
+    inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
   --winning-screen-button-hover-background-color: rgba(237, 29, 119, 0.141);
   --winning-screen-button-hover-color: var rgba(237, 27, 118, 1);
 

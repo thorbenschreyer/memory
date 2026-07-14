@@ -101,6 +101,13 @@ a {
 }
 
 @font-face {
+  font-family: "Figtree-extrabold";
+  src: url('../../../public/font/figtree/Figtree-ExtraBold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Figtree-light";
   src: url('../../../public/font/figtree/Figtree-Light.ttf') format('truetype');
   font-weight: lighter;
