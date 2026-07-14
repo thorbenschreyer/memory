@@ -152,41 +152,41 @@
   --winning-screen-flex-direction: column;
   --winning-screen-align-items: center;
   --winning-screen-position: relative;
+  --winner-scree-background-color: rgba(30, 117, 148, 1);
 
-  --winning-screen-text-font-size: 28px;
+  --winning-screen-text-font-size: 40px;
   --winning-screen-text-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
+    "Figtree-regular", Arial, Helvetica, sans-serif;
   --winning-screen-player-uppercase: none;
   --winning-screen-text-color: #ffffff;
 
-  --winning-screen-player-font-size: 64px;
+  --winning-screen-player-font-size: 80px;
   --winning-screen-player-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  --winning-screen-player-color: #ea6900;
-  --winning-screen-player-letter-spacing: 0.07em;
+    "Figtree-bold", Arial, Helvetica, sans-serif;
+  --winning-screen-player-color: #ffffff;
+  --winning-screen-player-letter-spacing: 0;
   --winning-screen-player-margin-bottom: 32px;
 
-  --winning-screen-img-background-image: url("public/img/theme-img/game/player-booth-games-theme.png");
+  --winning-screen-img-background-image: url("public/img/theme-img/da-projects/win-player-orange-project-theme.png");
   --winning-screen-img-width: 288px;
   --winning-screen-img-height: 344px;
   --winning-screen-img-letter-spacing: 0.07em;
   --winning-screen-img-margin-bottom: 32px;
 
   --winning-screen-button-position: relative;
-  --winning-screen-button-width: 182px;
-  --winning-screen-button-height: 54px;
-  --winning-screen-button-border: 2px solid rgba(231, 28, 79, 1);
-  --winning-screen-button-background-color: rgba(237, 27, 118, 0.08);
-  --winning-screen-button-color: rgba(255, 255, 255, 1);
+  --winning-screen-button-width: 96px;
+  --winning-screen-button-height: 48px;
+  --winning-screen-button-border: none;
+  --winning-screen-button-background-color: rgba(191, 229, 242, 1);
+  --winning-screen-button-color: rgba(30, 117, 148, 1);
   --winning-screen-button-border-radius: 10px;
   --winning-screen-button-font-family:
-    "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  --winning-screen-button-font-size: 24px;
+    "Figtree-regular", Arial, Helvetica, sans-serif;
+  --winning-screen-button-font-size: 20px;
 
-  --winning-screen-button-hover-border:
-    inset 0 0 0 1px rgba(231, 28, 79, 1), 3px 3px 5px rgba(0, 0, 0, 0.45);
-  --winning-screen-button-hover-background-color: rgba(237, 29, 119, 0.141);
-  --winning-screen-button-hover-color: var rgba(237, 27, 118, 1);
+  --winning-screen-button-hover-border: inset 0 0 0 2px  rgba(191, 229, 242, 1);
+  --winning-screen-button-hover-background-color: rgba(30, 117, 148, 1);
+  --winning-screen-button-hover-color:rgba(255, 255, 255, 1);
 
   --winning-screen-confetti-display: none;
   --winning-screen-confetti-width: 80%;
