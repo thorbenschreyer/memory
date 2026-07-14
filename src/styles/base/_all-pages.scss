@@ -11,6 +11,7 @@ a {
   text-decoration: none;
 }
 
+// ########################### Almarai ###############################
 @font-face {
   font-family: "Almarai-Bold";
   src: url('../../../public/font/almari/Almarai-Bold.ttf') format('truetype');
@@ -39,6 +40,7 @@ a {
   font-style: normal;
 }
 
+// ########################### Red Rose ###############################
 @font-face {
   font-family: "Red-Rose-regular";
   src: url('../../../public/font/redrose/RedRose-Regular.ttf') format('truetype');
@@ -74,6 +76,7 @@ a {
   font-style: normal;
 }
 
+// ########################### Orbitron ###############################
 @font-face {
   font-family: "Orbitron-Regular";
   src: url('../../../public/font/orbitron/Orbitron-Regular.ttf') format('truetype');
@@ -85,5 +88,27 @@ a {
   font-family: "Orbitron-Bold";
   src: url('../../../public/font/orbitron/Orbitron-Bold.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+}
+
+// ########################### figtree ###############################
+
+
+
+
+
+// ########################### klee_one ###############################
+
+@font-face {
+  font-family: "KleeOne-Regular";
+  src: url('../../../public/font/klee_one/KleeOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KleeOne-SemiBold";
+  src: url('../../../public/font/klee_one/KleeOne-SemiBold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
