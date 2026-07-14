@@ -93,9 +93,40 @@ a {
 
 // ########################### figtree ###############################
 
+@font-face {
+  font-family: "Figtree-Bold";
+  src: url('../../../public/font/figtree/Figtree-Bold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Figtree-light";
+  src: url('../../../public/font/figtree/Figtree-Light.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Figtree-medium";
+  src: url('../../../public/font/figtree/Figtree-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Figtree-regular";
+  src: url('../../../public/font/figtree/Figtree-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree-semibold";
+  src: url('../../../public/font/figtree/Figtree-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 // ########################### klee_one ###############################
 
