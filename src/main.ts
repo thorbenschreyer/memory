@@ -16,7 +16,6 @@ import './styles/pages/_winner-screen.scss'
 import './styles/themes/_code-vibes-theme.scss'
 import './styles/themes/_gaming-theme.scss'
 import './styles/themes/_da-projects.scss'
-import './styles/themes/_foods-theme.scss.scss'
 
 function init() {
   console.log("Init");
