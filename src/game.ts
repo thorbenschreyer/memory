@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
   generateGamefield();
 });
 
+
+
+/* -------------------------------------------------------------------------- */
+/*                              Generate Gamefield                            */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Set and remove the color or icon from the player
+ */
 function checkPlayerColor() {
   if (playerSetting === "orange") {
     currentPlayer = "orange";
@@ -41,6 +50,9 @@ function checkPlayerColor() {
   }
 }
 
+/**
+ * Generate the correct gamefildsize
+ */
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
     gamefieldSize(4,4);
@@ -52,8 +64,14 @@ function generateGamefield() {
 }
 
 
-function gamefieldSize (colums:number, rows:number) {
-      for (let cardColumn = 0; cardColumn < colums; cardColumn++) {
+/**
+ * Generate the colums and rows from templatefunctions (template.ts) for the
+ * correct sizes
+ * @param columns {number}
+ * @param rows {number}
+ */
+function gamefieldSize (columns:number, rows:number) {
+      for (let cardColumn = 0; cardColumn < columns; cardColumn++) {
       gameField.innerHTML += cardFieldColumn (cardColumn)
 
       for (let cardRow = 0; cardRow < rows; cardRow++) {
