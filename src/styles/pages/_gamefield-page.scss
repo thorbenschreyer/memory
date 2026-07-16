@@ -26,24 +26,6 @@
     height: var(--current-player-img-height);
   }
 
-  &__player {
-    
-
-
-
-    &--color {
-      background-color: var(--current-player-background-color);
-      border-radius: var(--player-icon-border-radius);
-      width: var(--player-icon-size);
-      height: var(--player-icon-size);
-      @include flex.flex-center;
-
-      > img {
-        width: var(--player-icon-img-width);
-        height: var(--player-icon-img-height);
-      }
-    }
-  }
 
   .score-board {
     width: var(--header-element-width);
@@ -98,6 +80,21 @@
       margin-right: var(--player-text-margin-right);
       color: var(--player-text-font-color);
       font-family: var(--player-text-font-family);
+    }
+
+    &__icon {
+      border-radius: var(--player-icon-border-radius);
+      width: var(--player-icon-size);
+      height: var(--player-icon-size);
+      @include flex.flex-center;
+
+      &--orange {
+        background-color: var(--current-player-background-color-orange);
+      }
+
+      &--blue {
+        background-color: var(--current-player-background-color-blue);
+      } 
     }
   }
 
