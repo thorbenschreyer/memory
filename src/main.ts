@@ -17,8 +17,3 @@ import './styles/themes/_code-vibes-theme.scss'
 import './styles/themes/_gaming-theme.scss'
 import './styles/themes/_da-projects.scss'
 
-function init() {
-  console.log("Init");
-}
-
-init();
