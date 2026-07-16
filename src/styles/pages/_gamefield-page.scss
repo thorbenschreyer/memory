@@ -26,29 +26,6 @@
     height: var(--current-player-img-height);
   }
 
-  &__score {
-
-    &--player {
-      @include flex.flex-center;
-      > span {
-        
-      }
-
-      > .player-score-blue {
-        color: var(--player-one-color);
-      }
-
-      > .player-score-orange {
-        color: var(--player-two-color);
-      }
-    }
-
-    &--add-color {
-      display: var(--player-color-is-displayed);
-      font-size: var(--player-color-is-displayed-font-size);
-    }
-  }
-
   &__player {
     @include flex.flex-center;
 
@@ -73,9 +50,6 @@
     }
   }
 
-
-
-  
   .score-board {
     width: var(--header-element-width);
     height: var(--header-element-height);
@@ -89,28 +63,37 @@
       @include flex.flex-center;
       padding: var(--score-bord-score-text-padding);
       font-size: var(--score-bord-score-text-font-size);
+
+      &--add-color {
+        display: var(--player-color-is-displayed);
+        font-size: var(--player-color-is-displayed-font-size);
+      }
+
+      &--orange {
+        color: var(--player-two-color);
+      }
+
+      &--blue {
+        color: var(--player-one-color);
+      }
     }
 
     &__img {
-    background-repeat: var(--card-background-img-background-repeat);
-    background-position: var(--card-background-img-background-position);
-    padding: var(--player-img-padding);
-    width: var(--player-img-width);
-    height: var(--player-img-height);
+      background-repeat: var(--card-background-img-background-repeat);
+      background-position: var(--card-background-img-background-position);
+      padding: var(--player-img-padding);
+      width: var(--player-img-width);
+      height: var(--player-img-height);
 
-    &--orange {
-      background-image: var(--player-background-img-orange);
-    }
+      &--orange {
+        background-image: var(--player-background-img-orange);
+      }
 
-    &--blue {
-      background-image: var(--player-background-img-blue);
-    }
+      &--blue {
+        background-image: var(--player-background-img-blue);
+      }
     }
   }
-
-
-
-
 
   &__exit {
     cursor: pointer;
