@@ -27,14 +27,9 @@
   }
 
   &__player {
-    @include flex.flex-center;
+    
 
-    &--text {
-      font-size: var(--player-text-font-size);
-      margin-right: var(--player-text-margin-right);
-      color: var(--player-text-font-color);
-      font-family: var(--player-text-font-family);
-    }
+
 
     &--color {
       background-color: var(--current-player-background-color);
@@ -92,6 +87,17 @@
       &--blue {
         background-image: var(--player-background-img-blue);
       }
+    }
+  }
+
+  .current-player {
+    @include flex.flex-center;
+
+    &__text {
+      font-size: var(--player-text-font-size);
+      margin-right: var(--player-text-margin-right);
+      color: var(--player-text-font-color);
+      font-family: var(--player-text-font-family);
     }
   }
 
