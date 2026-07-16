@@ -125,13 +125,12 @@ const falsch = document.getElementById("falsch");
 
 richtig?.addEventListener("click", () => {
   correctPaar = true;
-  changePlayer()
-  console.log("Aktuelle Farbe: " + currentPlayer);
+  checkPaar()
 });
 
 falsch?.addEventListener("click", () => {
   correctPaar = false;
-  playersTurn();
+  checkPaar()
 });
 
 /* -------------------------------------------------------------------------- */
@@ -150,20 +149,14 @@ function changePlayer() {
   }
 }
 
-function playersTurn() {
-  console.log("player turn");
-  changePlayer();
-  if (currentPlayer === "orange") {
-    updatePlayerColor();
-  } else if (currentPlayer === "blue") {
-    updatePlayerColor();
-  }
-}
 
 function checkPaar() {
+    
   if (correctPaar) {
     console.log("paar");
   } else {
     console.log("kein paar");
+    changePlayer()
   }
+
 }
