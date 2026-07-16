@@ -99,13 +99,13 @@
       }
     }
 
-      &:has(input:checked) {
-    font-family: "Almarai-Bold";
+    &:has(input:checked) {
+      font-family: "Almarai-Bold";
 
-    > input[type="radio"] {
-      border: 2px solid rgba(48, 49, 49, 1);
+      > input[type="radio"] {
+        border: 2px solid rgba(48, 49, 49, 1);
+      }
     }
-  }
   }
 
   &__radiobutton-image {
@@ -129,7 +129,7 @@
     justify-content: end;
     background-color: rgba(246, 246, 246, 1);
     padding: 16px;
-    font-family: 'Almarai-Regular', Arial, Helvetica, sans-serif;
+    font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
     font-size: 20px;
 
     > img {
@@ -149,11 +149,10 @@
 }
 
 .settings-detail__radiobutton-image {
-    display: none;
+  display: none;
 }
 
 .settings-detail__radiobutton:has(input:checked)
-    .settings-detail__radiobutton-image {
-    display: block;
+  .settings-detail__radiobutton-image {
+  display: block;
 }
-
