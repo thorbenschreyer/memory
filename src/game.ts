@@ -1,3 +1,8 @@
+import {
+  printCard,
+  cardFieldColumn,
+} from "./template/template-functions";
+
 let playerSetting: string;
 let numberOfCardsSetting: number;
 let currentPlayer: "orange" | "blue";
@@ -94,18 +99,3 @@ dialogExitGameButton?.addEventListener("click", (event) => {
 });
 
 
-function printCard () {
-    return `
-    <div class="card">
-        <div class="card__img"></div>
-    </div>
-    `
-}
-
-function cardFieldColumn (index:number) {
-    return `
-          <div id="card-field-column-${index}" class="card-field-column">
- 
-      </div>
-    `
-}
