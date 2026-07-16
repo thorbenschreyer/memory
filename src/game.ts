@@ -1,12 +1,10 @@
-import {
-  printCard,
-  cardFieldColumn,
-} from "./template/template-functions";
+/**
+ * Imports the templatefunctions
+ */
+import { printCard, cardFieldColumn } from "./template/template-functions";
 
-let playerSetting: string;
 let numberOfCardsSetting: number;
 let currentPlayer: "orange" | "blue";
-
 const dialog = document.getElementById("exit-dialog") as HTMLDialogElement;
 const exitGameButton = document.getElementById("exit-game-button")!;
 const backToGameButton = document.getElementById("back-to-game-button")!;
@@ -14,18 +12,21 @@ const dialogExitGameButton = document.getElementById("quit-game-button")!;
 const currentPlayerImg = document.getElementById("current-player-img");
 const currentPlayerColor = document.getElementById("current-player-color");
 const gameField = document.getElementById("game-field")!;
+const scorePlayerBlue = document.getElementById("score-player-blue")!;
+const scorePlayerOrange = document.getElementById("score-player-orange")!;
 
+/**
+ * Load the standardsettings for the gamefield and build ist
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
-  playerSetting = settings.player;
+  currentPlayer = settings.player;
   numberOfCardsSetting = settings.numberOfCards;
   document.body.dataset.theme = settings.theme;
 
-  checkPlayerColor();
+  updatePlayerColor();
   generateGamefield();
 });
-
-
 
 /* -------------------------------------------------------------------------- */
 /*                              Generate Gamefield                            */
@@ -34,15 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
 /**
  * Set and remove the color or icon from the player
  */
-function checkPlayerColor() {
-  if (playerSetting === "orange") {
-    currentPlayer = "orange";
+function updatePlayerColor() {
+  if (currentPlayer === "orange") {
     currentPlayerImg?.classList.remove("current-player__img--blue");
     currentPlayerImg?.classList.add("current-player__img--orange");
     currentPlayerColor?.classList.remove("current-player__icon--blue");
     currentPlayerColor?.classList.add("current-player__icon--orange");
-  } else if (playerSetting === "blue") {
-    currentPlayer = "blue";
+  } else if (currentPlayer === "blue") {
     currentPlayerImg?.classList.remove("current-player__img--orange");
     currentPlayerImg?.classList.add("current-player__img--blue");
     currentPlayerColor?.classList.add("current-player__icon--blue");
@@ -55,14 +54,13 @@ function checkPlayerColor() {
  */
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
-    gamefieldSize(4,4);
+    gamefieldSize(4, 4);
   } else if (numberOfCardsSetting === 24) {
-    gamefieldSize(4,6);
+    gamefieldSize(4, 6);
   } else if (numberOfCardsSetting === 36) {
-    gamefieldSize(6,6);
+    gamefieldSize(6, 6);
   }
 }
-
 
 /**
  * Generate the colums and rows from templatefunctions (template.ts) for the
@@ -70,15 +68,17 @@ function generateGamefield() {
  * @param columns {number}
  * @param rows {number}
  */
-function gamefieldSize (columns:number, rows:number) {
-      for (let cardColumn = 0; cardColumn < columns; cardColumn++) {
-      gameField.innerHTML += cardFieldColumn (cardColumn)
+function gamefieldSize(columns: number, rows: number) {
+  for (let cardColumn = 0; cardColumn < columns; cardColumn++) {
+    gameField.innerHTML += cardFieldColumn(cardColumn);
 
-      for (let cardRow = 0; cardRow < rows; cardRow++) {
-        const gameFieldRow = document.getElementById("card-field-column-" + cardColumn)!;
-        gameFieldRow.innerHTML += printCard ();
-      }
+    for (let cardRow = 0; cardRow < rows; cardRow++) {
+      const gameFieldRow = document.getElementById(
+        "card-field-column-" + cardColumn,
+      )!;
+      gameFieldRow.innerHTML += printCard();
     }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -116,4 +116,54 @@ dialogExitGameButton?.addEventListener("click", (event) => {
   window.location.href = "index.html";
 });
 
+/* -------------------------------------------------------------------------- */
+/*                        Helper - remove before launch                       */
+/* -------------------------------------------------------------------------- */
 
+const richtig = document.getElementById("richtig");
+const falsch = document.getElementById("falsch");
+
+richtig?.addEventListener("click", () => {
+  correctPaar = true;
+  changePlayer()
+  console.log("Aktuelle Farbe: " + currentPlayer);
+});
+
+falsch?.addEventListener("click", () => {
+  correctPaar = false;
+  playersTurn();
+});
+
+/* -------------------------------------------------------------------------- */
+/*                                Game logic                                  */
+/* -------------------------------------------------------------------------- */
+
+let correctPaar: boolean = true;
+
+function changePlayer() {
+  if (currentPlayer === "orange") {
+    currentPlayer = "blue";
+    updatePlayerColor()
+  } else if (currentPlayer === "blue") {
+    currentPlayer = "orange";
+    updatePlayerColor()
+  }
+}
+
+function playersTurn() {
+  console.log("player turn");
+  changePlayer();
+  if (currentPlayer === "orange") {
+    updatePlayerColor();
+  } else if (currentPlayer === "blue") {
+    updatePlayerColor();
+  }
+}
+
+function checkPaar() {
+  if (correctPaar) {
+    console.log("paar");
+  } else {
+    console.log("kein paar");
+  }
+}
