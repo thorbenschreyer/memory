@@ -98,6 +98,14 @@
         }
       }
     }
+
+      &:has(input:checked) {
+    font-family: "Almarai-Bold";
+
+    > input[type="radio"] {
+      border: 2px solid rgba(48, 49, 49, 1);
+    }
+  }
   }
 
   &__radiobutton-image {
@@ -148,3 +156,4 @@
     .settings-detail__radiobutton-image {
     display: block;
 }
+
