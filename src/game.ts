@@ -12,8 +12,8 @@ const dialogExitGameButton = document.getElementById("quit-game-button")!;
 const currentPlayerImg = document.getElementById("current-player-img");
 const currentPlayerColor = document.getElementById("current-player-color");
 const gameField = document.getElementById("game-field")!;
-let scoreBlue:number = 0
-let scoreOrange:number = 0
+let scoreBlue: number = 0;
+let scoreOrange: number = 0;
 const scorePlayerBlueAsText = document.getElementById("score-player-blue")!;
 const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
 
@@ -127,12 +127,12 @@ const falsch = document.getElementById("falsch");
 
 richtig?.addEventListener("click", () => {
   correctPaar = true;
-  checkPaar()
+  checkPaar();
 });
 
 falsch?.addEventListener("click", () => {
   correctPaar = false;
-  checkPaar()
+  checkPaar();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -144,29 +144,31 @@ let correctPaar: boolean = true;
 function changePlayer() {
   if (currentPlayer === "orange") {
     currentPlayer = "blue";
-    updatePlayerColor()
+    updatePlayerColor();
   } else if (currentPlayer === "blue") {
     currentPlayer = "orange";
-    updatePlayerColor()
+    updatePlayerColor();
   }
 }
 
-
 function checkPaar() {
-    
   if (correctPaar) {
-    if (currentPlayer === "blue") { 
-      scoreBlue += 1
-      scorePlayerBlueAsText.innerText = String(scoreBlue)
-
+    if (currentPlayer === "blue") {
+      scoreBlue++;
     }
-    if (currentPlayer === "orange") { 
-      scoreOrange += 1
-      scorePlayerOrangeAsText.innerText = String(scoreOrange)
+    if (currentPlayer === "orange") {
+      scoreOrange++;
     }
   } else {
     console.log("kein paar");
-    changePlayer()
+    changePlayer();
   }
-
+  updateScore();
 }
+
+function updateScore() {
+  scorePlayerBlueAsText.innerText = String(scoreBlue);
+  scorePlayerOrangeAsText.innerText = String(scoreOrange);
+}
+
+

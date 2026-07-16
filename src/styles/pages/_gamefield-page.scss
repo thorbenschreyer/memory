@@ -85,10 +85,12 @@
     @include flex.flex-center;
     padding: var(--score-bord-score-text-padding);
     font-size: var(--score-bord-score-text-font-size);
+    width: 160px;
 
     &--add-color {
       display: var(--player-color-is-displayed);
       font-size: var(--player-color-is-displayed-font-size);
+      margin-right: 6px;
     }
 
     &--orange {
