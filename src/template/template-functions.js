@@ -5,5 +5,9 @@ function cardFieldColumn (index) {
 }
 
 function printCard () {
-    return ``
+    return `
+    <div class="card">
+        <div class="card__img"></div>
+    </div>
+    `
 }
