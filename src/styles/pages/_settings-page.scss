@@ -139,3 +139,12 @@
   color: rgb(170, 163, 163);
   height: 16px;
 }
+
+.settings-detail__radiobutton-image {
+    display: none;
+}
+
+.settings-detail__radiobutton:has(input:checked)
+    .settings-detail__radiobutton-image {
+    display: block;
+}
