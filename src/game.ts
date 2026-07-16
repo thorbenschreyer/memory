@@ -6,6 +6,8 @@ const dialog = document.getElementById("exit-dialog") as HTMLDialogElement;
 const exitGameButton = document.getElementById("exit-game-button")!;
 const backToGameButton = document.getElementById("back-to-game-button")!;
 const dialogExitGameButton = document.getElementById("quit-game-button")!;
+const currentPlayerImg = document.getElementById("current-player-img")
+const currentPlayerColor = document.getElementById("current-player-color")
 
 document.addEventListener("DOMContentLoaded", () => {
   const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
@@ -21,9 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
 function setStartingPlayer() {
   if (playerSetting === "orange") {
     currentPlayer = "orange";
+    currentPlayerImg?.classList.remove('current-player__img--blue')
+    currentPlayerImg?.classList.add('current-player__img--orange') 
+    currentPlayerColor?.classList.remove('current-player__icon--blue')
+    currentPlayerColor?.classList.add('current-player__icon--orange') 
     console.log("Orange");
   } else if (playerSetting === "blue") {
     currentPlayer = "blue";
+    currentPlayerImg?.classList.remove('current-player__img--orange')
+    currentPlayerImg?.classList.add('current-player__img--blue')
+    currentPlayerColor?.classList.add('current-player__icon--blue') 
+    currentPlayerColor?.classList.remove('current-player__icon--range')
     console.log("blue");
   }
 }
