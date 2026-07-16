@@ -15,12 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   numberOfCardsSetting = settings.numberOfCards;
   document.body.dataset.theme = settings.theme;
 
-  setStartingPlayer();
+  checkPlayerColor();
+  generateGamefield()
 });
 
-// Für den wechsel der Farbe müssen wir umbauen! Alles was Farben hat muss via klasse geändert werden können.
-// Daher muss dann bsp in gamefield-page zeile 89 umbauen zu Element __color und dann einen modifier --color hinzufügen
-function setStartingPlayer() {
+function checkPlayerColor() {
   if (playerSetting === "orange") {
     currentPlayer = "orange";
     currentPlayerImg?.classList.remove('current-player__img--blue')
@@ -35,6 +34,16 @@ function setStartingPlayer() {
     currentPlayerColor?.classList.add('current-player__icon--blue') 
     currentPlayerColor?.classList.remove('current-player__icon--range')
     console.log("blue");
+  }
+}
+
+function generateGamefield() {
+  if (numberOfCardsSetting === 16) {
+    console.log("16 Karten");
+  } else if (numberOfCardsSetting === 24) {
+    console.log("24 Karten");
+  } else if (numberOfCardsSetting === 36) {
+    console.log("36 Karten");
   }
 }
 
