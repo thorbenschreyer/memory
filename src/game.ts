@@ -12,8 +12,10 @@ const dialogExitGameButton = document.getElementById("quit-game-button")!;
 const currentPlayerImg = document.getElementById("current-player-img");
 const currentPlayerColor = document.getElementById("current-player-color");
 const gameField = document.getElementById("game-field")!;
-const scorePlayerBlue = document.getElementById("score-player-blue")!;
-const scorePlayerOrange = document.getElementById("score-player-orange")!;
+let scoreBlue:number = 0
+let scoreOrange:number = 0
+const scorePlayerBlueAsText = document.getElementById("score-player-blue")!;
+const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
 
 /**
  * Load the standardsettings for the gamefield and build ist
@@ -153,7 +155,15 @@ function changePlayer() {
 function checkPaar() {
     
   if (correctPaar) {
-    console.log("paar");
+    if (currentPlayer === "blue") { 
+      scoreBlue += 1
+      scorePlayerBlueAsText.innerText = String(scoreBlue)
+
+    }
+    if (currentPlayer === "orange") { 
+      scoreOrange += 1
+      scorePlayerOrangeAsText.innerText = String(scoreOrange)
+    }
   } else {
     console.log("kein paar");
     changePlayer()
