@@ -4,6 +4,7 @@
 //  24 = 6 zu 6 Unentschieden 7 gewinner
 //  36 = 18 zu 18 Unentschieden 19 gewinner
 //  Entsprechender Screen darstellen 
+// Margin zwischen den Karten noch mit BEM anpassen so dass bei entsprehender kartenzahl kleinere Abstände gelten
 
 // Fliplogig implementieren 
 // Hintergrundbilder implementieren 

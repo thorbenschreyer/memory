@@ -171,8 +171,8 @@
 .card {
   width: var(--card-width);
   height: var(--card-eight);
-  background-image: var(--card-background-image);
   border-radius: var(--card-border-radius);
+  background-image: var(--card-background-image);
   background-color: var(--card-background-color);
   margin: var(--card-margin);
 
@@ -183,6 +183,14 @@
     background-position: var(--card-background-img-background-position);
     background-image: var(--card-background-img-background-image);
   }
+}
+
+.is-flipped {
+  background-image: linear-gradient(
+    
+    red 0%,
+    red 100%
+  );
 }
 
 .exit-game {
