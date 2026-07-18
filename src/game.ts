@@ -120,27 +120,8 @@ dialogExitGameButton?.addEventListener("click", (event) => {
 });
 
 /* -------------------------------------------------------------------------- */
-/*                        Helper - remove before launch                       */
-/* -------------------------------------------------------------------------- */
-
-const richtig = document.getElementById("richtig");
-const falsch = document.getElementById("falsch");
-
-richtig?.addEventListener("click", () => {
-  correctPaar = true;
-  checkPaar();
-});
-
-falsch?.addEventListener("click", () => {
-  correctPaar = false;
-  checkPaar();
-});
-
-/* -------------------------------------------------------------------------- */
 /*                                Game logic                                  */
 /* -------------------------------------------------------------------------- */
-
-let correctPaar: boolean = true;
 
 function changePlayer() {
   if (currentPlayer === "orange") {
@@ -152,79 +133,63 @@ function changePlayer() {
   }
 }
 
-function checkPaar() {
-  if (correctPaar) {
-    if (currentPlayer === "blue") {
-      scoreBlue++;
-    }
-    if (currentPlayer === "orange") {
-      scoreOrange++;
-    }
-  } else {
-    changePlayer();
-  }
-  updateScore();
-}
-
 function updateScore() {
   scorePlayerBlueAsText.innerText = String(scoreBlue);
   scorePlayerOrangeAsText.innerText = String(scoreOrange);
 }
 
-
 function enableFlipCard() {
-    const fieldRef = document.getElementById("game-field")
+  const fieldRef = document.getElementById("game-field");
+  if (!fieldRef) {
+    return;
+  }
 
-    if (!fieldRef) {
-        return
+  let firstCard: HTMLElement | null = null;
+  let firstImageSrc: string | null = null;
+
+  fieldRef.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    const card = target.closest(".card") as HTMLElement;
+    if (!card) {
+      return;
     }
+    const img = card.querySelector(".card__face--back img") as HTMLImageElement;
+    if (!img) {
+      return;
+    }
+    const imageSrc = img.src;
+    card.classList.toggle("is-flipped");
+    if (!firstCard) {
+      firstCard = card;
+      firstImageSrc = imageSrc;
+      console.log("Erste Karte:", firstImageSrc);
+    } else {
+      console.log("Zweite Karte:", imageSrc);
+      if (firstImageSrc === imageSrc) {
+        console.log("MATCH!");
 
-    let firstCard: HTMLElement | null = null
-    let firstImageSrc: string | null = null
-
-    fieldRef.addEventListener("click", (e) => {
-        const target = e.target as HTMLElement
-        const card = target.closest(".card") as HTMLElement
-
-        if (!card) {
-            return
+        if (currentPlayer === "blue") {
+          scoreBlue++;
         }
-
-        const img = card.querySelector(
-            ".card__face--back img"
-        ) as HTMLImageElement
-
-        if (!img) {
-            return
+        if (currentPlayer === "orange") {
+          scoreOrange++;
         }
+      } else {
+        console.log("Kein Match");
+        changePlayer();
 
-        const imageSrc = img.src
-
-        card.classList.toggle("is-flipped")
-
-        if (!firstCard) {
-            firstCard = card
-            firstImageSrc = imageSrc
-
-            console.log("Erste Karte:", firstImageSrc)
-
-        } else {
-            console.log("Zweite Karte:", imageSrc)
-
-            if (firstImageSrc === imageSrc) {
-                console.log("MATCH!")
-
-            } else {
-                console.log("Kein Match")
-
-                setTimeout(() => {
-                    firstCard?.classList.remove("is-flipped")
-                    card.classList.remove("is-flipped")
-                }, 1000)
-            }
-
-            firstCard = null
-            firstImageSrc = null
-        }
-    })
+        setTimeout(() => {
+          firstCard?.classList.remove("is-flipped");
+          card.classList.remove("is-flipped");
+        }, 1000);
+      }
+      firstCard = null;
+      firstImageSrc = null;
+      updateScore();
+    }
+  });
 }
+
+/* -------------------------------------------------------------------------- */
+/*                        Helper - remove before launch                       */
+/* -------------------------------------------------------------------------- */
