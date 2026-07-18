@@ -5,25 +5,34 @@ Gamefield:
 // Wenn 2 gleich noch umranden!
 // DOM Verschiebung beim Counter margin im header größer machen! 
 
+
 Weitere Screens:
-if (ScorePlayerOne === ScorePlayerTwo) {
+
+let drawScore = Die Menge wenn unentschieden 
+drawScore = wird immer erhöht wenn einer 
+
+
+if (ScorePlayerOne === ScorePlayerTwo && drawScore/2 === drawCondition) {
     playerDraw()
 } else if (playerOne > 4/6/9) {
-    playerOneWin()
+    playerOrangeWin()
 }  else if (playerOne > 4/6/9) {
-    playerTwoWin()
+    playerBlueWin()
 }
 
-playerTwoWin() {
+playerOrangeWin() {
     //  Entsprechender Screen darstellen 
+    console.log("Player Orange hat gewonnen")
 }
 
-playerOneWin() {
+playerBlueWin() {
     //  Entsprechender Screen darstellen 
+    console.log("Player Blau hat gewonnen")
 }
 
 playerDraw() {
     //  Entsprechender Screen darstellen 
+    console.log("Unentschieden")
 }
 
 
