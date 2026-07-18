@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updatePlayerColor();
   generateGamefield();
-  enableFlipCard();
+  flipCard();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -138,8 +138,9 @@ function updateScore() {
   scorePlayerOrangeAsText.innerText = String(scoreOrange);
 }
 
-function enableFlipCard() {
+function flipCard() {
   const fieldRef = document.getElementById("game-field");
+
   if (!fieldRef) {
     return;
   }
@@ -150,41 +151,68 @@ function enableFlipCard() {
   fieldRef.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     const card = target.closest(".card") as HTMLElement;
+
     if (!card) {
       return;
     }
-    const img = card.querySelector(".card__face--back img") as HTMLImageElement;
+
+    // Bereits gefundenes Paar nicht mehr anklickbar machen
+    if (card.classList.contains("is-solved")) {
+      return;
+    }
+
+    const img = card.querySelector(
+      ".card__face--back img"
+    ) as HTMLImageElement;
+
     if (!img) {
       return;
     }
+
     const imageSrc = img.src;
+
     card.classList.toggle("is-flipped");
+
     if (!firstCard) {
       firstCard = card;
       firstImageSrc = imageSrc;
+
       console.log("Erste Karte:", firstImageSrc);
+
     } else {
       console.log("Zweite Karte:", imageSrc);
+
       if (firstImageSrc === imageSrc) {
         console.log("MATCH!");
+
+        // Beide Karten als gelöst markieren
+        firstCard.classList.add("is-solved");
+        card.classList.add("is-solved");
 
         if (currentPlayer === "blue") {
           scoreBlue++;
         }
+
         if (currentPlayer === "orange") {
           scoreOrange++;
         }
+
       } else {
         console.log("Kein Match");
+
         changePlayer();
+
         const firstCardToFlip = firstCard;
+
         setTimeout(() => {
           firstCardToFlip?.classList.remove("is-flipped");
           card.classList.remove("is-flipped");
         }, 1000);
       }
+
       firstCard = null;
       firstImageSrc = null;
+
       updateScore();
     }
   });

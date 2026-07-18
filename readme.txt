@@ -4,12 +4,12 @@
 //  24 = 6 zu 6 Unentschieden 7 gewinner
 //  36 = 18 zu 18 Unentschieden 19 gewinner
 //  Entsprechender Screen darstellen 
+
+
 // Margin zwischen den Karten noch mit BEM anpassen so dass bei entsprehender kartenzahl kleinere Abstände gelten
 // Hier die Vorbereitung dazu, noch implementieren -> &--margin-more-than-16cards 
-
 
 // Hintergrundbilder implementieren 
 
 // Wenn 2 gleich noch umranden!
-// Wenn 2 ungleich wieder umdrehen beide wieder umdrehen. 
-// DOM Verschiebung beim Counter
+// DOM Verschiebung beim Counter margin im header größer machen! 
