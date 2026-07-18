@@ -160,59 +160,38 @@ function flipCard() {
     if (card.classList.contains("is-solved")) {
       return;
     }
-
     const img = card.querySelector(
       ".card__face--back img"
     ) as HTMLImageElement;
-
     if (!img) {
       return;
     }
-
     const imageSrc = img.src;
-
     card.classList.toggle("is-flipped");
-
     if (!firstCard) {
       firstCard = card;
       firstImageSrc = imageSrc;
-
-      console.log("Erste Karte:", firstImageSrc);
-
     } else {
-      console.log("Zweite Karte:", imageSrc);
-
       if (firstImageSrc === imageSrc) {
-        console.log("MATCH!");
-
-        // Beide Karten als gelöst markieren
+        //Umradnung TODO
         firstCard.classList.add("is-solved");
         card.classList.add("is-solved");
-
         if (currentPlayer === "blue") {
           scoreBlue++;
         }
-
         if (currentPlayer === "orange") {
           scoreOrange++;
         }
-
       } else {
-        console.log("Kein Match");
-
         changePlayer();
-
         const firstCardToFlip = firstCard;
-
         setTimeout(() => {
           firstCardToFlip?.classList.remove("is-flipped");
           card.classList.remove("is-flipped");
         }, 1000);
       }
-
       firstCard = null;
       firstImageSrc = null;
-
       updateScore();
     }
   });
