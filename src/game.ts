@@ -171,14 +171,60 @@ function updateScore() {
   scorePlayerOrangeAsText.innerText = String(scoreOrange);
 }
 
+
 function enableFlipCard() {
-  const fieldRef = document.getElementById("game-field");
-  if (fieldRef) {
+    const fieldRef = document.getElementById("game-field")
+
+    if (!fieldRef) {
+        return
+    }
+
+    let firstCard: HTMLElement | null = null
+    let firstImageSrc: string | null = null
+
     fieldRef.addEventListener("click", (e) => {
-      const card = (e.target as HTMLElement).closest(".card") as HTMLElement;
-      if (card) {
-        card.classList.toggle("is-flipped");
-      }
-    });
-  }
+        const target = e.target as HTMLElement
+        const card = target.closest(".card") as HTMLElement
+
+        if (!card) {
+            return
+        }
+
+        const img = card.querySelector(
+            ".card__face--back img"
+        ) as HTMLImageElement
+
+        if (!img) {
+            return
+        }
+
+        const imageSrc = img.src
+
+        card.classList.toggle("is-flipped")
+
+        if (!firstCard) {
+            firstCard = card
+            firstImageSrc = imageSrc
+
+            console.log("Erste Karte:", firstImageSrc)
+
+        } else {
+            console.log("Zweite Karte:", imageSrc)
+
+            if (firstImageSrc === imageSrc) {
+                console.log("MATCH!")
+
+            } else {
+                console.log("Kein Match")
+
+                setTimeout(() => {
+                    firstCard?.classList.remove("is-flipped")
+                    card.classList.remove("is-flipped")
+                }, 1000)
+            }
+
+            firstCard = null
+            firstImageSrc = null
+        }
+    })
 }
