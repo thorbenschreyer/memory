@@ -5,8 +5,9 @@
 //  36 = 18 zu 18 Unentschieden 19 gewinner
 //  Entsprechender Screen darstellen 
 // Margin zwischen den Karten noch mit BEM anpassen so dass bei entsprehender kartenzahl kleinere Abstände gelten
+// Hier die Vorbereitung dazu, noch implementieren -> &--margin-more-than-16cards 
 
-// Fliplogig implementieren 
+
 // Hintergrundbilder implementieren 
 // Hintergrundbilder vergleichen 
 // Wenn 2 gleich offen bleiben 
