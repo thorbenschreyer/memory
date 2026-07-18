@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updatePlayerColor();
   generateGamefield();
-  enableFlipCard()
+  enableFlipCard();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -161,7 +161,6 @@ function checkPaar() {
       scoreOrange++;
     }
   } else {
-    console.log("kein paar");
     changePlayer();
   }
   updateScore();
@@ -173,15 +172,13 @@ function updateScore() {
 }
 
 function enableFlipCard() {
-    const fieldRef = document.getElementById("game-field")
-    if(fieldRef) {
-        fieldRef.addEventListener("click", e => {
-            console.log(e.target + " is FLIP");
-            const card = (e.target as HTMLElement).closest(".card") as HTMLElement
-            if(card) {
-              card.classList.toggle("is-flipped")
-            }
-        })
-    }
+  const fieldRef = document.getElementById("game-field");
+  if (fieldRef) {
+    fieldRef.addEventListener("click", (e) => {
+      const card = (e.target as HTMLElement).closest(".card") as HTMLElement;
+      if (card) {
+        card.classList.toggle("is-flipped");
+      }
+    });
+  }
 }
-
