@@ -17,60 +17,58 @@
   border-radius: var(--header-element-radius);
   margin-top: var(--header-menu-margin-top);
   background-color: var(--background-color-header-menu);
-
 }
 
-.exit-button{
-    cursor: pointer;
-    position: relative;
-    width: var(--exit-button-width);
-    height: var(--exit-button-height);
-    border: var(--exit-button-border);
-    background-color: var(--exit-button-background-color);
-    color: var(--exit-button-text-color);
-    border-radius: var(--header-element-radius);
-    margin-right: var(--header-element-margin);
-    @include flex.flex-center;
+.exit-button {
+  cursor: pointer;
+  position: relative;
+  width: var(--exit-button-width);
+  height: var(--exit-button-height);
+  border: var(--exit-button-border);
+  background-color: var(--exit-button-background-color);
+  color: var(--exit-button-text-color);
+  border-radius: var(--header-element-radius);
+  margin-right: var(--header-element-margin);
+  @include flex.flex-center;
 
-    &:hover {
-      box-shadow: var(--exit-button-img-background-box-shadow-hover);
-      background-color: var(--exit-button-background-color-hover);
-      color: var(--exit-button-text-color-hover);
-    }
-
-    &__text {
-      margin-left: 32px;
-    }
-
-    &__img {
-      position: absolute;
-      width: var(--exit-button-img-width);
-      height: var(--exit-button-img-height);
-      left: var(--exit-button-img-left);
-      transition: all ease-in-out 200ms;
-      background-image: var(--exit-button-img-background-image);
-      margin-right: 32px;
-    }
-
-    &--hover {
-      position: absolute;
-      opacity: 0;
-      width: var(--exit-button-img-width);
-      height: var(--exit-button-img-height);
-      left: var(--exit-button-img-left);
-      transition: all ease-in-out 200ms;
-      background-image: var(--exit-button-img-background-image-hover);
-    }
-
-    &:hover .exit-img {
-      opacity: 0;
-    }
-
-    &:hover .exit-img-hover {
-      opacity: 1;
-    }
+  &:hover {
+    box-shadow: var(--exit-button-img-background-box-shadow-hover);
+    background-color: var(--exit-button-background-color-hover);
+    color: var(--exit-button-text-color-hover);
   }
 
+  &__text {
+    margin-left: 32px;
+  }
+
+  &__img {
+    position: absolute;
+    width: var(--exit-button-img-width);
+    height: var(--exit-button-img-height);
+    left: var(--exit-button-img-left);
+    transition: all ease-in-out 200ms;
+    background-image: var(--exit-button-img-background-image);
+    margin-right: 32px;
+  }
+
+  &--hover {
+    position: absolute;
+    opacity: 0;
+    width: var(--exit-button-img-width);
+    height: var(--exit-button-img-height);
+    left: var(--exit-button-img-left);
+    transition: all ease-in-out 200ms;
+    background-image: var(--exit-button-img-background-image-hover);
+  }
+
+  &:hover .exit-img {
+    opacity: 0;
+  }
+
+  &:hover .exit-img-hover {
+    opacity: 1;
+  }
+}
 
 .score-board {
   width: var(--header-element-width);
@@ -171,26 +169,43 @@
 .card {
   width: var(--card-width);
   height: var(--card-eight);
-  border-radius: var(--card-border-radius);
-  background-image: var(--card-background-image);
-  background-color: var(--card-background-color);
   margin: var(--card-margin);
 
-  &__img {
-    width: var(--card-background-img-width);
-    height: var(--card-background-img-height);
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 300ms ease-in-out;
+  }
+
+  &__face {
+    position: absolute;
+    @include flex.flex-center;
+    inset: 0;
+    border-radius: var(--card-border-radius);
+    background-image: var(--card-background-image);
+    background-color: var(--card-background-color);
     background-repeat: var(--card-background-img-background-repeat);
     background-position: var(--card-background-img-background-position);
-    background-image: var(--card-background-img-background-image);
-  }
-}
+    backface-visibility: hidden;
 
-.is-flipped {
-  background-image: linear-gradient(
+    &--img {
+      display: var(--back-card-img);
+      width: 50%;
+      height: 50%;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      background-image: linear-gradient(30deg, red 0%, red 100%);
+    }
     
-    red 0%,
-    red 100%
-  );
+  }
+
+  &.is-flipped .card__inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .exit-game {

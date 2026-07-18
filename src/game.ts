@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.dataset.theme = settings.theme;
 
   updatePlayerColor();
- /* generateGamefield();*/
+  generateGamefield();
   enableFlipCard()
 });
 
