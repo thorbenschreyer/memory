@@ -177,9 +177,9 @@ function enableFlipCard() {
       } else {
         console.log("Kein Match");
         changePlayer();
-
+        const firstCardToFlip = firstCard;
         setTimeout(() => {
-          firstCard?.classList.remove("is-flipped");
+          firstCardToFlip?.classList.remove("is-flipped");
           card.classList.remove("is-flipped");
         }, 1000);
       }

@@ -9,7 +9,7 @@
 
 
 // Hintergrundbilder implementieren 
-// Hintergrundbilder vergleichen 
-// Wenn 2 gleich offen bleiben 
-// Wenn 2 ungleich wieder umdrehen 
+
+// Wenn 2 gleich noch umranden!
+// Wenn 2 ungleich wieder umdrehen beide wieder umdrehen. 
 // DOM Verschiebung beim Counter
