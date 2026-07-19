@@ -12,10 +12,13 @@ const dialogExitGameButton = document.getElementById("quit-game-button")!;
 const currentPlayerImg = document.getElementById("current-player-img");
 const currentPlayerColor = document.getElementById("current-player-color");
 const gameField = document.getElementById("game-field")!;
-let scoreBlue: number = 0;
-let scoreOrange: number = 0;
 const scorePlayerBlueAsText = document.getElementById("score-player-blue")!;
 const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
+
+let scoreBlue: number = 0;
+let scoreOrange: number = 0;
+let drawScore: number = 0;
+let drawCondition: number = 2
 
 /**
  * Load the standardsettings for the gamefield and build ist
@@ -178,9 +181,11 @@ function flipCard() {
         card.classList.add("is-solved");
         if (currentPlayer === "blue") {
           scoreBlue++;
+          drawScore++;
         }
         if (currentPlayer === "orange") {
           scoreOrange++;
+          drawScore++;
         }
       } else {
         changePlayer();
@@ -193,9 +198,36 @@ function flipCard() {
       firstCard = null;
       firstImageSrc = null;
       updateScore();
+      checkWinCondition()
     }
   });
 }
+
+function checkWinCondition() {
+  if (scoreBlue === scoreOrange && drawCondition === 2) {
+    playerDraw()
+} else if (scoreOrange > 1) {
+    playerOrangeWin()
+}  else if (scoreBlue > 1) {
+    playerBlueWin()
+}
+}
+
+function playerOrangeWin() {
+    //  Entsprechender Screen darstellen 
+    console.log("Player Orange hat gewonnen")
+}
+
+function playerBlueWin() {
+    //  Entsprechender Screen darstellen 
+    console.log("Player Blau hat gewonnen")
+}
+
+function playerDraw() {
+    //  Entsprechender Screen darstellen 
+    console.log("Unentschieden")
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                        Helper - remove before launch                       */
