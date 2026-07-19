@@ -17,7 +17,6 @@ const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
 
 let scoreBlue: number = 0;
 let scoreOrange: number = 0;
-let drawScore: number = 0;
 let drawCondition: number = 2
 
 /**
@@ -181,11 +180,9 @@ function flipCard() {
         card.classList.add("is-solved");
         if (currentPlayer === "blue") {
           scoreBlue++;
-          drawScore++;
         }
         if (currentPlayer === "orange") {
           scoreOrange++;
-          drawScore++;
         }
       } else {
         changePlayer();
