@@ -17,7 +17,7 @@ const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
 
 let scoreBlue: number = 0;
 let scoreOrange: number = 0;
-let drawCondition: number = 2
+let drawCondition: number = 2;
 
 /**
  * Load the standardsettings for the gamefield and build ist
@@ -162,9 +162,7 @@ function flipCard() {
     if (card.classList.contains("is-solved")) {
       return;
     }
-    const img = card.querySelector(
-      ".card__face--back img"
-    ) as HTMLImageElement;
+    const img = card.querySelector(".card__face--back img") as HTMLImageElement;
     if (!img) {
       return;
     }
@@ -195,36 +193,35 @@ function flipCard() {
       firstCard = null;
       firstImageSrc = null;
       updateScore();
-      checkWinCondition()
+      checkWinCondition();
     }
   });
 }
 
 function checkWinCondition() {
   if (scoreBlue === scoreOrange && drawCondition === 2) {
-    playerDraw()
-} else if (scoreOrange > 1) {
-    playerOrangeWin()
-}  else if (scoreBlue > 1) {
-    playerBlueWin()
-}
+    playerDraw();
+  } else if (scoreOrange > 1) {
+    playerOrangeWin();
+  } else if (scoreBlue > 1) {
+    playerBlueWin();
+  }
 }
 
 function playerOrangeWin() {
-    //  Entsprechender Screen darstellen 
-    console.log("Player Orange hat gewonnen")
+  //  Entsprechender Screen darstellen
+  console.log("Player Orange hat gewonnen");
 }
 
 function playerBlueWin() {
-    //  Entsprechender Screen darstellen 
-    console.log("Player Blau hat gewonnen")
+  //  Entsprechender Screen darstellen
+  console.log("Player Blau hat gewonnen");
 }
 
 function playerDraw() {
-    //  Entsprechender Screen darstellen 
-    console.log("Unentschieden")
+  //  Entsprechender Screen darstellen
+  console.log("Unentschieden");
 }
-
 
 /* -------------------------------------------------------------------------- */
 /*                        Helper - remove before launch                       */
