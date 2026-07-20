@@ -14,6 +14,7 @@ const currentPlayerColor = document.getElementById("current-player-color");
 const gameField = document.getElementById("game-field")!;
 const scorePlayerBlueAsText = document.getElementById("score-player-blue")!;
 const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
+const card = document.querySelector("card")!;
 
 let scoreBlue: number = 0;
 let scoreOrange: number = 0;
@@ -61,14 +62,14 @@ function updatePlayerColor() {
  */
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
-    gamefieldSize(4, 4);
-    maximumPointsAllowed = 8
+    gamefieldSize(4, 4, "card--margin-16cards");
+    maximumPointsAllowed = 8;
   } else if (numberOfCardsSetting === 24) {
-    gamefieldSize(4, 6);
-    maximumPointsAllowed = 12
+    gamefieldSize(4, 6, "card--margin-more-than-16cards");
+    maximumPointsAllowed = 12;
   } else if (numberOfCardsSetting === 36) {
-    gamefieldSize(6, 6);
-    maximumPointsAllowed = 18
+    gamefieldSize(6, 6, "card--margin-more-than-16cards");
+    maximumPointsAllowed = 18;
   }
   drawCondition = maximumPointsAllowed / 2;
 }
@@ -79,7 +80,7 @@ function generateGamefield() {
  * @param columns {number}
  * @param rows {number}
  */
-function gamefieldSize(columns: number, rows: number) {
+function gamefieldSize(columns: number, rows: number, margin: string) {
   for (let cardColumn = 0; cardColumn < columns; cardColumn++) {
     gameField.innerHTML += cardFieldColumn(cardColumn);
 
@@ -87,7 +88,7 @@ function gamefieldSize(columns: number, rows: number) {
       const gameFieldRow = document.getElementById(
         "card-field-column-" + cardColumn,
       )!;
-      gameFieldRow.innerHTML += printCard();
+      gameFieldRow.innerHTML += printCard(margin);
     }
   }
 }
@@ -209,11 +210,20 @@ function flipCard() {
 }
 
 function checkWinCondition() {
-  if (scoreBlue === maximumPointsAllowed / 2 &&  scoreOrange === maximumPointsAllowed / 2) {
+  if (
+    scoreBlue === maximumPointsAllowed / 2 &&
+    scoreOrange === maximumPointsAllowed / 2
+  ) {
     playerDraw();
-  } else if (scoreOrange > maximumPointsAllowed / 2 && maximumPointsPlayers === maximumPointsAllowed) {
+  } else if (
+    scoreOrange > maximumPointsAllowed / 2 &&
+    maximumPointsPlayers === maximumPointsAllowed
+  ) {
     playerOrangeWin();
-  } else if (scoreBlue > maximumPointsAllowed / 2  && maximumPointsPlayers === maximumPointsAllowed) {
+  } else if (
+    scoreBlue > maximumPointsAllowed / 2 &&
+    maximumPointsPlayers === maximumPointsAllowed
+  ) {
     playerBlueWin();
   }
 }

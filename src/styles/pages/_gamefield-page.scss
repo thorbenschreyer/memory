@@ -169,14 +169,13 @@
 .card {
   width: var(--card-width);
   height: var(--card-eight);
-  margin: var(--card-margin);
 
   &--margin-16cards {
-
+    margin: 8px;
   }
 
   &--margin-more-than-16cards {
-
+    margin: 4px;
   }
 
   &__inner {
