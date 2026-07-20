@@ -3,7 +3,7 @@
 .winner-screen-position {
   width: 100wh;
   height: 100vh;
-  background-color: var(--winner-scree-background-color);
+  background-color: var(--winner-screen-background-color);
   @include flex.flex-center;
 }
 
