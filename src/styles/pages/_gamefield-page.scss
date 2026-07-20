@@ -202,6 +202,7 @@
     background-repeat: var(--card-background-img-background-repeat);
     background-position: var(--card-background-img-background-position);
     backface-visibility: hidden;
+    box-shadow: var(--card-shaddow);
 
     &--img {
       display: var(--back-card-img);
@@ -215,6 +216,7 @@
       background-image: var(--back-card-background);
       width: var(--card-width);
       height: var(--card-eight);
+      box-shadow: var(--card-shaddow);
 
       &::after {
         content: "";
