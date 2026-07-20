@@ -81,6 +81,7 @@
 
   &__player {
     @include flex.flex-center;
+    justify-content: space-between;
     padding: var(--score-bord-score-text-padding);
     font-size: var(--score-bord-score-text-font-size);
     width: 160px;
@@ -97,6 +98,11 @@
 
     &--blue {
       color: var(--player-one-color);
+    }
+
+    &--width {
+      width: 32px;
+      margin-right: 6px;
     }
   }
 

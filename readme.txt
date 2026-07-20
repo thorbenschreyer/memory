@@ -1,5 +1,4 @@
 Gamefield:
-- Wenn 2 gleich noch umranden!
 - DOM Verschiebung beim Counter margin im header größer machen! 
 - Hintergrundbilder implementieren 
 
