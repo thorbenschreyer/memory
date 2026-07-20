@@ -166,7 +166,7 @@ function flipCard() {
     }
 
     // Bereits gefundenes Paar nicht mehr anklickbar machen
-    if (card.classList.contains("is-solved")) {
+    if (card.classList.contains("is-solved") || card.classList.contains("no-click-again")) {
       return;
     }
     const img = card.querySelector(".card__face--back img") as HTMLImageElement;
@@ -178,7 +178,7 @@ function flipCard() {
     if (!firstCard) {
       firstCard = card;
       firstImageSrc = imageSrc;
-      card.classList.add("is-solved");
+      card.classList.add("no-click-again");
     } else {
       if (firstImageSrc === imageSrc) {
         //Umradnung TODO
@@ -196,8 +196,7 @@ function flipCard() {
         changePlayer();
         const firstCardToFlip = firstCard;
         setTimeout(() => {
-          firstCardToFlip?.classList.remove("is-flipped");
-          firstCardToFlip?.classList.remove("is-solved");
+          firstCardToFlip?.classList.remove("is-flipped", "no-click-again");
           card.classList.remove("is-flipped");
         }, 1000);
       }
