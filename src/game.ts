@@ -2,6 +2,11 @@
  * Imports the templatefunctions
  */
 import { printCard, cardFieldColumn } from "./template/template-functions";
+import {
+  codeVibesArray,
+  daProjectArray,
+  gameArray,
+} from "./template/memeory-cards";
 
 let numberOfCardsSetting: number;
 let currentPlayer: "orange" | "blue";
@@ -21,6 +26,8 @@ let scoreOrange: number = 0;
 let drawCondition: number = 0;
 let maximumPointsAllowed: number = 0;
 let maximumPointsPlayers: number = 0;
+let memoryCardArray: string[];
+let settingsTheme: string;
 
 /**
  * Load the standardsettings for the gamefield and build ist
@@ -30,11 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
   currentPlayer = settings.player;
   numberOfCardsSetting = settings.numberOfCards;
   document.body.dataset.theme = settings.theme;
+  settingsTheme = settings.theme;
 
+  loadMemorycards()
   updatePlayerColor();
   generateGamefield();
   flipCard();
+  
 });
+
+/* -------------------------------------------------------------------------- */
+/*                                Settings                                  */
+/* -------------------------------------------------------------------------- */
+
+function loadMemorycards() {
+  if (settingsTheme === "vibes") {
+    memoryCardArray = codeVibesArray;
+  } else if (settingsTheme === "gaming") {
+    memoryCardArray = gameArray;
+  } else if (settingsTheme === "project") {
+    memoryCardArray = daProjectArray;
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              Generate Gamefield                            */
@@ -62,13 +86,13 @@ function updatePlayerColor() {
  */
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
-    gamefieldSize(4, 4, "card--margin-16cards");
+    gamefieldSize(4, 4, "card--margin-16cards", memoryCardArray);
     maximumPointsAllowed = 8;
   } else if (numberOfCardsSetting === 24) {
-    gamefieldSize(4, 6, "card--margin-more-than-16cards");
+    gamefieldSize(4, 6, "card--margin-more-than-16cards", memoryCardArray);
     maximumPointsAllowed = 12;
   } else if (numberOfCardsSetting === 36) {
-    gamefieldSize(6, 6, "card--margin-more-than-16cards");
+    gamefieldSize(6, 6, "card--margin-more-than-16cards", memoryCardArray);
     maximumPointsAllowed = 18;
   }
   drawCondition = maximumPointsAllowed / 2;
@@ -80,15 +104,21 @@ function generateGamefield() {
  * @param columns {number}
  * @param rows {number}
  */
-function gamefieldSize(columns: number, rows: number, margin: string) {
+function gamefieldSize(
+  columns: number,
+  rows: number,
+  margin: string,
+  memoryCards: string[]
+) {
   for (let cardColumn = 0; cardColumn < columns; cardColumn++) {
     gameField.innerHTML += cardFieldColumn(cardColumn);
-
+   
     for (let cardRow = 0; cardRow < rows; cardRow++) {
+      const cardIndex = cardColumn * rows + cardRow;
       const gameFieldRow = document.getElementById(
         "card-field-column-" + cardColumn,
       )!;
-      gameFieldRow.innerHTML += printCard(margin);
+      gameFieldRow.innerHTML += printCard(margin, memoryCards[cardIndex]);
     }
   }
 }
@@ -166,7 +196,10 @@ function flipCard() {
     }
 
     // Bereits gefundenes Paar nicht mehr anklickbar machen
-    if (card.classList.contains("is-solved") || card.classList.contains("no-click-again")) {
+    if (
+      card.classList.contains("is-solved") ||
+      card.classList.contains("no-click-again")
+    ) {
       return;
     }
     const img = card.querySelector(".card__face--back img") as HTMLImageElement;

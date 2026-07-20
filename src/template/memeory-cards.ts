@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                Code-Vibes                                  */
 /* -------------------------------------------------------------------------- */
-let codeVibesArray:string[] = [
+export let codeVibesArray:string[] = [
     "public/img/theme-img/code-vibes/memory-cards/cv-1.png",
     "public/img/theme-img/code-vibes/memory-cards/cv-1.png",
     "public/img/theme-img/code-vibes/memory-cards/cv-2.png",
@@ -44,7 +44,7 @@ let codeVibesArray:string[] = [
 /* -------------------------------------------------------------------------- */
 /*                                Da-Project                                  */
 /* -------------------------------------------------------------------------- */
-let daProjectArray:string[] = [
+export let daProjectArray:string[] = [
     "public/img/theme-img/da-projects/memory-cards/da-memory-1.png",
     "public/img/theme-img/da-projects/memory-cards/da-memory-1.png",
     "public/img/theme-img/da-projects/memory-cards/da-memory-2.png",
@@ -86,7 +86,7 @@ let daProjectArray:string[] = [
 /* -------------------------------------------------------------------------- */
 /*                                Game                                        */
 /* -------------------------------------------------------------------------- */
-let gameArray:string[] = [
+export let gameArray:string[] = [
     "public/img/theme-img/game/memory-cards/gaming-1.png",
     "public/img/theme-img/game/memory-cards/gaming-1.png",
     "public/img/theme-img/game/memory-cards/gaming-2.png",

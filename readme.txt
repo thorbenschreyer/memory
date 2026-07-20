@@ -1,5 +1,4 @@
 Gamefield:
-- DOM Verschiebung beim Counter margin im header größer machen! 
 - Hintergrundbilder implementieren 
 
 
