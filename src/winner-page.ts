@@ -1,12 +1,7 @@
-let scoreOrange : number;
-let scoreBlue: number;
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  const winningValue = JSON.parse(localStorage.getItem("winningValue") ?? "{}");
-  scoreOrange = winningValue.scoreOrange;
-  scoreBlue = winningValue.scoreBlue;
+  const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
+  document.body.dataset.theme = settings.theme;
 
-  console.log(scoreBlue + " " + scoreOrange);
+
 });
 
