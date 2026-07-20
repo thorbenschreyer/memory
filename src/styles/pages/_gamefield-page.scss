@@ -212,7 +212,8 @@
         content: "";
         position: absolute;
         inset: 0;
-        border: 5px solid rgba(77, 213, 188, 1);
+        border: var(--is-solved-border);
+        box-shadow: var(--is-solved-box-shadow);
         border-radius: var(--card-border-radius);
         pointer-events: none;
         opacity: 0;
