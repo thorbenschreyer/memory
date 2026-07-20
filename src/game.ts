@@ -17,7 +17,9 @@ const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
 
 let scoreBlue: number = 0;
 let scoreOrange: number = 0;
-let drawCondition: number = 2;
+let drawCondition: number = 0;
+let maximumPointsAllowed: number = 0;
+let maximumPointsPlayers: number = 0;
 
 /**
  * Load the standardsettings for the gamefield and build ist
@@ -60,11 +62,15 @@ function updatePlayerColor() {
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
     gamefieldSize(4, 4);
+    maximumPointsAllowed = 8
   } else if (numberOfCardsSetting === 24) {
     gamefieldSize(4, 6);
+    maximumPointsAllowed = 12
   } else if (numberOfCardsSetting === 36) {
     gamefieldSize(6, 6);
+    maximumPointsAllowed = 18
   }
+  drawCondition = maximumPointsAllowed / 2;
 }
 
 /**
@@ -171,6 +177,7 @@ function flipCard() {
     if (!firstCard) {
       firstCard = card;
       firstImageSrc = imageSrc;
+      card.classList.add("is-solved");
     } else {
       if (firstImageSrc === imageSrc) {
         //Umradnung TODO
@@ -178,15 +185,18 @@ function flipCard() {
         card.classList.add("is-solved");
         if (currentPlayer === "blue") {
           scoreBlue++;
+          maximumPointsPlayers++;
         }
         if (currentPlayer === "orange") {
           scoreOrange++;
+          maximumPointsPlayers++;
         }
       } else {
         changePlayer();
         const firstCardToFlip = firstCard;
         setTimeout(() => {
           firstCardToFlip?.classList.remove("is-flipped");
+          firstCardToFlip?.classList.remove("is-solved");
           card.classList.remove("is-flipped");
         }, 1000);
       }
@@ -199,11 +209,11 @@ function flipCard() {
 }
 
 function checkWinCondition() {
-  if (scoreBlue === scoreOrange && drawCondition === 2) {
+  if (scoreBlue === maximumPointsAllowed / 2 &&  scoreOrange === maximumPointsAllowed / 2) {
     playerDraw();
-  } else if (scoreOrange > 1) {
+  } else if (scoreOrange > maximumPointsAllowed / 2 && maximumPointsPlayers === maximumPointsAllowed) {
     playerOrangeWin();
-  } else if (scoreBlue > 1) {
+  } else if (scoreBlue > maximumPointsAllowed / 2  && maximumPointsPlayers === maximumPointsAllowed) {
     playerBlueWin();
   }
 }
