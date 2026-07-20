@@ -1,7 +1,3 @@
-Gamefield:
-- Hintergrundbilder implementieren 
-
-
 Weitere Screens:
 - console.log("Unentschieden")
 - console.log("Player Blau hat gewonnen")

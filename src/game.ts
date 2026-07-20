@@ -39,11 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.dataset.theme = settings.theme;
   settingsTheme = settings.theme;
 
-  loadMemorycards()
+  loadMemorycards();
   updatePlayerColor();
   generateGamefield();
   flipCard();
-  
 });
 
 /* -------------------------------------------------------------------------- */
@@ -86,14 +85,19 @@ function updatePlayerColor() {
  */
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
-    gamefieldSize(4, 4, "card--margin-16cards", memoryCardArray);
     maximumPointsAllowed = 8;
+    memoryCardArray.splice(16);
+    memoryCardArray.sort(() => Math.random() - 0.5);
+    gamefieldSize(4, 4, "card--margin-16cards", memoryCardArray);
   } else if (numberOfCardsSetting === 24) {
-    gamefieldSize(4, 6, "card--margin-more-than-16cards", memoryCardArray);
     maximumPointsAllowed = 12;
+    memoryCardArray.splice(24);
+    memoryCardArray.sort(() => Math.random() - 0.5);
+    gamefieldSize(4, 6, "card--margin-more-than-16cards", memoryCardArray);
   } else if (numberOfCardsSetting === 36) {
-    gamefieldSize(6, 6, "card--margin-more-than-16cards", memoryCardArray);
     maximumPointsAllowed = 18;
+    memoryCardArray.sort(() => Math.random() - 0.5);
+    gamefieldSize(6, 6, "card--margin-more-than-16cards", memoryCardArray);
   }
   drawCondition = maximumPointsAllowed / 2;
 }
@@ -108,11 +112,11 @@ function gamefieldSize(
   columns: number,
   rows: number,
   margin: string,
-  memoryCards: string[]
+  memoryCards: string[],
 ) {
   for (let cardColumn = 0; cardColumn < columns; cardColumn++) {
     gameField.innerHTML += cardFieldColumn(cardColumn);
-   
+
     for (let cardRow = 0; cardRow < rows; cardRow++) {
       const cardIndex = cardColumn * rows + cardRow;
       const gameFieldRow = document.getElementById(
@@ -258,21 +262,27 @@ function checkWinCondition() {
   ) {
     playerBlueWin();
   }
+  saveWinningValues();
 }
 
 function playerOrangeWin() {
-  //  Entsprechender Screen darstellen
-  console.log("Player Orange hat gewonnen");
+  window.location.href = "game_over_screen.html";
 }
 
 function playerBlueWin() {
-  //  Entsprechender Screen darstellen
-  console.log("Player Blau hat gewonnen");
+  window.location.href = "game_over_screen.html";
 }
 
 function playerDraw() {
-  //  Entsprechender Screen darstellen
-  console.log("Unentschieden");
+  window.location.href = "game_over_screen.html";
+}
+
+function saveWinningValues() {
+  const winningValues = {
+    scoreBlue,
+    scoreOrange,
+  };
+  localStorage.setItem("winningValue", JSON.stringify(winningValues));
 }
 
 /* -------------------------------------------------------------------------- */
