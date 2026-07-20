@@ -27,6 +27,7 @@ let maximumPointsAllowed: number = 0;
 let maximumPointsPlayers: number = 0;
 let memoryCardArray: string[];
 let settingsTheme: string;
+let winner: string;
 
 /**
  * Load the standardsettings for the gamefield and build ist
@@ -255,11 +256,13 @@ function checkWinCondition() {
     maximumPointsPlayers === maximumPointsAllowed
   ) {
     playerOrangeWin();
+    winner = "Orange"
   } else if (
     scoreBlue > maximumPointsAllowed / 2 &&
     maximumPointsPlayers === maximumPointsAllowed
   ) {
     playerBlueWin();
+    winner = "Blue"
   }
   saveWinningValues();
 }
@@ -280,6 +283,7 @@ function saveWinningValues() {
   const winningValues = {
     scoreBlue,
     scoreOrange,
+    winner
   };
   localStorage.setItem("winningValue", JSON.stringify(winningValues));
 }
