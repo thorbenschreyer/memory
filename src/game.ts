@@ -19,7 +19,6 @@ const currentPlayerColor = document.getElementById("current-player-color");
 const gameField = document.getElementById("game-field")!;
 const scorePlayerBlueAsText = document.getElementById("score-player-blue")!;
 const scorePlayerOrangeAsText = document.getElementById("score-player-orange")!;
-const card = document.querySelector("card")!;
 
 let scoreBlue: number = 0;
 let scoreOrange: number = 0;
