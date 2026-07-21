@@ -1,6 +1,7 @@
 /**
- * Imports the templatefunctions
- */
+
+* Imports the template functions used to generate the game field and cards.
+  */
 import { printCard, cardFieldColumn } from "./template/template-functions";
 import {
   codeVibesArray,
@@ -30,10 +31,15 @@ let settingsTheme: string;
 let winner: string;
 
 /**
- * Load the standardsettings for the gamefield and build ist
- */
+
+* Loads the saved game settings from localStorage when the page has finished loading.
+*
+* The selected player, card count, and theme are initialized before the memory
+* cards and game field are generated.
+  */
 document.addEventListener("DOMContentLoaded", () => {
   const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
+
   currentPlayer = settings.player;
   numberOfCardsSetting = settings.numberOfCards;
   document.body.dataset.theme = settings.theme;
@@ -46,9 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* -------------------------------------------------------------------------- */
-/*                                Settings                                  */
+/*                                Settings                                    */
 /* -------------------------------------------------------------------------- */
 
+/**
+
+* Loads the memory card array that corresponds to the selected game theme.
+  */
 function loadMemorycards() {
   if (settingsTheme === "vibes") {
     memoryCardArray = codeVibesArray;
@@ -60,54 +70,72 @@ function loadMemorycards() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                              Generate Gamefield                            */
+/*                            Generate Game Field                             */
 /* -------------------------------------------------------------------------- */
 
 /**
- * Set and remove the color or icon from the player
- */
+
+* Updates the current player's visual indicator.
+*
+* The corresponding player color is applied to the player image and icon,
+* while the styling of the previous player is removed.
+  */
 function updatePlayerColor() {
   if (currentPlayer === "orange") {
     currentPlayerImg?.classList.remove("current-player__img--blue");
     currentPlayerImg?.classList.add("current-player__img--orange");
+
     currentPlayerColor?.classList.remove("current-player__icon--blue");
     currentPlayerColor?.classList.add("current-player__icon--orange");
   } else if (currentPlayer === "blue") {
     currentPlayerImg?.classList.remove("current-player__img--orange");
     currentPlayerImg?.classList.add("current-player__img--blue");
+
     currentPlayerColor?.classList.add("current-player__icon--blue");
-    currentPlayerColor?.classList.remove("current-player__icon--range");
+    currentPlayerColor?.classList.remove("current-player__icon--orange");
   }
 }
 
 /**
- * Generate the correct gamefildsize
- */
+
+* Configures and generates the game field based on the selected number of cards.
+*
+* The function determines the maximum number of possible pairs, limits the
+* card array to the required size, shuffles the cards, and creates the
+* corresponding grid layout.
+  */
 function generateGamefield() {
   if (numberOfCardsSetting === 16) {
     maximumPointsAllowed = 8;
     memoryCardArray.splice(16);
     memoryCardArray.sort(() => Math.random() - 0.5);
+
     gamefieldSize(4, 4, "card--margin-16cards", memoryCardArray);
   } else if (numberOfCardsSetting === 24) {
     maximumPointsAllowed = 12;
     memoryCardArray.splice(24);
     memoryCardArray.sort(() => Math.random() - 0.5);
+
     gamefieldSize(4, 6, "card--margin-more-than-16cards", memoryCardArray);
   } else if (numberOfCardsSetting === 36) {
     maximumPointsAllowed = 18;
     memoryCardArray.sort(() => Math.random() - 0.5);
+
     gamefieldSize(6, 6, "card--margin-more-than-16cards", memoryCardArray);
   }
+
   drawCondition = maximumPointsAllowed / 2;
 }
 
 /**
- * Generate the colums and rows from templatefunctions (template.ts) for the
- * correct sizes
- * @param columns {number}
- * @param rows {number}
- */
+
+* Generates the columns and rows of the game field.
+*
+* @param columns - The number of columns to generate.
+* @param rows - The number of cards to generate in each column.
+* @param margin - The CSS class used to apply the correct card spacing.
+* @param memoryCards - The array containing the card image paths.
+  */
 function gamefieldSize(
   columns: number,
   rows: number,
@@ -119,9 +147,11 @@ function gamefieldSize(
 
     for (let cardRow = 0; cardRow < rows; cardRow++) {
       const cardIndex = cardColumn * rows + cardRow;
+
       const gameFieldRow = document.getElementById(
         "card-field-column-" + cardColumn,
       )!;
+
       gameFieldRow.innerHTML += printCard(margin, memoryCards[cardIndex]);
     }
   }
@@ -132,8 +162,9 @@ function gamefieldSize(
 /* -------------------------------------------------------------------------- */
 
 /**
- * Close dialog while clicking outside of themselfe
- */
+
+* Closes the exit dialog when the user clicks outside the dialog content.
+  */
 dialog.addEventListener("click", (event) => {
   if (event.target === dialog) {
     dialog.close();
@@ -141,31 +172,38 @@ dialog.addEventListener("click", (event) => {
 });
 
 /**
- * Show dialog while clicking on exit game
- */
-exitGameButton?.addEventListener("click", (event) => {
+
+* Opens the exit confirmation dialog when the user clicks the exit button.
+  */
+exitGameButton?.addEventListener("click", () => {
   dialog.showModal();
 });
 
 /**
- * close dialog and go back to game
- */
-backToGameButton?.addEventListener("click", (event) => {
+
+* Closes the exit confirmation dialog and returns to the current game.
+  */
+backToGameButton?.addEventListener("click", () => {
   dialog.close();
 });
 
 /**
- * close dialog, clear local storage and go to index.html
- */
-dialogExitGameButton?.addEventListener("click", (event) => {
+
+* Clears the saved game data and redirects the user to the start page.
+  */
+dialogExitGameButton?.addEventListener("click", () => {
   localStorage.clear();
   window.location.href = "index.html";
 });
 
 /* -------------------------------------------------------------------------- */
-/*                                Game logic                                  */
+/*                                Game Logic                                  */
 /* -------------------------------------------------------------------------- */
 
+/**
+
+* Switches the active player and updates the player indicator.
+  */
 function changePlayer() {
   if (currentPlayer === "orange") {
     currentPlayer = "blue";
@@ -176,31 +214,42 @@ function changePlayer() {
   }
 }
 
+/**
+
+* Updates the displayed scores of both players.
+  */
 function updateScore() {
   scorePlayerBlueAsText.innerText = String(scoreBlue);
   scorePlayerOrangeAsText.innerText = String(scoreOrange);
 }
 
+/**
+Handles the selection of cards in the game field.
+
+The function uses event delegation to listen for clicks on the game field
+and determines whether the clicked element belongs to a card. Solved cards
+and cards that have already been selected are ignored.
+
+When a valid card is clicked, it is flipped and its image source is stored.
+The first selected card is saved temporarily. When a second card is selected,
+both cards are passed to the compareCards function to determine whether they
+form a matching pair.
+
+After the comparison, the stored card data is reset so that the next pair
+can be selected.
+*/
 function flipCard() {
   const fieldRef = document.getElementById("game-field");
-
   if (!fieldRef) {
     return;
   }
-
   let firstCard: HTMLElement | null = null;
   let firstImageSrc: string | null = null;
-
   fieldRef.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     const card = target.closest(".card") as HTMLElement;
-
-    if (!card) {
-      return;
-    }
-
-    // Bereits gefundenes Paar nicht mehr anklickbar machen
     if (
+      !card ||
       card.classList.contains("is-solved") ||
       card.classList.contains("no-click-again")
     ) {
@@ -210,41 +259,66 @@ function flipCard() {
     if (!img) {
       return;
     }
-    const imageSrc = img.src;
-    card.classList.toggle("is-flipped");
+    card.classList.add("is-flipped");
     if (!firstCard) {
       firstCard = card;
-      firstImageSrc = imageSrc;
+      firstImageSrc = img.src;
       card.classList.add("no-click-again");
-    } else {
-      if (firstImageSrc === imageSrc) {
-        //Umradnung TODO
-        firstCard.classList.add("is-solved");
-        card.classList.add("is-solved");
-        if (currentPlayer === "blue") {
-          scoreBlue++;
-          maximumPointsPlayers++;
-        }
-        if (currentPlayer === "orange") {
-          scoreOrange++;
-          maximumPointsPlayers++;
-        }
-      } else {
-        changePlayer();
-        const firstCardToFlip = firstCard;
-        setTimeout(() => {
-          firstCardToFlip?.classList.remove("is-flipped", "no-click-again");
-          card.classList.remove("is-flipped");
-        }, 1000);
-      }
-      firstCard = null;
-      firstImageSrc = null;
-      updateScore();
-      checkWinCondition();
+      return;
     }
+    compareCards(firstCard, card, firstImageSrc, img.src);
+    firstCard = null;
+    firstImageSrc = null;
   });
 }
 
+/**
+Compares two selected cards to determine whether they form a matching pair.
+
+If both cards contain the same image, they are marked as solved and the
+current player receives a point. The maximum number of points is updated
+accordingly.
+
+If the cards do not match, the active player changes and both cards are
+turned face down again after a short delay.
+
+After each comparison, the score and the win condition are updated.
+*/
+function compareCards(
+  firstCard: HTMLElement,
+  secondCard: HTMLElement,
+  firstImageSrc: string | null,
+  secondImageSrc: string,
+) {
+  if (firstImageSrc === secondImageSrc) {
+    firstCard.classList.add("is-solved");
+    secondCard.classList.add("is-solved");
+    if (currentPlayer === "blue") {
+      scoreBlue++;
+    }
+    if (currentPlayer === "orange") {
+      scoreOrange++;
+    }
+    maximumPointsPlayers++;
+  } else {
+    changePlayer();
+    setTimeout(() => {
+      firstCard.classList.remove("is-flipped", "no-click-again");
+      secondCard.classList.remove("is-flipped");
+    }, 1000);
+  }
+  updateScore();
+  checkWinCondition();
+}
+
+/**
+
+* Checks whether the game has reached a draw or a winning condition.
+*
+* A draw occurs when both players have found the same number of pairs.
+* A player wins when all pairs have been found and their score is higher
+* than the other player's score.
+  */
 function checkWinCondition() {
   if (
     scoreBlue === maximumPointsAllowed / 2 &&
@@ -265,30 +339,50 @@ function checkWinCondition() {
     winner = "Blue";
     playerBlueWin();
   }
+
   saveWinningValues();
 }
 
+/**
+
+* Stores the Orange Player as the winner and redirects to the game-over screen.
+  */
 function playerOrangeWin() {
   window.location.href = "game_over_screen.html";
 }
 
+/**
+
+* Stores the Blue Player as the winner and redirects to the game-over screen.
+  */
 function playerBlueWin() {
   window.location.href = "game_over_screen.html";
 }
 
+/**
+
+* Handles a draw and redirects to the game-over screen.
+  */
 function playerDraw() {
   window.location.href = "game_over_screen.html";
 }
 
+/**
+
+* Saves the final scores and winner information in localStorage.
+*
+* The stored values are used by the game-over screen and winner screen.
+  */
 function saveWinningValues() {
   const winningValues = {
     scoreBlue,
     scoreOrange,
     winner,
   };
+
   localStorage.setItem("winningValue", JSON.stringify(winningValues));
 }
 
 /* -------------------------------------------------------------------------- */
-/*                        Helper - remove before launch                       */
+/*                        Helper - Remove Before Launch                       */
 /* -------------------------------------------------------------------------- */
