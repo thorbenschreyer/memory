@@ -2,6 +2,7 @@
  * Imports the template functions used to generate the game field and cards.
  */
 import { printCard, cardFieldColumn } from "./template/template-functions";
+import { showGameOverPage } from "./main"
 import {
   codeVibesArray,
   daProjectArray,
@@ -318,46 +319,22 @@ After each comparison, the score and the win condition are updated.
       scoreOrange === maximumPointsAllowed / 2
     ) {
       winner = "Draw";
-      playerDraw();
+      showGameOverPage()
     } else if (
       scoreOrange > maximumPointsAllowed / 2 &&
       maximumPointsPlayers === maximumPointsAllowed
     ) {
       winner = "Orange";
-      playerOrangeWin();
+      showGameOverPage()
     } else if (
       scoreBlue > maximumPointsAllowed / 2 &&
       maximumPointsPlayers === maximumPointsAllowed
     ) {
       winner = "Blue";
-      playerBlueWin();
+      showGameOverPage()
     }
 
     saveWinningValues();
-  }
-
-  /**
-
-* Stores the Orange Player as the winner and redirects to the game-over screen.
-  */
-  function playerOrangeWin() {
-    window.location.href = "game_over_screen.html";
-  }
-
-  /**
-
-* Stores the Blue Player as the winner and redirects to the game-over screen.
-  */
-  function playerBlueWin() {
-    window.location.href = "game_over_screen.html";
-  }
-
-  /**
-
-* Handles a draw and redirects to the game-over screen.
-  */
-  function playerDraw() {
-    window.location.href = "game_over_screen.html";
   }
 
   /**

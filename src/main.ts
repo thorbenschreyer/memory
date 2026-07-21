@@ -23,6 +23,10 @@ import { initSettings } from "./setting";
 import { gamePage } from "./template/game-page";
 import { initGame } from "./game";
 import { saveSettings } from "./setting";
+import { gameOverPage } from "./template/game-over-page";
+import { winnerPage } from "./template/winner-screen";
+import {initGameOverPage} from "./gameover-page"
+import {initWinnerPage} from "./winner-page"
 
 const app = document.getElementById("app")!;
 
@@ -40,4 +44,14 @@ export function showGamePage() {
   app.innerHTML = gamePage();
 
   initGame();
+}
+
+export function showGameOverPage() {
+    app.innerHTML = gameOverPage();
+    initGameOverPage()
+}
+
+export function showWinnerPage() {
+    app.innerHTML = winnerPage();
+    initWinnerPage()
 }

@@ -1,20 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/image/memory_favicon.ico"
-      type="image/x-icon"
-    />
-    <script type="module" src="../main.ts"></script>
-    <script type="module" src="../setting.ts"></script>
-    <script type="module" src="../gameover-page.ts"></script>
-
-    <title>Memory</title>
-  </head>
-  <body data-theme="project" class="gamefield-page game-over-page">
+export function gameOverPage() {
+  return `
+    <div class="gamefield-page game-over-page">
     <div class="game-over-content">
       <p class="game-over-header">GAME OVER</p>
 
@@ -44,5 +30,6 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+    `;
+}
