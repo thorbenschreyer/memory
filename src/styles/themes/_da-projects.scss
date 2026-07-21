@@ -28,12 +28,12 @@
   --player-img-width: 22px;
   --player-img-height: 28px;
   --player-img-padding: 4px;
-  --player-background-img-orange: url("../assets/image/theme-img/game/chess_pawn_orange.svg");
-  --player-background-img-blue: url("../assets/image/theme-img/game/chess_pawn_blue.svg");
+  --player-background-img-orange: url("../../assets/image/theme-img/game/chess_pawn_orange.svg");
+  --player-background-img-blue: url("../../assets/image/theme-img/game/chess_pawn_blue.svg");
   --player-color-is-displayed: none;
   --player-color-is-displayed-font-size: 24px;
-  --current-player-background-image-orange: url("../assets/image/theme-img/game/chess_pawn.svg");
-  --current-player-background-image-blue: url("../assets/image/theme-img/game/chess_pawn.svg");
+  --current-player-background-image-orange: url("../../assets/image/theme-img/game/chess_pawn.svg");
+  --current-player-background-image-blue: url("../../assets/image/theme-img/game/chess_pawn.svg");
   --current-player-img-width: 25px;
   --current-player-img-height: 32px;
   --current-player-background-color-blue: rgba(9, 127, 197, 1);
@@ -49,8 +49,8 @@
   --exit-button-img-width: 30px;
   --exit-button-img-height: 30px;
   --exit-button-img-left: 16px;
-  --exit-button-img-background-image: url("../assets/image/theme-img/da-projects/exit-button-blue.png");
-  --exit-button-img-background-image-hover: url("../assets/image/theme-img/da-projects/exit-button-white-da-projects.png");
+  --exit-button-img-background-image: url("../../assets/image/theme-img/da-projects/exit-button-blue.png");
+  --exit-button-img-background-image-hover: url("../../assets/image/theme-img/da-projects/exit-button-white-da-projects.png");
   --exit-button-img-background-box-shadow-hover: none;
   --exit-button-background-color-hover: rgba(30, 117, 148, 1);
   --exit-button-text-color-hover: rgba(255, 255, 255, 1);
@@ -78,7 +78,7 @@
   --card-background-img-height: 100%;
   --card-background-img-background-repeat: no-repeat;
   --card-background-img-background-position: center;
-  --card-background-img-background-image: url("../assets/image/theme-img/da-projects/card-background-project-theme.png");
+  --card-background-img-background-image: url("../../assets/image/theme-img/da-projects/card-background-project-theme.png");
 
   // Dialog
   --dialog-width: 481px;
