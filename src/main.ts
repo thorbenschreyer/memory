@@ -20,9 +20,9 @@ import "./styles/themes/_da-projects.scss";
 import { startPage } from "./template/start-page";
 import { settingsPage } from "./template/settings-page";
 import { initSettings } from "./setting";
-
-
-
+import { gamePage } from "./template/game-page";
+import { initGame } from "./game";
+import { saveSettings } from "./setting";
 
 const app = document.getElementById("app")!;
 
@@ -31,6 +31,13 @@ app.innerHTML = startPage();
 const playButton = document.getElementById("play-button")!;
 
 playButton.addEventListener("click", () => {
-    app.innerHTML = settingsPage();
-    initSettings();
+  app.innerHTML = settingsPage();
+  initSettings();
 });
+
+export function showGamePage() {
+  saveSettings();
+  app.innerHTML = gamePage();
+
+  initGame();
+}

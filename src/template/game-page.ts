@@ -1,22 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/image/memory_favicon.ico"
-      type="image/x-icon"
-    />
-    <script type="module" src="../template/template-functions.ts"></script>
-    <script type="module" src="../template/memory-cards.ts"></script>
-    <script type="module" src="../main.ts"></script>
-    <script type="module" src="../game.ts"></script>
-    <script type="module" src="../setting.ts"></script>
-
-    <title>Memory</title>
-  </head>
-  <body data-theme="da-project" class="gamefield-page">
+export function gamePage() {
+  return `
+          <div class="gamefield-page">
     <header class="header-menu">
       <!-- Score board -->
       <div class="score-board">
@@ -70,7 +54,7 @@
 
     <!-- Gamefield -->
     <section id="game-field" class="card-field"></section>
-  </body>
+  </div>
 
   <!-- Exit Dialog -->
   <dialog id="exit-dialog" class="exit-game">
@@ -92,4 +76,5 @@
       </div>
     </div>
   </dialog>
-</html>
+    `;
+}

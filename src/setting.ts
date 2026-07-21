@@ -1,6 +1,7 @@
 import themeCodeVibes from "./assets/image/theme-it-logos.png";
 import themeGaming from "./assets/image/theme-gameing.png";
 import themeProjects from "./assets/image/theme-da-projects.png";
+import { showGamePage } from "./main";
 
 let themeDetails!: HTMLElement;
 let playerDetails!: HTMLElement;
@@ -23,7 +24,7 @@ export function initSettings() {
     'input[name="player"]',
   );
   const sizeRadios =
-  document.querySelectorAll<HTMLInputElement>('input[name="size"]');
+    document.querySelectorAll<HTMLInputElement>('input[name="size"]');
   themeDetails = document.getElementById("gaming-theme")!;
   playerDetails = document.getElementById("starting-player")!;
   numberOfCardsDetails = document.getElementById("card-size")!;
@@ -54,33 +55,33 @@ export function initSettings() {
    * When hovering over the label ends, the most recently selected theme image
    * is displayed again. If no theme has been selected yet, the default image remains active.
    */
-themeHover.forEach((element) => {
-  element.addEventListener("mouseenter", () => {
-    const radioValueHover = element.querySelector<HTMLInputElement>(
-      'input[name="theme"]',
-    );
+  themeHover.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      const radioValueHover = element.querySelector<HTMLInputElement>(
+        'input[name="theme"]',
+      );
 
-    if (!radioValueHover) return;
+      if (!radioValueHover) return;
 
-    switch (radioValueHover.value) {
-      case "vibes":
-        themeImage.src = themeCodeVibes;
-        break;
+      switch (radioValueHover.value) {
+        case "vibes":
+          themeImage.src = themeCodeVibes;
+          break;
 
-      case "gaming":
-        themeImage.src = themeGaming;
-        break;
+        case "gaming":
+          themeImage.src = themeGaming;
+          break;
 
-      case "project":
-        themeImage.src = themeProjects;
-        break;
-    }
+        case "project":
+          themeImage.src = themeProjects;
+          break;
+      }
+    });
+
+    element.addEventListener("mouseleave", () => {
+      themeImage.src = usedThemeImage;
+    });
   });
-
-  element.addEventListener("mouseleave", () => {
-    themeImage.src = usedThemeImage;
-  });
-});
 
   /**
    * Records which player must be selected when the radio buttons are changed and displays this in the gaming bar
@@ -102,17 +103,23 @@ themeHover.forEach((element) => {
     });
   });
 
-  /**
-   * Save the settings for the game in local storage
-   */
-  startButton?.addEventListener("click", () => {
-    const settings = {
-      theme,
-      player,
-      numberOfCards,
-    };
-    localStorage.setItem("settings", JSON.stringify(settings));
+  startButton.addEventListener("click", () => {
+    saveSettings();
+    showGamePage();
   });
+}
+
+/**
+ * Save the settings for the game in local storage
+ */
+export function saveSettings() {
+  const settings = {
+    theme,
+    player,
+    numberOfCards,
+  };
+
+  localStorage.setItem("settings", JSON.stringify(settings));
 }
 
 /* -------------------------------------------------------------------------- */
