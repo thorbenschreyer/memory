@@ -14,7 +14,7 @@ const startButton = document.getElementById("start-button");
 const errorMassage = document.getElementById("error-massage")!;
 const themeImage = document.getElementById("theme-image") as HTMLImageElement;
 
-let usedThemeImage: string = "public/img/theme-it-logos.png";
+let usedThemeImage: string = "../assets/image/theme-it-logos.png";
 let theme: string;
 let player: string;
 let numberOfCards: number;
@@ -51,11 +51,11 @@ themeHover.forEach((element) => {
     let hoveredElement = radioValueHover.value;
 
     if (hoveredElement === "vibes") {
-      themeImage.src = "public/img/theme-it-logos.png";
+      themeImage.src = "../assets/image/theme-it-logos.png";
     } else if (hoveredElement === "gaming") {
-      themeImage.src = "public/img/theme-gameing.png";
+      themeImage.src = "../assets/image/theme-gameing.png";
     } else if (hoveredElement === "project") {
-      themeImage.src = "public/img/theme-da-projects.png";
+      themeImage.src = "../assets/image/theme-da-projects.png";
     }
   });
 
@@ -109,15 +109,15 @@ startButton?.addEventListener("click", () => {
 function updatetheme() {
   if (theme === "vibes") {
     themeDetails.innerText = "Code vibes theme";
-    usedThemeImage = "public/img/theme-it-logos.png";
+    usedThemeImage = "../assets/image/theme-it-logos.png";
     themeImage.src = usedThemeImage;
   } else if (theme === "gaming") {
     themeDetails.innerText = "Gaming theme";
-    usedThemeImage = "public/img/theme-gameing.png";
+    usedThemeImage = "../assets/image/theme-gameing.png";
     themeImage.src = usedThemeImage;
   } else if (theme === "project") {
     themeDetails.innerText = "DA Projects theme";
-    usedThemeImage = "public/img/theme-da-projects.png";
+    usedThemeImage = "../assets/image/theme-da-projects.png";
     themeImage.src = usedThemeImage;
   }
   checkStartValues();

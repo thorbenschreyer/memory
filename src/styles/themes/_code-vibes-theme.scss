@@ -28,12 +28,12 @@
   --player-img-width: 22px;
   --player-img-height: 28px;
   --player-img-padding: 4px;
-  --player-background-img-orange: url("public/img/theme-img/code-vibes/code-vibes-orange-player.png");
-  --player-background-img-blue: url("public/img/theme-img/code-vibes/code-vibes-blue-player.png");
+  --player-background-img-orange: url("../assets/image/theme-img/code-vibes/code-vibes-orange-player.png");
+  --player-background-img-blue: url("../assets/image/theme-img/code-vibes/code-vibes-blue-player.png");
   --player-color-is-displayed: inline;
   --player-color-is-displayed-font-size: 24px;
-  --current-player-background-image-orange: url("public/img/theme-img/code-vibes/code-vibes-orange-player.png");
-  --current-player-background-image-blue: url("public/img/theme-img/code-vibes/code-vibes-blue-player.png");
+  --current-player-background-image-orange: url("../assets/image/theme-img/code-vibes/code-vibes-orange-player.png");
+  --current-player-background-image-blue: url("../assets/image/theme-img/code-vibes/code-vibes-blue-player.png");
   --current-player-img-width: 24px;
   --current-player-img-height: 29px;
   --current-player-background-color-orange: none;
@@ -49,8 +49,8 @@
   --exit-button-img-width: 30px;
   --exit-button-img-height: 30px;
   --exit-button-img-left: 16px;
-  --exit-button-img-background-image: url("./public/img/theme-img/game/exit-button.svg");
-  --exit-button-img-background-image-hover: url("public/img/theme-img/code-vibes/exit-icon-code-vibes-theme.png");
+  --exit-button-img-background-image: url("../assets/image/theme-img/game/exit-button.svg");
+  --exit-button-img-background-image-hover: url("../assets/image/theme-img/code-vibes/exit-icon-code-vibes-theme.png");
   --exit-button-img-background-box-shadow-hover:
     4px 6px 6px 0 rgba(77, 213, 188, 0.2), inset 0 0 0 2px rgba(77, 213, 188, 1);
   --exit-button-background-color-hover: none;
@@ -79,7 +79,7 @@
   --card-background-img-height: 100%;
   --card-background-img-background-repeat: no-repeat;
   --card-background-img-background-position: center;
-  --card-background-img-background-image: url("public/img/theme-img/code-vibes/card-background-code-vibes.png");
+  --card-background-img-background-image: url("../assets/image/theme-img/code-vibes/card-background-code-vibes.png");
 
   // Dialog
   --dialog-width: 481px;

@@ -28,12 +28,12 @@
   --player-img-width: 22px;
   --player-img-height: 28px;
   --player-img-padding: 4px;
-  --player-background-img-orange: url("./public/img/theme-img/game/chess_pawn_orange.svg");
-  --player-background-img-blue: url("./public/img/theme-img/game/chess_pawn_blue.svg");
+  --player-background-img-orange: url("../assets/image/theme-img/game/chess_pawn_orange.svg");
+  --player-background-img-blue: url("../assets/image/theme-img/game/chess_pawn_blue.svg");
   --player-color-is-displayed: none;
   --player-color-is-displayed-font-size: 24px;
-  --current-player-background-image-orange: url("public/img/theme-img/game/chess_pawn.svg");
-  --current-player-background-image-blue: url("public/img/theme-img/game/chess_pawn.svg");
+  --current-player-background-image-orange: url("../assets/image/theme-img/game/chess_pawn.svg");
+  --current-player-background-image-blue: url("../assets/image/theme-img/game/chess_pawn.svg");
   --current-player-img-width: 25px;
   --current-player-img-height: 32px;
   --current-player-background-color-blue: rgba(9, 127, 197, 1);
@@ -49,8 +49,8 @@
   --exit-button-img-width: 30px;
   --exit-button-img-height: 30px;
   --exit-button-img-left: 16px;
-  --exit-button-img-background-image: url("./public/img/theme-img/game/exit-button.svg");
-  --exit-button-img-background-image-hover: url("public/img/theme-img/game/exit-button-color.svg");
+  --exit-button-img-background-image: url("../assets/image/theme-img/game/exit-button.svg");
+  --exit-button-img-background-image-hover: url("../assets/image/theme-img/game/exit-button-color.svg");
   --exit-button-img-background-box-shadow-hover:
     4px 6px 6px 0 rgba(47, 46, 46, 0.2), inset 0 0 0 2px rgba(231, 28, 79, 1);
   --exit-button-background-color-hover: none;

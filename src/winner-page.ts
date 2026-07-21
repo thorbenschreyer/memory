@@ -56,12 +56,12 @@ function printDrawPage() {
 
   if (winnerScreenTheme === "vibes") {
     winnerImage.src =
-      "public/img/theme-img/code-vibes/draw-code-vibes-theme.png";
+      "../assets/image/theme-img/code-vibes/draw-code-vibes-theme.png";
   } else if (winnerScreenTheme === "gaming") {
-    winnerImage.src = "public/img/theme-img/game/draw_games_theme.png";
+    winnerImage.src = "../assets/image/theme-img/game/draw_games_theme.png";
   } else if (winnerScreenTheme === "project") {
     winnerImage.src =
-      "public/img/theme-img/da-projects/draw-projects-theme.png";
+      "../assets/image/theme-img/da-projects/draw-projects-theme.png";
   }
 }
 
@@ -79,12 +79,12 @@ function printOrangePage() {
 
   if (winnerScreenTheme === "vibes") {
     winnerImage.src =
-      "public/img/theme-img/code-vibes/player-win-orange-code-vibes.png";
+      "../assets/image/theme-img/code-vibes/player-win-orange-code-vibes.png";
   } else if (winnerScreenTheme === "gaming") {
-    winnerImage.src = "public/img/theme-img/game/player-booth-games-theme.png";
+    winnerImage.src = "../assets/image/theme-img/game/player-booth-games-theme.png";
   } else if (winnerScreenTheme === "project") {
     winnerImage.src =
-      "public/img/theme-img/da-projects/win-player-orange-project-theme.png";
+      "../assets/image/theme-img/da-projects/win-player-orange-project-theme.png";
   }
 }
 
@@ -102,11 +102,11 @@ function printBluePage() {
 
   if (winnerScreenTheme === "vibes") {
     winnerImage.src =
-      "public/img/theme-img/code-vibes/player-win-blue-code-vibes.png";
+      "../assets/image/theme-img/code-vibes/player-win-blue-code-vibes.png";
   } else if (winnerScreenTheme === "gaming") {
-    winnerImage.src = "public/img/theme-img/game/player-booth-games-theme.png";
+    winnerImage.src = "../assets/image/theme-img/game/player-booth-games-theme.png";
   } else if (winnerScreenTheme === "project") {
     winnerImage.src =
-      "public/img/theme-img/da-projects/win-player-blue-project-theme.png";
+      "../assets/image/theme-img/da-projects/win-player-blue-project-theme.png";
   }
 }
