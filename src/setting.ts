@@ -1,61 +1,79 @@
-const themeRadios = document.querySelectorAll<HTMLInputElement>(
-  'input[name="theme"]',
-);
-const themeHover = document.querySelectorAll<HTMLLabelElement>(".theme-label");
-const playerRadios = document.querySelectorAll<HTMLInputElement>(
-  'input[name="player"]',
-);
-const sizeRadios =
-  document.querySelectorAll<HTMLInputElement>('input[name="size"]');
-const themeDetails = document.getElementById("gaming-theme")!;
-const playerDetails = document.getElementById("starting-player")!;
-const numberOfCardsDetails = document.getElementById("card-size")!;
-const startButton = document.getElementById("start-button");
-const errorMassage = document.getElementById("error-massage")!;
-const themeImage = document.getElementById("theme-image") as HTMLImageElement;
+import themeCodeVibes from "./assets/image/theme-it-logos.png";
+import themeGaming from "./assets/image/theme-gameing.png";
+import themeProjects from "./assets/image/theme-da-projects.png";
 
-let usedThemeImage: string = "../assets/image/theme-it-logos.png";
+let themeDetails!: HTMLElement;
+let playerDetails!: HTMLElement;
+let numberOfCardsDetails!: HTMLElement;
+let startButton!: HTMLElement;
+let errorMassage!: HTMLElement;
+let themeImage!: HTMLImageElement;
+let usedThemeImage: string = themeCodeVibes;
 let theme: string;
 let player: string;
 let numberOfCards: number;
 
-/* -------------------------------------------------------------------------- */
-/*                              Eventlisteners                                */
-/* -------------------------------------------------------------------------- */
+export function initSettings() {
+  const themeRadios = document.querySelectorAll<HTMLInputElement>(
+    'input[name="theme"]',
+  );
+  const themeHover =
+    document.querySelectorAll<HTMLLabelElement>(".theme-label");
+  const playerRadios = document.querySelectorAll<HTMLInputElement>(
+    'input[name="player"]',
+  );
+  const sizeRadios =
+  document.querySelectorAll<HTMLInputElement>('input[name="size"]');
+  themeDetails = document.getElementById("gaming-theme")!;
+  playerDetails = document.getElementById("starting-player")!;
+  numberOfCardsDetails = document.getElementById("card-size")!;
+  startButton = document.getElementById("start-button")!;
+  errorMassage = document.getElementById("error-massage")!;
+  themeImage = document.getElementById("theme-image") as HTMLImageElement;
 
-/**
- * Determines which theme should be set when the radio buttons are changed and displays this in the gaming bar
- */
-themeRadios.forEach((radio) => {
-  radio.addEventListener("change", () => {
-    theme = radio.value;
-    updatetheme();
+  /* -------------------------------------------------------------------------- */
+  /*                              Eventlisteners                                */
+  /* -------------------------------------------------------------------------- */
+
+  /**
+   * Determines which theme should be set when the radio buttons are changed and displays this in the gaming bar
+   */
+  themeRadios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      theme = radio.value;
+      updatetheme();
+    });
   });
-});
 
-/**
- * Updates the theme preview when hovering over a theme label.
- *
- * When hovering over a label, the value of the corresponding radio button
- * is read, and the corresponding theme image is displayed in the preview.
- *
- * When hovering over the label ends, the most recently selected theme image
- * is displayed again. If no theme has been selected yet, the default image remains active.
- */
+  /**
+   * Updates the theme preview when hovering over a theme label.
+   *
+   * When hovering over a label, the value of the corresponding radio button
+   * is read, and the corresponding theme image is displayed in the preview.
+   *
+   * When hovering over the label ends, the most recently selected theme image
+   * is displayed again. If no theme has been selected yet, the default image remains active.
+   */
 themeHover.forEach((element) => {
-  element?.addEventListener("mouseenter", () => {
+  element.addEventListener("mouseenter", () => {
     const radioValueHover = element.querySelector<HTMLInputElement>(
       'input[name="theme"]',
     );
-    if (!radioValueHover) return;
-    let hoveredElement = radioValueHover.value;
 
-    if (hoveredElement === "vibes") {
-      themeImage.src = "../assets/image/theme-it-logos.png";
-    } else if (hoveredElement === "gaming") {
-      themeImage.src = "../assets/image/theme-gameing.png";
-    } else if (hoveredElement === "project") {
-      themeImage.src = "../assets/image/theme-da-projects.png";
+    if (!radioValueHover) return;
+
+    switch (radioValueHover.value) {
+      case "vibes":
+        themeImage.src = themeCodeVibes;
+        break;
+
+      case "gaming":
+        themeImage.src = themeGaming;
+        break;
+
+      case "project":
+        themeImage.src = themeProjects;
+        break;
     }
   });
 
@@ -64,37 +82,38 @@ themeHover.forEach((element) => {
   });
 });
 
-/**
- * Records which player must be selected when the radio buttons are changed and displays this in the gaming bar
- */
-playerRadios.forEach((radio) => {
-  radio.addEventListener("change", () => {
-    player = radio.value;
-    updatetPlayer();
+  /**
+   * Records which player must be selected when the radio buttons are changed and displays this in the gaming bar
+   */
+  playerRadios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      player = radio.value;
+      updatetPlayer();
+    });
   });
-});
 
-/**
- * Detects which size needs to be set when the radio buttons are changed and displays this in the gaming bar
- */
-sizeRadios.forEach((radio) => {
-  radio.addEventListener("change", () => {
-    numberOfCards = Number(radio.value);
-    updatetNumberofCards();
+  /**
+   * Detects which size needs to be set when the radio buttons are changed and displays this in the gaming bar
+   */
+  sizeRadios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      numberOfCards = Number(radio.value);
+      updatetNumberofCards();
+    });
   });
-});
 
-/**
- * Save the settings for the game in local storage
- */
-startButton?.addEventListener("click", () => {
-  const settings = {
-    theme,
-    player,
-    numberOfCards,
-  };
-  localStorage.setItem("settings", JSON.stringify(settings));
-});
+  /**
+   * Save the settings for the game in local storage
+   */
+  startButton?.addEventListener("click", () => {
+    const settings = {
+      theme,
+      player,
+      numberOfCards,
+    };
+    localStorage.setItem("settings", JSON.stringify(settings));
+  });
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              Functions                                     */
@@ -109,17 +128,18 @@ startButton?.addEventListener("click", () => {
 function updatetheme() {
   if (theme === "vibes") {
     themeDetails.innerText = "Code vibes theme";
-    usedThemeImage = "../assets/image/theme-it-logos.png";
+    usedThemeImage = themeCodeVibes;
     themeImage.src = usedThemeImage;
   } else if (theme === "gaming") {
     themeDetails.innerText = "Gaming theme";
-    usedThemeImage = "../assets/image/theme-gameing.png";
+    usedThemeImage = themeGaming;
     themeImage.src = usedThemeImage;
   } else if (theme === "project") {
     themeDetails.innerText = "DA Projects theme";
-    usedThemeImage = "../assets/image/theme-da-projects.png";
+    usedThemeImage = themeProjects;
     themeImage.src = usedThemeImage;
   }
+
   checkStartValues();
 }
 

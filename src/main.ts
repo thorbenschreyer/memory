@@ -15,3 +15,22 @@ import "./styles/pages/_winner-screen.scss";
 import "./styles/themes/_code-vibes-theme.scss";
 import "./styles/themes/_gaming-theme.scss";
 import "./styles/themes/_da-projects.scss";
+
+// ############### Pages ###############
+import { startPage } from "./template/start-page";
+import { settingsPage } from "./template/settings-page";
+import { initSettings } from "./setting";
+
+
+
+
+const app = document.getElementById("app")!;
+
+app.innerHTML = startPage();
+
+const playButton = document.getElementById("play-button")!;
+
+playButton.addEventListener("click", () => {
+    app.innerHTML = settingsPage();
+    initSettings();
+});
