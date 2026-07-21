@@ -1,7 +1,12 @@
-const themeRadios = document.querySelectorAll<HTMLInputElement>('input[name="theme"]',);
+const themeRadios = document.querySelectorAll<HTMLInputElement>(
+  'input[name="theme"]',
+);
 const themeHover = document.querySelectorAll<HTMLLabelElement>(".theme-label");
-const playerRadios = document.querySelectorAll<HTMLInputElement>('input[name="player"]',);
-const sizeRadios =document.querySelectorAll<HTMLInputElement>('input[name="size"]');
+const playerRadios = document.querySelectorAll<HTMLInputElement>(
+  'input[name="player"]',
+);
+const sizeRadios =
+  document.querySelectorAll<HTMLInputElement>('input[name="size"]');
 const themeDetails = document.getElementById("gaming-theme")!;
 const playerDetails = document.getElementById("starting-player")!;
 const numberOfCardsDetails = document.getElementById("card-size")!;
@@ -9,7 +14,7 @@ const startButton = document.getElementById("start-button");
 const errorMassage = document.getElementById("error-massage")!;
 const themeImage = document.getElementById("theme-image") as HTMLImageElement;
 
-let usedThemeImage:string = "public/img/theme-it-logos.png";
+let usedThemeImage: string = "public/img/theme-it-logos.png";
 let theme: string;
 let player: string;
 let numberOfCards: number;
@@ -17,7 +22,6 @@ let numberOfCards: number;
 /* -------------------------------------------------------------------------- */
 /*                              Eventlisteners                                */
 /* -------------------------------------------------------------------------- */
-
 
 /**
  * Determines which theme should be set when the radio buttons are changed and displays this in the gaming bar
@@ -40,17 +44,19 @@ themeRadios.forEach((radio) => {
  */
 themeHover.forEach((element) => {
   element?.addEventListener("mouseenter", () => {
-    const radioValueHover = element.querySelector<HTMLInputElement>('input[name="theme"]',);
+    const radioValueHover = element.querySelector<HTMLInputElement>(
+      'input[name="theme"]',
+    );
     if (!radioValueHover) return;
     let hoveredElement = radioValueHover.value;
 
     if (hoveredElement === "vibes") {
-        themeImage.src = "public/img/theme-it-logos.png";
-    } else if (hoveredElement === "gaming" ) {
-        themeImage.src = "public/img/theme-gameing.png";
+      themeImage.src = "public/img/theme-it-logos.png";
+    } else if (hoveredElement === "gaming") {
+      themeImage.src = "public/img/theme-gameing.png";
     } else if (hoveredElement === "project") {
-        themeImage.src = "public/img/theme-da-projects.png";
-    } 
+      themeImage.src = "public/img/theme-da-projects.png";
+    }
   });
 
   element.addEventListener("mouseleave", () => {
@@ -81,22 +87,21 @@ sizeRadios.forEach((radio) => {
 /**
  * Save the settings for the game in local storage
  */
-startButton?.addEventListener('click', ()=> {
-    const settings = {
-        theme, 
-        player,
-        numberOfCards
-    }
-    localStorage.setItem("settings", JSON.stringify(settings));
+startButton?.addEventListener("click", () => {
+  const settings = {
+    theme,
+    player,
+    numberOfCards,
+  };
+  localStorage.setItem("settings", JSON.stringify(settings));
 });
-
 
 /* -------------------------------------------------------------------------- */
 /*                              Functions                                     */
 /* -------------------------------------------------------------------------- */
 
 /**
- * Set and save the current theme Image 
+ * Set and save the current theme Image
  * Set the current theme
  * The saved image is used by the hover updating eventlistener themeHover
  * Also check the startvalues for enable/disable the start button
@@ -119,7 +124,7 @@ function updatetheme() {
 }
 
 /**
- * Set the current player 
+ * Set the current player
  * Also check the startvalues for enable/disable the start button
  */
 function updatetPlayer() {

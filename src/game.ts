@@ -250,19 +250,19 @@ function checkWinCondition() {
     scoreBlue === maximumPointsAllowed / 2 &&
     scoreOrange === maximumPointsAllowed / 2
   ) {
-    winner ="Draw"
+    winner = "Draw";
     playerDraw();
   } else if (
     scoreOrange > maximumPointsAllowed / 2 &&
     maximumPointsPlayers === maximumPointsAllowed
   ) {
-    winner = "Orange"
+    winner = "Orange";
     playerOrangeWin();
   } else if (
     scoreBlue > maximumPointsAllowed / 2 &&
     maximumPointsPlayers === maximumPointsAllowed
   ) {
-    winner = "Blue"
+    winner = "Blue";
     playerBlueWin();
   }
   saveWinningValues();
@@ -284,7 +284,7 @@ function saveWinningValues() {
   const winningValues = {
     scoreBlue,
     scoreOrange,
-    winner
+    winner,
   };
   localStorage.setItem("winningValue", JSON.stringify(winningValues));
 }
