@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   scorePlayerBlue.innerText = String(scoreBlue);
   scorePlayerOrange.innerText = String(scoreOrange);
-
+  
   setTimeout(() => {
-    window.location.href = "winner_screen.html";
+    //window.location.href = "winner_screen.html";
   }, 3000);
 });

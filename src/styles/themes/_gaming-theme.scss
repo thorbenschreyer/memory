@@ -174,11 +174,12 @@
   --winning-screen-player-font-size: 64px;
   --winning-screen-player-font-family:
     "Orbitron-Bold", Arial, Helvetica, sans-serif;
-  --winning-screen-player-color: #ea6900;
+  --winning-screen-player-color-orange: rgba(234, 105, 0, 1);
+  --winning-screen-player-color-blue: rgba(34, 152, 219, 1);
+  --winning-screen-player-color-draw: rgba(237, 27, 118, 1);
   --winning-screen-player-letter-spacing: 0.07em;
   --winning-screen-player-margin-bottom: 32px;
 
-  --winning-screen-img-background-image: url("public/img/theme-img/game/player-booth-games-theme.png");
   --winning-screen-img-width: 288px;
   --winning-screen-img-height: 344px;
   --winning-screen-img-letter-spacing: 0.07em;

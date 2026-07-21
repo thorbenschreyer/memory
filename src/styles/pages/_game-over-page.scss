@@ -23,7 +23,9 @@
     font-size: var(--game-over-score-fontsize);
     color: var(--game-over-score-header-color);
     text-align: var(--game-over-score-header-text-align);
-    font-family: var(--game-over-score-header-font-family);
+    font-family: var(--game-over-score-header-font-family);    
+    margin-right: 8px
+
   }
 
   &_overview {
@@ -55,5 +57,10 @@
     &--orange {
       color: var(--game-over-score-player-two-color);
     }
+  }
+
+  .header-menu__score--player {
+    display: flex;
+    align-items: center;
   }
 }

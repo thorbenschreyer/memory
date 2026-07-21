@@ -130,7 +130,7 @@
   --game-over-score-header-color: #ffffff;
   --game-over-score-header-text-align: center;
   --game-over-score-header-font-family:
-    "Red-Rose-regular", Arial, Helvetica, sans-serif;
+    "Red-Rose-bold", Arial, Helvetica, sans-serif;
 
   --game-over-score-overview-display: flex;
   --game-over-score-overview-align-items: center;
@@ -167,11 +167,12 @@
   --winning-screen-player-font-family:
     "Red-Rose-bold", Arial, Helvetica, sans-serif;
   --winning-screen-player-uppercase: uppercase;
-  --winning-screen-player-color: #ea6900;
+  --winning-screen-player-color-orange: rgba(245, 142, 57, 1);
+  --winning-screen-player-color-blue: rgba(43, 177, 255, 1);
+  --winning-screen-player-color-draw: rgba(77, 213, 188, 1);
   --winning-screen-player-letter-spacing: 0.07em;
   --winning-screen-player-margin-bottom: 32px;
 
-  --winning-screen-img-background-image: url("public/img/theme-img/code-vibes/player-win-orange-code-vibes.png");
   --winning-screen-img-width: 288px;
   --winning-screen-img-height: 344px;
   --winning-screen-img-letter-spacing: 0.07em;
@@ -196,4 +197,5 @@
   --winning-screen-confetti-display: block;
   --winning-screen-confetti-width: 90%;
   --winning-screen-confetti-margin-top: -90px;
+  --winner-screen-background-color: rgb(48, 49, 49);
 }

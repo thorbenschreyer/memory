@@ -250,19 +250,20 @@ function checkWinCondition() {
     scoreBlue === maximumPointsAllowed / 2 &&
     scoreOrange === maximumPointsAllowed / 2
   ) {
+    winner ="Draw"
     playerDraw();
   } else if (
     scoreOrange > maximumPointsAllowed / 2 &&
     maximumPointsPlayers === maximumPointsAllowed
   ) {
-    playerOrangeWin();
     winner = "Orange"
+    playerOrangeWin();
   } else if (
     scoreBlue > maximumPointsAllowed / 2 &&
     maximumPointsPlayers === maximumPointsAllowed
   ) {
-    playerBlueWin();
     winner = "Blue"
+    playerBlueWin();
   }
   saveWinningValues();
 }

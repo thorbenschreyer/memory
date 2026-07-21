@@ -167,11 +167,12 @@
   --winning-screen-player-font-size: 80px;
   --winning-screen-player-font-family:
     "Figtree-bold", Arial, Helvetica, sans-serif;
-  --winning-screen-player-color: #ffffff;
+  --winning-screen-player-color-orange: #ffffff;
+  --winning-screen-player-color-blue: #ffffff;
+  --winning-screen-player-color-draw: rgba(253, 91, 79, 1);
   --winning-screen-player-letter-spacing: 0;
   --winning-screen-player-margin-bottom: 32px;
 
-  --winning-screen-img-background-image: url("public/img/theme-img/da-projects/win-player-orange-project-theme.png");
   --winning-screen-img-width: 288px;
   --winning-screen-img-height: 344px;
   --winning-screen-img-letter-spacing: 0.07em;

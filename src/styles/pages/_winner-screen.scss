@@ -23,13 +23,23 @@
     font-size: var(--winning-screen-player-font-size);
     font-family: var(--winning-screen-player-font-family);
     text-transform: var(--winning-screen-player-uppercase);
-    color: var(--winning-screen-player-color);
     letter-spacing: var(--winning-screen-player-letter-spacing);
     margin-bottom: var(--winning-screen-player-margin-bottom);
+
+    &--orange{
+      color: var(--winning-screen-player-color-orange);
+    }
+
+    &--blue{
+      color: var(--winning-screen-player-color-blue);
+    }
+
+    &--draw {
+      color: var(--winning-screen-player-color-draw);
+    }
   }
 
   &_img {
-    background-image: var(--winning-screen-img-background-image);
     width: var(--winning-screen-img-width);
     height: var(--winning-screen-img-height);
     letter-spacing: var(--winning-screen-img-letter-spacing);
