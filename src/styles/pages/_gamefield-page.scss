@@ -49,23 +49,23 @@
     transition: all ease-in-out 200ms;
     background-image: var(--exit-button-img-background-image);
     margin-right: 32px;
+
+    &--hover {
+      position: absolute;
+      opacity: 0;
+      width: var(--exit-button-img-width);
+      height: var(--exit-button-img-height);
+      left: var(--exit-button-img-left);
+      transition: all ease-in-out 200ms;
+      background-image: var(--exit-button-img-background-image-hover);
+    }
   }
 
-  &--hover {
-    position: absolute;
+  &:hover .exit-button__img {
     opacity: 0;
-    width: var(--exit-button-img-width);
-    height: var(--exit-button-img-height);
-    left: var(--exit-button-img-left);
-    transition: all ease-in-out 200ms;
-    background-image: var(--exit-button-img-background-image-hover);
   }
 
-  &:hover .exit-img {
-    opacity: 0;
-  }
-
-  &:hover .exit-img-hover {
+  &:hover .exit-button__img--hover {
     opacity: 1;
   }
 }
