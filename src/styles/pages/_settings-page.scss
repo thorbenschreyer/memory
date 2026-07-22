@@ -26,13 +26,11 @@
   }
 }
 
-
 .settings--content > section {
   display: flex;
   justify-content: space-between;
   position: relative;
 }
-
 
 /* -------------------------------------------------------------------------- */
 /*                              Settings Groups                               */
@@ -46,7 +44,6 @@
   border: 0;
 }
 
-
 .settings-group {
   min-width: 0;
   margin: 0;
@@ -57,7 +54,6 @@
     margin-top: 64px;
   }
 }
-
 
 .settings-detail__header {
   display: flex;
@@ -75,12 +71,11 @@
   }
 }
 
-
 .settings-detail__radiobutton {
   cursor: pointer;
   display: flex;
   align-items: center;
-
+  transition: font-weight 0.2s ease;
   font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
   font-size: 20px;
 
@@ -95,7 +90,7 @@
 
     margin: 0 8px 0 0;
 
-    border: 3px solid rgba(48, 49, 49, 1);
+    border: 2px solid rgba(48, 49, 49, 1);
     border-radius: 50%;
 
     background: white;
@@ -109,8 +104,8 @@
 
       position: absolute;
 
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
 
       top: 50%;
       left: 50%;
@@ -131,28 +126,30 @@
       outline-offset: 3px;
     }
   }
-
+  &:hover,
   &:has(input:checked) {
     font-family: "Almarai-Bold";
 
     > input[type="radio"] {
-      border: 2px solid rgba(48, 49, 49, 1);
+      border: 1px solid rgba(48, 49, 49, 1);
+
+      &::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
     }
   }
 }
-
 
 .settings-detail__radiobutton-image {
   display: none;
   margin-left: 8px;
 }
 
-
+.settings-detail__radiobutton:hover .settings-detail__radiobutton-image,
 .settings-detail__radiobutton:has(input:checked)
   .settings-detail__radiobutton-image {
   display: block;
 }
-
 
 /* -------------------------------------------------------------------------- */
 /*                              Preview Area                                  */
@@ -169,7 +166,6 @@
   }
 }
 
-
 .show-settings__details {
   @include flex.flex-vertical-center;
 
@@ -182,13 +178,27 @@
   font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
   font-size: 20px;
 
-  width: 560px;
+  width: 575px;
 
   > span:last-of-type {
     margin-right: 16px;
   }
-}
 
+  &--gaming-text {
+    width: 180px;
+    text-align: center;
+  }
+
+  &--player-text {
+    width: 135px;
+    text-align: center;
+  }
+
+  &--bord-size-text {
+    width: 100px;
+    text-align: center;
+  }
+}
 
 .error-message {
   font-family: "Red-Rose-bold";

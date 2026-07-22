@@ -184,7 +184,6 @@ function updatetNumberofCards() {
 function checkStartValues() {
   if (theme && player && numberOfCards) {
     startButton?.classList.remove("isDisabled");
-    errorMassage.innerText = "";
   } else {
     startButton?.classList.add("isDisabled");
   }

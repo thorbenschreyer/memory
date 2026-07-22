@@ -72,7 +72,6 @@
 }
 
 .score-board {
-  width: var(--header-element-width);
   height: var(--header-element-height);
   background-color: var(--score-bord-background-color);
   border-radius: var(--header-element-radius);
@@ -85,7 +84,8 @@
     justify-content: space-between;
     padding: var(--score-bord-score-text-padding);
     font-size: var(--score-bord-score-text-font-size);
-    width: 160px;
+    
+    margin-left: 8px;
 
     &--add-color {
       display: var(--player-color-is-displayed);

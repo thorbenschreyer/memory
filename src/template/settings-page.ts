@@ -138,15 +138,15 @@ export function settingsPage() {
 
             <section class="show-settings__details">
 
-              <span id="gaming-theme">Game theme</span>
+              <span class="show-settings__details--gaming-text" id="gaming-theme">Game theme</span>
 
               <img src="${settingsMenuLine}" alt="">
 
-              <span id="starting-player">Player</span>
+              <span class="show-settings__details--player-text" id="starting-player">Player</span>
 
               <img src="${settingsMenuLine}" alt="">
 
-              <span id="card-size">Board size</span>
+              <span class="show-settings__details--bord-size-text" id="card-size">Board size</span>
 
               <button
                 id="start-button"
