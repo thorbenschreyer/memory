@@ -37,6 +37,11 @@ playButton.addEventListener("click", () => {
   initSettings();
 });
 
+export function showSettingsPage() {
+  app.innerHTML = settingsPage();
+  initSettings();
+}
+
 export function showGamePage() {
   saveSettings();
   app.innerHTML = gamePage();

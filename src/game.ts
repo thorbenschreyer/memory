@@ -2,7 +2,7 @@
  * Imports the template functions used to generate the game field and cards.
  */
 import { printCard, cardFieldColumn } from "./template/template-functions";
-import { showGameOverPage } from "./main";
+import { showGameOverPage, showSettingsPage } from "./main";
 import {
   codeVibesArray,
   daProjectArray,
@@ -185,7 +185,7 @@ export function initGame() {
   */
   dialogExitGameButton?.addEventListener("click", () => {
     localStorage.clear();
-    window.location.href = "index.html";
+    showSettingsPage() 
   });
 
   /* -------------------------------------------------------------------------- */

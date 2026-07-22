@@ -2,7 +2,6 @@ import drawCodeVibes from "./assets/image/theme-img/code-vibes/draw-code-vibes-t
 import drawGaming from "./assets/image/theme-img/game/draw_games_theme.png";
 import drawProjects from "./assets/image/theme-img/da-projects/draw-projects-theme.png";
 
-
 import orangeWinCodeVibes from "./assets/image/theme-img/code-vibes/player-win-orange-code-vibes.png";
 import orangeWinGaming from "./assets/image/theme-img/game/player-booth-games-theme.png";
 import orangeWinProjects from "./assets/image/theme-img/da-projects/win-player-orange-project-theme.png";
@@ -11,7 +10,7 @@ import blueWinCodeVibes from "./assets/image/theme-img/code-vibes/player-win-blu
 import blueWinGaming from "./assets/image/theme-img/game/player-booth-games-theme.png";
 import blueWinProjects from "./assets/image/theme-img/da-projects/win-player-blue-project-theme.png";
 
-import {showStartPage} from "./main"
+import { showSettingsPage } from "./main";
 
 export function initWinnerPage() {
   let winningPlayer: string;
@@ -38,9 +37,9 @@ export function initWinnerPage() {
 
   showWinningplayer();
 
-  homeButton.addEventListener('click', () => {
-    showStartPage();
-  })
+  homeButton.addEventListener("click", () => {
+    showSettingsPage();
+  });
 
   /**
    * Determines which result screen should be displayed.

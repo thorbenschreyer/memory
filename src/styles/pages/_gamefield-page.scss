@@ -176,6 +176,7 @@
 .card {
   width: var(--card-width);
   height: var(--card-eight);
+  cursor: pointer;
 
   &--margin-16cards {
     margin: 8px;
