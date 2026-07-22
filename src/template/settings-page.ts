@@ -9,94 +9,135 @@ import settingsStartButton from "../assets/image/settings-start-button.png";
 
 export function settingsPage() {
   return `
-    <div class="settings">
-      <div class="flex-collum">
+    <main class="settings">
 
-        <div class="settings--content__header">
+      <section class="settings--content">
+
+        <header class="settings--content__header">
           <h1>Settings</h1>
           <img src="${settingsHeaderLine}" alt="">
-        </div>
+        </header>
 
-        <div class="settings--content">
+        <section class="settings--content">
 
-          <div class="settings-detail">
+          <form class="settings-detail">
 
-            <div class="flex-collumn">
-              <div class="settings-detail__header">
+            <fieldset class="settings-group flex-collumn">
+              <legend class="settings-detail__header">
                 <img src="${settingsPalette}" alt="">
                 <span>Game themes</span>
-              </div>
+              </legend>
 
               <label class="settings-detail__radiobutton theme-label">
                 <input type="radio" name="theme" value="vibes">
                 Code vibes theme
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
 
               <label class="settings-detail__radiobutton theme-label">
                 <input type="radio" name="theme" value="gaming">
                 Gaming theme
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
 
               <label class="settings-detail__radiobutton theme-label">
                 <input type="radio" name="theme" value="project">
                 DA Projects theme
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
-            </div>
+            </fieldset>
 
-            <div class="flex-collumn">
-              <div class="settings-detail__header">
+
+            <fieldset class="settings-group flex-collumn">
+              <legend class="settings-detail__header">
                 <img src="${settingsChess}" alt="">
                 <span>Choose player</span>
-              </div>
+              </legend>
 
               <label class="settings-detail__radiobutton">
                 <input type="radio" name="player" value="blue">
                 Blue
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
 
               <label class="settings-detail__radiobutton">
                 <input type="radio" name="player" value="orange">
                 Orange
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
-            </div>
+            </fieldset>
 
-            <div class="flex-collumn">
-              <div class="settings-detail__header">
+
+            <fieldset class="settings-group flex-collumn">
+              <legend class="settings-detail__header">
                 <img src="${settingsCards}" alt="">
                 <span>Board size</span>
-              </div>
+              </legend>
 
               <label class="settings-detail__radiobutton">
                 <input type="radio" name="size" value="16">
                 16 cards
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
 
               <label class="settings-detail__radiobutton">
                 <input type="radio" name="size" value="24">
                 24 cards
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
 
               <label class="settings-detail__radiobutton">
                 <input type="radio" name="size" value="36">
                 36 cards
-                <img class="settings-detail__radiobutton-image" src="${settingsLine}" alt="">
+                <img
+                  class="settings-detail__radiobutton-image"
+                  src="${settingsLine}"
+                  alt=""
+                >
               </label>
-            </div>
+            </fieldset>
 
-          </div>
+          </form>
 
-          <div class="show-settings--area">
 
-            <img id="theme-image" src="${themeImageDefault}" alt="">
+          <aside class="show-settings--area">
 
-            <div class="show-settings__details">
+            <img
+              id="theme-image"
+              src="${themeImageDefault}"
+              alt=""
+            >
+
+            <section class="show-settings__details">
+
               <span id="gaming-theme">Game theme</span>
 
               <img src="${settingsMenuLine}" alt="">
@@ -109,23 +150,24 @@ export function settingsPage() {
 
               <button
                 id="start-button"
-                class="button button--primary button--primary__settings isDisabled">
-
+                class="button button--primary button--primary__settings isDisabled"
+              >
                 <img src="${settingsStartButton}" alt="">
                 <span>Start</span>
-
               </button>
-            </div>
 
-            <p class="error-massage" id="error-massage">
+            </section>
+
+            <p class="error-message" id="error-message">
               Choose a theme, a player, and the board size to get started.
             </p>
 
-          </div>
+          </aside>
 
-        </div>
+        </section>
 
-      </div>
-    </div>
+      </section>
+
+    </main>
   `;
 }

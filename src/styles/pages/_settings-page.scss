@@ -1,154 +1,197 @@
 @use "../layout/flex";
 
 .settings {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
   &--content {
     width: 1100px;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+  }
+
+  &--content__header {
+    font-family: "Red-Rose-bold";
+    font-size: 54px;
+    margin-bottom: 64px;
     position: relative;
 
-    &__header {
-      font-family: "Red-Rose-bold";
-      font-size: 54px;
-      margin-bottom: 64px;
-      position: relative;
-
-      > img {
-        position: absolute;
-        bottom: -24px;
-        left: -24px;
-        width: 480px;
-      }
+    > img {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      width: 480px;
     }
   }
-
-  &__size {
-    display: flex;
-    flex-direction: column;
-  }
 }
+
+
+.settings--content > section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                              Settings Groups                               */
+/* -------------------------------------------------------------------------- */
 
 .settings-detail {
-  &__header {
-    font-family: "Almarai-Bold", Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    color: rgba(48, 49, 49, 1);
-    margin: 64px 0px 24px 0px;
-    @include flex.flex-vertical-center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
-    > img {
-      margin-right: 8px;
-    }
+
+.settings-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  &:not(:first-child) {
+    margin-top: 64px;
   }
+}
 
-  .flex-collumn:first-child &__header {
-    margin-top: 0;
+
+.settings-detail__header {
+  display: flex;
+  align-items: center;
+
+  font-family: "Almarai-Bold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: rgba(48, 49, 49, 1);
+
+  margin: 0 0 24px 0;
+  padding: 0;
+
+  > img {
+    margin-right: 8px;
   }
+}
 
-  &__radiobutton {
+
+.settings-detail__radiobutton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+
+  padding: 6px;
+  margin-left: 40px;
+
+  > input[type="radio"] {
+    appearance: none;
+
+    width: 22px;
+    height: 22px;
+
+    margin: 0 8px 0 0;
+
+    border: 3px solid rgba(48, 49, 49, 1);
+    border-radius: 50%;
+
+    background: white;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    padding: 6px;
-    margin-left: 40px;
 
-    > input {
-      margin-right: 8px;
+    position: relative;
+    transition: 0.2s;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      width: 10px;
+      height: 10px;
+
+      top: 50%;
+      left: 50%;
+
+      border-radius: 50%;
+      background: rgba(48, 49, 49, 1);
+
+      transform: translate(-50%, -50%) scale(0);
+      transition: 0.2s;
     }
+
+    &:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    &:focus-visible {
+      outline: 3px solid #8ec5ff;
+      outline-offset: 3px;
+    }
+  }
+
+  &:has(input:checked) {
+    font-family: "Almarai-Bold";
 
     > input[type="radio"] {
-      appearance: none;
-      width: 22px;
-      height: 22px;
-      margin-right: 8px;
-      border: 3px solid rgba(48, 49, 49, 1);
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-      position: relative;
-      transition: 0.2s;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: 50%;
-        left: 50%;
-        border-radius: 50%;
-        background: rgba(48, 49, 49, 1);
-        transform: translate(-50%, -50%) scale(0);
-        transition: 0.2s;
-      }
-
-      &:checked::before {
-        transform: translate(-50%, -50%) scale(1);
-
-        &:focus-visible {
-          outline: 3px solid #8ec5ff;
-          outline-offset: 3px;
-        }
-      }
-    }
-
-    &:has(input:checked) {
-      font-family: "Almarai-Bold";
-
-      > input[type="radio"] {
-        border: 2px solid rgba(48, 49, 49, 1);
-      }
-    }
-  }
-
-  &__radiobutton-image {
-    margin-left: 8px;
-  }
-}
-
-.show-settings {
-  &--area {
-    @include flex.flex-collumn-space;
-    align-items: end;
-
-    > img {
-      width: 460px;
-      height: 412px;
-    }
-  }
-
-  &__details {
-    @include flex.flex-vertical-center;
-    justify-content: end;
-    background-color: rgba(246, 246, 246, 1);
-    padding: 16px;
-    font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    width: 560px;
-
-    > span:last-of-type {
-      margin-right: 16px;
+      border: 2px solid rgba(48, 49, 49, 1);
     }
   }
 }
 
-.error-massage {
-  font-family: "Red-Rose-bold";
-  color: rgb(170, 163, 163);
-  height: 16px;
-}
 
 .settings-detail__radiobutton-image {
   display: none;
+  margin-left: 8px;
 }
+
 
 .settings-detail__radiobutton:has(input:checked)
   .settings-detail__radiobutton-image {
   display: block;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                              Preview Area                                  */
+/* -------------------------------------------------------------------------- */
+
+.show-settings--area {
+  @include flex.flex-collumn-space;
+
+  align-items: end;
+
+  > img {
+    width: 460px;
+    height: 412px;
+  }
+}
+
+
+.show-settings__details {
+  @include flex.flex-vertical-center;
+
+  justify-content: end;
+
+  background-color: rgba(246, 246, 246, 1);
+
+  padding: 16px;
+
+  font-family: "Almarai-Regular", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+
+  width: 560px;
+
+  > span:last-of-type {
+    margin-right: 16px;
+  }
+}
+
+
+.error-message {
+  font-family: "Red-Rose-bold";
+  color: rgb(170, 163, 163);
+  height: 16px;
 }
