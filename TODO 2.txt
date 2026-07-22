@@ -1,0 +1,6 @@
+Ordner IMG Verschieben und alle neu verlinken
+public/img/ -> 
+
+Ordner Font verschieben und neu verlinken
+
+alle html dateien umbauen so dass diese als SAP laufen
