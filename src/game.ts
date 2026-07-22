@@ -230,41 +230,66 @@ form a matching pair.
 After the comparison, the stored card data is reset so that the next pair
 can be selected.
 */
-  function flipCard() {
-    const fieldRef = document.getElementById("game-field");
-    if (!fieldRef) {
+function flipCard() {
+  const fieldRef = document.getElementById("game-field");
+
+  if (!fieldRef) {
+    return;
+  }
+
+  let firstCard: HTMLElement | null = null;
+  let firstImageSrc: string | null = null;
+
+  let isComparing = false;
+
+  fieldRef.addEventListener("click", (e) => {
+    // Keine weiteren Karten anklickbar,
+    // solange das aktuelle Paar verarbeitet wird
+    if (isComparing) {
       return;
     }
-    let firstCard: HTMLElement | null = null;
-    let firstImageSrc: string | null = null;
-    fieldRef.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement;
-      const card = target.closest(".card") as HTMLElement;
-      if (
-        !card ||
-        card.classList.contains("is-solved") ||
-        card.classList.contains("no-click-again")
-      ) {
-        return;
-      }
-      const img = card.querySelector(
-        ".card__face--back img",
-      ) as HTMLImageElement;
-      if (!img) {
-        return;
-      }
-      card.classList.add("is-flipped");
-      if (!firstCard) {
-        firstCard = card;
-        firstImageSrc = img.src;
-        card.classList.add("no-click-again");
-        return;
-      }
-      compareCards(firstCard, card, firstImageSrc, img.src);
-      firstCard = null;
-      firstImageSrc = null;
-    });
-  }
+
+    const target = e.target as HTMLElement;
+    const card = target.closest(".card") as HTMLElement;
+
+    if (
+      !card ||
+      card.classList.contains("is-solved") ||
+      card.classList.contains("no-click-again")
+    ) {
+      return;
+    }
+
+    const img = card.querySelector(
+      ".card__face--back img",
+    ) as HTMLImageElement;
+
+    if (!img) {
+      return;
+    }
+
+    card.classList.add("is-flipped");
+
+    if (!firstCard) {
+      firstCard = card;
+      firstImageSrc = img.src;
+      card.classList.add("no-click-again");
+      return;
+    }
+
+    // Ab jetzt sind genau zwei Karten aufgedeckt
+    isComparing = true;
+
+    compareCards( firstCard, card, firstImageSrc, img.src, () => {
+        isComparing = false;},
+    );
+
+    firstCard = null;
+    firstImageSrc = null;
+  });
+}
+
+
 
   /**
 Compares two selected cards to determine whether they form a matching pair.
@@ -278,32 +303,44 @@ turned face down again after a short delay.
 
 After each comparison, the score and the win condition are updated.
 */
-  function compareCards(
-    firstCard: HTMLElement,
-    secondCard: HTMLElement,
-    firstImageSrc: string | null,
-    secondImageSrc: string,
-  ) {
-    if (firstImageSrc === secondImageSrc) {
-      firstCard.classList.add("is-solved");
-      secondCard.classList.add("is-solved");
-      if (currentPlayer === "blue") {
-        scoreBlue++;
-      }
-      if (currentPlayer === "orange") {
-        scoreOrange++;
-      }
-      maximumPointsPlayers++;
-    } else {
-      changePlayer();
-      setTimeout(() => {
-        firstCard.classList.remove("is-flipped", "no-click-again");
-        secondCard.classList.remove("is-flipped");
-      }, 1000);
+function compareCards(
+  firstCard: HTMLElement,
+  secondCard: HTMLElement,
+  firstImageSrc: string | null,
+  secondImageSrc: string,
+  onFinished: () => void,
+) {
+  if (firstImageSrc === secondImageSrc) {
+    firstCard.classList.add("is-solved");
+    secondCard.classList.add("is-solved");
+
+    if (currentPlayer === "blue") {
+      scoreBlue++;
     }
+
+    if (currentPlayer === "orange") {
+      scoreOrange++;
+    }
+
+    maximumPointsPlayers++;
+
     updateScore();
     checkWinCondition();
+
+    // Bei einem richtigen Paar sofort wieder freigeben
+    onFinished();
+  } else {
+    changePlayer();
+
+    setTimeout(() => {
+      firstCard.classList.remove("is-flipped", "no-click-again");
+      secondCard.classList.remove("is-flipped");
+
+      // Erst nach dem Umdrehen wieder freigeben
+      onFinished();
+    }, 1000);
   }
+}
 
   /**
 
