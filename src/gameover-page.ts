@@ -1,4 +1,3 @@
-import {showWinnerPage} from "./main"
 let scoreOrange: number;
 let scoreBlue: number;
 
@@ -14,26 +13,13 @@ export function initGameOverPage() {
 * The scores are displayed on the game-over screen. After a short delay,
 * the user is automatically redirected to the winner screen.
   */
-  document.addEventListener("DOMContentLoaded", () => {
-    const winningValue = JSON.parse(
-      localStorage.getItem("winningValue") ?? "{}",
-    );
-    const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
-
-    scoreOrange = winningValue.scoreOrange;
-    scoreBlue = winningValue.scoreBlue;
-
-    document.body.dataset.theme = settings.theme;
-
-    scorePlayerBlue.innerText = String(scoreBlue);
-    scorePlayerOrange.innerText = String(scoreOrange);
-
-    /**
-
-* Redirects the user to the winner screen after three seconds.
-  */
-    setTimeout(() => {
-      showWinnerPage();
-    }, 3000);
-  });
+  const winningValue = JSON.parse(localStorage.getItem("winningValue") ?? "{}");
+  console.log("Aus LocalStorage gelesen:", winningValue);
+  console.log("Blue Score:", winningValue.scoreBlue);
+  console.log("Orange Score:", winningValue.scoreOrange);
+  let orange = String(winningValue.scoreOrange);
+  let blue = String(winningValue.scoreBlue); 
+  
+  scorePlayerBlue.innerText = blue;
+  scorePlayerOrange.innerText = orange;
 }

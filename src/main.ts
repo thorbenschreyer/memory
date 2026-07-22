@@ -25,15 +25,13 @@ import { initGame } from "./game";
 import { saveSettings } from "./setting";
 import { gameOverPage } from "./template/game-over-page";
 import { winnerPage } from "./template/winner-screen";
-import {initGameOverPage} from "./gameover-page"
-import {initWinnerPage} from "./winner-page"
+import { initGameOverPage } from "./gameover-page";
+import { initWinnerPage } from "./winner-page";
 
 const app = document.getElementById("app")!;
 
 app.innerHTML = startPage();
-
 const playButton = document.getElementById("play-button")!;
-
 playButton.addEventListener("click", () => {
   app.innerHTML = settingsPage();
   initSettings();
@@ -47,11 +45,21 @@ export function showGamePage() {
 }
 
 export function showGameOverPage() {
-    app.innerHTML = gameOverPage();
-    initGameOverPage()
+  app.innerHTML = gameOverPage();
+  initGameOverPage();
+  setTimeout(() => {
+    app.innerHTML = winnerPage();
+    initWinnerPage();
+  }, 8000);
 }
 
-export function showWinnerPage() {
-    app.innerHTML = winnerPage();
-    initWinnerPage()
+export function showStartPage() {
+  app.innerHTML = startPage();
+
+  const playButton = document.getElementById("play-button")!;
+
+  playButton.addEventListener("click", () => {
+    app.innerHTML = settingsPage();
+    initSettings();
+  });
 }

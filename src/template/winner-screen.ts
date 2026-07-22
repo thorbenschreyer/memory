@@ -25,9 +25,9 @@ export function winnerPage() {
           alt=""
         >
 
-        <a href="./index.html" class="winner-screen__button">
+        <button id="homebutton" class="winner-screen__button">
           <span>HOME</span>
-        </a>
+        </button>
       </div>
     </div>
   `;

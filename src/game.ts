@@ -2,7 +2,7 @@
  * Imports the template functions used to generate the game field and cards.
  */
 import { printCard, cardFieldColumn } from "./template/template-functions";
-import { showGameOverPage } from "./main"
+import { showGameOverPage } from "./main";
 import {
   codeVibesArray,
   daProjectArray,
@@ -313,29 +313,21 @@ After each comparison, the score and the win condition are updated.
 * A player wins when all pairs have been found and their score is higher
 * than the other player's score.
   */
-  function checkWinCondition() {
-    if (
-      scoreBlue === maximumPointsAllowed / 2 &&
-      scoreOrange === maximumPointsAllowed / 2
-    ) {
-      winner = "Draw";
-      showGameOverPage()
-    } else if (
-      scoreOrange > maximumPointsAllowed / 2 &&
-      maximumPointsPlayers === maximumPointsAllowed
-    ) {
-      winner = "Orange";
-      showGameOverPage()
-    } else if (
-      scoreBlue > maximumPointsAllowed / 2 &&
-      maximumPointsPlayers === maximumPointsAllowed
-    ) {
-      winner = "Blue";
-      showGameOverPage()
-    }
-
-    saveWinningValues();
+function checkWinCondition() {
+  if (maximumPointsPlayers !== maximumPointsAllowed) {
+    return;
   }
+
+  if (scoreBlue > scoreOrange) {
+    winner = "Blue";
+  } else if (scoreOrange > scoreBlue) {
+    winner = "Orange";
+  } else {
+    winner = "Draw";
+  }
+
+  saveWinningValues();
+}
 
   /**
 
@@ -349,7 +341,8 @@ After each comparison, the score and the win condition are updated.
       scoreOrange,
       winner,
     };
-
+    console.log("Wird gespeichert:", winningValues);
     localStorage.setItem("winningValue", JSON.stringify(winningValues));
+    showGameOverPage();
   }
 }
