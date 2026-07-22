@@ -50,7 +50,7 @@ export function showGameOverPage() {
   setTimeout(() => {
     app.innerHTML = winnerPage();
     initWinnerPage();
-  }, 8000);
+  }, 3000);
 }
 
 export function showStartPage() {

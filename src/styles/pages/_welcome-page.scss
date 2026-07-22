@@ -1,15 +1,12 @@
 @use "../layout/flex";
 
 .welcome-page {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: rgba(48, 49, 49);
   color: rgba(255, 255, 255, 1);
 
-  > img {
-    position: absolute;
-    bottom: 24px;
-  }
 
   &-content {
     width: 100%;
@@ -42,4 +39,9 @@
     font-weight: 500;
     margin-bottom: 64px;
   }
+}
+
+.welcome-page-img {
+  position: absolute;
+  bottom: 24px;
 }

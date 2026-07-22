@@ -1,4 +1,4 @@
-import controllerButton from "../assets/image/controller_button.png";
+import controllerButton from "../assets/image/controller_button.svg";
 import arrowRight from "../assets/image/arrow_right.png";
 import arrowHover from "../assets/image/arrow-hover.png";
 import controllerWelcome from "../assets/image/controller_welcomepage.png";
@@ -19,6 +19,6 @@ export function startPage() {
       </div>
     </div>
 
-    <img src="${controllerWelcome}" alt="Controller Icon" />
+    <img class="welcome-page-img" src="${controllerWelcome}" alt="Controller Icon" />
   `;
 }
