@@ -1,55 +1,100 @@
-// ############### Other ###############
+/* -------------------------------------------------------------------------- */
+/*                                  Styles                                    */
+/* -------------------------------------------------------------------------- */
+
+// Base styles
 import "./styles/style.scss";
-import "./styles/components/_button.scss";
-import "./styles/layout/_flex.scss";
 import "./styles/base/_all-pages.scss";
 
-// ############### Pages ###############
+// Layout
+import "./styles/layout/_flex.scss";
+
+// Components
+import "./styles/components/_button.scss";
+
+// Pages
 import "./styles/pages/_welcome-page.scss";
 import "./styles/pages/_settings-page.scss";
 import "./styles/pages/_gamefield-page.scss";
 import "./styles/pages/_game-over-page.scss";
 import "./styles/pages/_winner-screen.scss";
 
-// ############### Themes ###############
+// Themes
 import "./styles/themes/_code-vibes-theme.scss";
 import "./styles/themes/_gaming-theme.scss";
 import "./styles/themes/_da-projects.scss";
 
-// ############### Pages ###############
+/* -------------------------------------------------------------------------- */
+/*                              Page Templates                                */
+/* -------------------------------------------------------------------------- */
+
 import { startPage } from "./template/start-page";
 import { settingsPage } from "./template/settings-page";
-import { initSettings } from "./setting";
 import { gamePage } from "./template/game-page";
-import { initGame } from "./game";
-import { saveSettings } from "./setting";
 import { gameOverPage } from "./template/game-over-page";
 import { winnerPage } from "./template/winner-screen";
+
+/* -------------------------------------------------------------------------- */
+/*                          Page Initialization                               */
+/* -------------------------------------------------------------------------- */
+
+import { initSettings, saveSettings } from "./setting";
+import { initGame } from "./game";
 import { initGameOverPage } from "./gameover-page";
 import { initWinnerPage } from "./winner-page";
 
+/* -------------------------------------------------------------------------- */
+/*                              Application                                   */
+/* -------------------------------------------------------------------------- */
+
 const app = document.getElementById("app")!;
 
-app.innerHTML = startPage();
-const playButton = document.getElementById("play-button")!;
-playButton.addEventListener("click", () => {
-  app.innerHTML = settingsPage();
-  initSettings();
-});
+/**
+ * Displays the start page and initializes its navigation.
+ *
+ * The start page is the first page displayed when the application loads.
+ * The play button navigates the user to the settings page.
+ *
+ * @returns {void}
+ */
+export function showStartPage(): void {
+  app.innerHTML = startPage();
+  const playButton = document.getElementById("play-button")!;
+  playButton.addEventListener("click", showSettingsPage);
+}
 
-export function showSettingsPage() {
+/**
+ * Displays the settings page and initializes the settings logic.
+ *
+ * @returns {void}
+ */
+export function showSettingsPage(): void {
   app.innerHTML = settingsPage();
   initSettings();
 }
 
-export function showGamePage() {
+/**
+ * Displays the game page and initializes the game.
+ *
+ * The current game settings are saved before the game page is displayed.
+ *
+ * @returns {void}
+ */
+export function showGamePage(): void {
   saveSettings();
   app.innerHTML = gamePage();
-
   initGame();
 }
 
-export function showGameOverPage() {
+/**
+
+* Displays the game-over page and initializes the final score display.
+*
+* After a short delay, the winner screen is displayed automatically.
+*
+* @returns {void}
+*/
+export function showGameOverPage(): void {
   app.innerHTML = gameOverPage();
   initGameOverPage();
   setTimeout(() => {
@@ -58,13 +103,11 @@ export function showGameOverPage() {
   }, 3000);
 }
 
-export function showStartPage() {
-  app.innerHTML = startPage();
+/* -------------------------------------------------------------------------- */
+/*                           Application Start                                */
+/* -------------------------------------------------------------------------- */
 
-  const playButton = document.getElementById("play-button")!;
-
-  playButton.addEventListener("click", () => {
-    app.innerHTML = settingsPage();
-    initSettings();
-  });
-}
+/**
+ * Initializes the application by displaying the start page.
+ */
+showStartPage();
