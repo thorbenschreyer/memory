@@ -58,6 +58,8 @@
     background-color: var(--winning-screen-button-background-color);
     color: var(--winning-screen-button-color);
     border-radius: var(--winning-screen-button-border-radius);
+    font-family: var(--winning-screen-button-font-family);
+    font-size: var(--winning-screen-button-font-size);
 
     &:hover {
       box-shadow: var(--winning-screen-button-hover-border);
@@ -65,10 +67,6 @@
       color: var(--winning-screen-button-hover-color);
     }
 
-    > span {
-      font-family: var(--winning-screen-button-font-family);
-      font-size: var(--winning-screen-button-font-size);
-    }
   }
 }
 

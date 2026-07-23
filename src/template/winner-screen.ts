@@ -2,7 +2,7 @@ import confettiImage from "../assets/image/theme-img/code-vibes/winning-scree-co
 
 export function winnerPage() {
   return `
-    <div class="gamefield-page winner-screen-position">
+    <section class="gamefield-page winner-screen-position">
       <img
         class="confetti"
         src="${confettiImage}"
@@ -10,9 +10,9 @@ export function winnerPage() {
       >
 
       <div class="winner-screen">
-        <span id="winner-screen_text" class="winner-screen_text">
+        <h1 id="winner-screen_text" class="winner-screen_text">
           The winner is
-        </span>
+        </h1>
 
         <span id="winning-player" class="winner-screen_player">
           Orange Player
@@ -26,9 +26,9 @@ export function winnerPage() {
         >
 
         <button id="homebutton" class="winner-screen__button">
-          <span>HOME</span>
+          HOME
         </button>
       </div>
-    </div>
+    </section>
   `;
 }
