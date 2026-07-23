@@ -7,8 +7,8 @@ export function startPage() {
   return `
     <section class="welcome-page flex">
       <div class="weclome-page-text">
-        <h1>It's play time.</h1>
-        <p>Ready to play?</p>
+        <p>It's play time.</p>
+        <h1>Ready to play?</h1>
 
         <button class="button button--primary" id="play-button">
           <img class="button__controller" src="${controllerButton}" alt="Controller Icon" />
