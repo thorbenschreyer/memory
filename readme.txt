@@ -22,9 +22,89 @@ Choose your favorite theme, select the number of cards and decide which player s
 
 ---
 
-## 🖼️ Available Themes
+## 🚀 Getting Started
 
-The game currently includes three different themes:
+### Prerequisites
+
+Before starting the project, make sure you have the following installed:
+
+* [Node.js](https://nodejs.org/)
+* npm
+
+### Installation
+
+#### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+```
+
+#### 2. Navigate into the project directory
+
+```bash
+cd memory-game
+```
+
+#### 3. Install the dependencies
+
+```bash
+npm install
+```
+
+#### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will then be available in your browser.
+
+---
+
+## 🕹️ How to Play
+
+The game is designed for two players.
+
+### Game Setup
+
+Before starting a game:
+
+1. Select a theme.
+2. Choose which player starts.
+3. Select the number of cards.
+4. Start the game.
+
+### Gameplay
+
+1. Flip two cards.
+2. If the cards match, the current player scores one point and keeps their turn.
+3. If the cards do not match, they are turned face down again.
+4. The other player continues.
+5. The game ends when all pairs have been found.
+
+The player with the most matching pairs wins.
+
+If both players finish with the same number of pairs, the game ends in a draw.
+
+---
+
+## 🃏 Game Sizes
+
+The game offers three different game sizes:
+
+|   Cards  |  Grid |
+| :------: | :---: |
+| 16 Cards | 4 × 4 |
+| 24 Cards | 4 × 6 |
+| 36 Cards | 6 × 6 |
+
+Each card appears twice, creating matching pairs.
+
+---
+
+## 🎨 Available Themes
+
+The game currently includes three different themes.
 
 ### 💻 Code Vibes
 
@@ -40,32 +120,38 @@ A theme based on projects from the Developer Academy.
 
 ---
 
-## 🃏 Game Modes
+## ⚙️ Game Settings
 
-You can choose between three different game sizes:
+The selected game settings are saved locally before the game starts.
 
-| Cards    | Grid  |
-| -------- | ----- |
-| 16 Cards | 4 × 4 |
-| 24 Cards | 4 × 6 |
-| 36 Cards | 6 × 6 |
+The settings include:
 
-Each card appears twice, creating matching pairs.
+```ts
+const settings = {
+  theme,
+  player,
+  numberOfCards,
+};
+```
 
----
+These settings are stored in `localStorage`:
 
-## 🕹️ How to Play
+```ts
+localStorage.setItem(
+  "settings",
+  JSON.stringify(settings)
+);
+```
 
-1. Select a theme.
-2. Choose the starting player.
-3. Select the number of cards.
-4. Start the game.
-5. Flip two cards.
-6. If the cards match, the player scores a point and keeps the turn.
-7. If the cards do not match, they are turned face down again and the other player continues.
-8. The player with the most matching pairs wins.
+When the game starts, the settings are loaded again:
 
-If both players finish with the same number of pairs, the game ends in a draw.
+```ts
+const settings = JSON.parse(
+  localStorage.getItem("settings") ?? "{}"
+);
+```
+
+This allows the selected configuration to be transferred from the settings page to the actual game.
 
 ---
 
@@ -78,37 +164,93 @@ The game supports two players:
 
 Every successfully found pair awards one point to the current player.
 
-The game automatically checks the score and determines whether:
+At the end of the game, the final score is evaluated automatically.
 
-* Blue wins
-* Orange wins
-* The game ends in a draw
+The game can determine whether:
 
-The final scores and winner are saved in `localStorage` and displayed on the game-over screen.
+* 🔵 Blue wins
+* 🟠 Orange wins
+* 🤝 The game ends in a draw
+
+The final scores and the winner are stored and displayed on the game-over screen.
 
 ---
 
-## ⚙️ Game Settings
+## 💾 Game Results
 
-Before starting a game, the selected settings are saved locally:
+The final game results are saved in `localStorage`.
 
 ```ts
-const settings = {
-  theme,
-  player,
-  numberOfCards,
+const winningValues = {
+  scoreBlue,
+  scoreOrange,
+  winner,
 };
-```
 
-These settings are later loaded when the game starts:
-
-```ts
-const settings = JSON.parse(
-  localStorage.getItem("settings") ?? "{}"
+localStorage.setItem(
+  "winningValue",
+  JSON.stringify(winningValues)
 );
 ```
 
-This allows the game to transfer the selected configuration from the settings page to the actual game.
+This allows the game-over screen to access and display the results of the completed game.
+
+---
+
+## 🔀 Card Randomization
+
+Before the game starts, the cards are randomly shuffled:
+
+```ts
+memoryCardArray.sort(() => Math.random() - 0.5);
+```
+
+Depending on the selected game size, the appropriate number of cards is used to generate the game field.
+
+---
+
+## 🧠 Game Logic
+
+The game uses event delegation to handle card clicks.
+
+When a card is clicked:
+
+1. The card is flipped.
+2. The image source is stored.
+3. A second card is selected.
+4. Both image sources are compared.
+5. If the cards match:
+
+   * The pair is marked as solved.
+   * The current player receives one point.
+6. If the cards do not match:
+
+   * The cards are turned face down again.
+   * The player changes.
+7. The score and win condition are updated.
+
+Example:
+
+```ts
+if (firstImageSrc === imageSrc) {
+  firstCard.classList.add("is-solved");
+  card.classList.add("is-solved");
+} else {
+  changePlayer();
+}
+```
+
+---
+
+## 📱 Responsive Design
+
+The game is designed to work across different screen sizes, including:
+
+* Desktop
+* Tablet
+* Mobile devices
+
+The game field dynamically adapts to the selected number of cards.
 
 ---
 
@@ -149,125 +291,6 @@ This allows the game to transfer the selected configuration from the settings pa
 ├── package.json
 └── README.md
 ```
-
----
-
-## 🔀 Card Randomization
-
-The cards are randomly shuffled before the game starts:
-
-```ts
-memoryCardArray.sort(() => Math.random() - 0.5);
-```
-
-Depending on the selected game size, the appropriate number of cards is used to generate the game field.
-
----
-
-## 🧠 Game Logic
-
-The game uses event delegation to handle card clicks.
-
-When a card is clicked:
-
-1. The card is flipped.
-2. The image source is stored.
-3. A second card is selected.
-4. Both image sources are compared.
-5. If they match:
-
-   * The pair is marked as solved.
-   * The current player receives one point.
-6. If they do not match:
-
-   * The cards are turned face down again.
-   * The player changes.
-7. The score and win condition are updated.
-
-Example:
-
-```ts
-if (firstImageSrc === imageSrc) {
-  firstCard.classList.add("is-solved");
-  card.classList.add("is-solved");
-} else {
-  changePlayer();
-}
-```
-
----
-
-## 💾 LocalStorage
-
-The game uses `localStorage` to save:
-
-### Game Settings
-
-```ts
-localStorage.setItem(
-  "settings",
-  JSON.stringify(settings)
-);
-```
-
-### Game Results
-
-```ts
-const winningValues = {
-  scoreBlue,
-  scoreOrange,
-  winner,
-};
-
-localStorage.setItem(
-  "winningValue",
-  JSON.stringify(winningValues)
-);
-```
-
-This allows the game-over screen to access the final game results.
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-```
-
-### 2. Navigate into the project
-
-```bash
-cd memory-game
-```
-
-### 3. Install dependencies
-
-```bash
-npm install
-```
-
-### 4. Start the development server
-
-```bash
-npm run dev
-```
-
-The application will then be available in your browser.
-
----
-
-## 📱 Responsive Design
-
-The game is designed to work across different screen sizes, including:
-
-* Desktop
-* Tablet
-* Mobile devices
-
-The game field dynamically adapts to the selected number of cards.
 
 ---
 
