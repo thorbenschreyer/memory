@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
   background-color: var(--page-background);
   font-family: var(--page-font-family);
-  height: 100vh;
 }
 
 .header-menu {
@@ -15,22 +15,26 @@
   justify-content: space-between;
   width: 1220px;
   height: 104px;
-  border-radius: var(--header-element-radius);
   margin-top: var(--header-menu-margin-top);
+  border-radius: var(--header-element-radius);
   background-color: var(--background-color-header-menu);
 }
 
 .exit-button {
-  cursor: pointer;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: var(--exit-button-width);
   height: var(--exit-button-height);
+  margin-right: var(--header-element-margin);
+  padding: 0;
   border: var(--exit-button-border);
+  border-radius: var(--header-element-radius);
   background-color: var(--exit-button-background-color);
   color: var(--exit-button-text-color);
-  border-radius: var(--header-element-radius);
-  margin-right: var(--header-element-margin);
-  @include flex.flex-center;
+  font: inherit;
+  cursor: pointer;
 
   &:hover {
     box-shadow: var(--exit-button-img-background-box-shadow-hover);
@@ -42,55 +46,54 @@
     margin-left: 32px;
   }
 
-  &__img {
+  &__img,
+  &__img--hover {
     position: absolute;
+    left: var(--exit-button-img-left);
     width: var(--exit-button-img-width);
     height: var(--exit-button-img-height);
-    left: var(--exit-button-img-left);
-    transition: all ease-in-out 200ms;
-    background-image: var(--exit-button-img-background-image);
-    margin-right: 32px;
-
-    &--hover {
-      position: absolute;
-      opacity: 0;
-      width: var(--exit-button-img-width);
-      height: var(--exit-button-img-height);
-      left: var(--exit-button-img-left);
-      transition: all ease-in-out 200ms;
-      background-image: var(--exit-button-img-background-image-hover);
-    }
+    transition: opacity 200ms ease-in-out;
   }
 
-  &:hover .exit-button__img {
+  &__img {
+    background-image: var(--exit-button-img-background-image);
+  }
+
+  &__img--hover {
+    opacity: 0;
+    background-image: var(--exit-button-img-background-image-hover);
+  }
+
+  &:hover &__img {
     opacity: 0;
   }
 
-  &:hover .exit-button__img--hover {
+  &:hover &__img--hover {
     opacity: 1;
   }
 }
 
 .score-board {
-  height: var(--header-element-height);
-  background-color: var(--score-bord-background-color);
-  border-radius: var(--header-element-radius);
-  margin-left: var(--header-element-margin);
-  @include flex.flex-center;
+  display: flex;
+  align-items: center;
   justify-content: space-around;
+  height: var(--header-element-height);
+  margin-left: var(--header-element-margin);
+  border-radius: var(--header-element-radius);
+  background-color: var(--score-bord-background-color);
 
   &__player {
-    @include flex.flex-center;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-left: 8px;
     padding: var(--score-bord-score-text-padding);
     font-size: var(--score-bord-score-text-font-size);
-    
-    margin-left: 8px;
 
     &--add-color {
       display: var(--player-color-is-displayed);
-      font-size: var(--player-color-is-displayed-font-size);
       margin-right: 6px;
+      font-size: var(--player-color-is-displayed-font-size);
     }
 
     &--orange {
@@ -108,11 +111,11 @@
   }
 
   &__img {
-    background-repeat: var(--card-background-img-background-repeat);
-    background-position: var(--card-background-img-background-position);
-    padding: var(--player-img-padding);
     width: var(--player-img-width);
     height: var(--player-img-height);
+    padding: var(--player-img-padding);
+    background-repeat: var(--card-background-img-background-repeat);
+    background-position: var(--card-background-img-background-position);
 
     &--orange {
       background-image: var(--player-background-img-orange);
@@ -125,35 +128,23 @@
 }
 
 .current-player {
-  @include flex.flex-center;
-
-  &__img {
-    background-repeat: var(--card-background-img-background-repeat);
-    background-position: var(--card-background-img-background-position);
-    width: var(--current-player-img-width);
-    height: var(--current-player-img-height);
-
-    &--orange {
-      background-image: var(--current-player-background-image-orange);
-    }
-
-    &--blue {
-      background-image: var(--current-player-background-image-blue);
-    }
-  }
+  display: flex;
+  align-items: center;
 
   &__text {
-    font-size: var(--player-text-font-size);
     margin-right: var(--player-text-margin-right);
     color: var(--player-text-font-color);
     font-family: var(--player-text-font-family);
+    font-size: var(--player-text-font-size);
   }
 
   &__icon {
-    border-radius: var(--player-icon-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: var(--player-icon-size);
     height: var(--player-icon-size);
-    @include flex.flex-center;
+    border-radius: var(--player-icon-border-radius);
 
     &--orange {
       background-color: var(--current-player-background-color-orange);
@@ -161,6 +152,21 @@
 
     &--blue {
       background-color: var(--current-player-background-color-blue);
+    }
+  }
+
+  &__img {
+    width: var(--current-player-img-width);
+    height: var(--current-player-img-height);
+    background-repeat: var(--card-background-img-background-repeat);
+    background-position: var(--card-background-img-background-position);
+
+    &--orange {
+      background-image: var(--current-player-background-image-orange);
+    }
+
+    &--blue {
+      background-image: var(--current-player-background-image-blue);
     }
   }
 }
@@ -191,20 +197,22 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
   }
 
   &__face {
     position: absolute;
-    @include flex.flex-center;
     inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: var(--card-border-radius);
-    background-image: var(--card-background-image);
     background-color: var(--card-background-color);
+    background-image: var(--card-background-image);
     background-repeat: var(--card-background-img-background-repeat);
     background-position: var(--card-background-img-background-position);
-    backface-visibility: hidden;
     box-shadow: var(--card-shaddow);
+    backface-visibility: hidden;
 
     &--img {
       display: var(--back-card-img);
@@ -214,72 +222,77 @@
 
     &--back {
       position: relative;
-      transform: rotateY(180deg);
-      background-image: var(--back-card-background);
       width: var(--card-width);
       height: var(--card-eight);
+      transform: rotateY(180deg);
+      background-image: var(--back-card-background);
       box-shadow: var(--card-shaddow);
 
       &::after {
-        content: "";
         position: absolute;
         inset: 0;
+        content: "";
         border: var(--is-solved-border);
-        box-shadow: var(--is-solved-box-shadow);
         border-radius: var(--card-border-radius);
-        pointer-events: none;
+        box-shadow: var(--is-solved-box-shadow);
         opacity: 0;
+        pointer-events: none;
       }
     }
   }
 
-  &.card.is-solved .card__face--back::after {
-    opacity: 1;
+  &.is-solved {
+    .card__face--back::after {
+      opacity: 1;
+    }
   }
 
-  &.is-flipped .card__inner {
-    transform: rotateY(180deg);
+  &.is-flipped {
+    .card__inner {
+      transform: rotateY(180deg);
+    }
   }
 }
 
 .exit-game {
-  margin: auto;
   width: var(--dialog-width);
   height: var(--dialog-height);
+  margin: auto;
   border-radius: var(--dialog-border-radius);
+  border: none;
 
   &--content {
-    @include flex.flex-center;
-    flex-direction: column;
+    display: flex;
+    align-items: center;
     justify-content: space-around;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     border-radius: var(--dialog-button-borderradius);
-
     background-color: var(--dialog-background-color);
 
     &__text {
-      font-size: var(--dialog-text-font-size);
       color: var(--dialog-text-color);
+      font-size: var(--dialog-text-font-size);
       text-align: center;
       letter-spacing: 2%;
     }
 
     &__buttons {
-      width: 100%;
       display: flex;
       justify-content: space-around;
+      width: 100%;
     }
   }
 }
 
 .dialog-button {
-  font-family: var(--dialog-button-font-family);
-  cursor: pointer;
-  font-size: var(--dialog-button-font-size);
-  letter-spacing: var(--dialog-button-letter-spacing);
   padding: var(--dialog-button-padding);
   border-radius: var(--dialog-button-borderradius);
+  font-family: var(--dialog-button-font-family);
+  font-size: var(--dialog-button-font-size);
+  letter-spacing: var(--dialog-button-letter-spacing);
+  cursor: pointer;
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
@@ -293,9 +306,10 @@
     box-shadow: var(--dialog-button-stay-boxshadow);
 
     &:hover {
-      box-shadow: var(--dialog-button-stay-hover-border);
+      border: var(--dialog-button-stay-hover-border);
       background-color: var(--dialog-button-stay-hover-background-color);
       color: var(--dialog-button-stay-hover-color);
+      box-shadow: var(--dialog-button-stay-hover-border);
     }
   }
 
@@ -306,9 +320,9 @@
     box-shadow: var(--dialog-button-exit-boxshadow);
 
     &:hover {
-      box-shadow: var(--dialog-button-exit-hover-boxshadow);
       background-color: var(--dialog-button-exit-hover-background-color);
       color: var(--dialog-button-exit-hover-color);
+      box-shadow: var(--dialog-button-exit-hover-boxshadow);
     }
   }
 }
