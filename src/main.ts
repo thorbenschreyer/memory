@@ -95,8 +95,11 @@ export function showGamePage(): void {
 * @returns {void}
 */
 export function showGameOverPage(): void {
-  app.innerHTML = gameOverPage();
-  initGameOverPage();
+  setTimeout(() => {
+    app.innerHTML = gameOverPage();
+    initGameOverPage();
+  }, 3000);
+
   setTimeout(() => {
     app.innerHTML = winnerPage();
     initWinnerPage();
