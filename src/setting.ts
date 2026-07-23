@@ -15,16 +15,10 @@ let player: string;
 let numberOfCards: number;
 
 export function initSettings() {
-  const themeRadios = document.querySelectorAll<HTMLInputElement>(
-    'input[name="theme"]',
-  );
-  const themeHover =
-    document.querySelectorAll<HTMLLabelElement>(".theme-label");
-  const playerRadios = document.querySelectorAll<HTMLInputElement>(
-    'input[name="player"]',
-  );
-  const sizeRadios =
-    document.querySelectorAll<HTMLInputElement>('input[name="size"]');
+  const themeRadios = document.querySelectorAll<HTMLInputElement>('input[name="theme"]',);
+  const themeHover = document.querySelectorAll<HTMLLabelElement>(".theme-label");
+  const playerRadios = document.querySelectorAll<HTMLInputElement>('input[name="player"]',);
+  const sizeRadios = document.querySelectorAll<HTMLInputElement>('input[name="size"]');
   themeDetails = document.getElementById("gaming-theme")!;
   playerDetails = document.getElementById("starting-player")!;
   numberOfCardsDetails = document.getElementById("card-size")!;
@@ -157,7 +151,7 @@ function updatetheme() {
 function updatetPlayer() {
   if (player === "blue") {
     playerDetails.innerText = "Blue player";
-  } else if (player === "orange") {
+  } else {
     playerDetails.innerText = "Orange player";
   }
   checkStartValues();
