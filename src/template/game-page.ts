@@ -1,6 +1,6 @@
 export function gamePage() {
   return `
-          <div class="gamefield-page">
+  <main class="gamefield-page">
     <header class="header-menu">
       <!-- Score board -->
       <div class="score-board">
@@ -54,7 +54,7 @@ export function gamePage() {
 
     <!-- Gamefield -->
     <section id="game-field" class="card-field"></section>
-  </div>
+  </main>
 
   <!-- Exit Dialog -->
   <dialog id="exit-dialog" class="exit-game">
