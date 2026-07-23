@@ -15,16 +15,25 @@ let player: string;
 let numberOfCards: number;
 
 export function initSettings() {
-  const themeRadios = document.querySelectorAll<HTMLInputElement>('input[name="theme"]',);
-  const themeHover = document.querySelectorAll<HTMLLabelElement>(".theme-label");
-  const playerRadios = document.querySelectorAll<HTMLInputElement>('input[name="player"]',);
-  const sizeRadios = document.querySelectorAll<HTMLInputElement>('input[name="size"]');
+  const themeRadios = document.querySelectorAll<HTMLInputElement>(
+    'input[name="theme"]',
+  );
+  const themeHover =
+    document.querySelectorAll<HTMLLabelElement>(".theme-label");
+  const playerRadios = document.querySelectorAll<HTMLInputElement>(
+    'input[name="player"]',
+  );
+  const sizeRadios =
+    document.querySelectorAll<HTMLInputElement>('input[name="size"]');
   themeDetails = document.getElementById("gaming-theme")!;
   playerDetails = document.getElementById("starting-player")!;
   numberOfCardsDetails = document.getElementById("card-size")!;
   startButton = document.getElementById("start-button")!;
   errorMassage = document.getElementById("error-massage")!;
   themeImage = document.getElementById("theme-image") as HTMLImageElement;
+  theme = "";
+  player = "";
+  numberOfCards = 0;
 
   /* -------------------------------------------------------------------------- */
   /*                              Eventlisteners                                */
